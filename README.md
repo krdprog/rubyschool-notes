@@ -6,3 +6,5 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 - Урок 20 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-03.md
 
 Продолжение в процессе оформления ;-)
+
+Спасибо автору курса http://rubyschool.us/ - Роману Пушкину (программисту из Сан-Франциско)
