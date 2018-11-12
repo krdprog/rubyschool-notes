@@ -285,7 +285,7 @@ end
 
 ```ruby
 def gets_password
-  print "Введе пароль: "
+  print "Введите пароль: "
   return gets.chomp
 end
 
