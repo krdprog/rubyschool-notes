@@ -1221,3 +1221,5 @@ planes.each do |plane|
 	puts "Plane moving: #{plane.moving?}"
 end
 ```
+
+Продолжение конспекта: Урок 15-19 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-02.md
