@@ -1179,3 +1179,5 @@ views/welcome.erb
 <p><a href="/contacts">Contacts</a></p>
 ```
 > Отдельная область программирования scraping - парсинг информации
+
+Продолжение конспекта: Урок 20 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-03.md
