@@ -8,13 +8,18 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 Продолжение в процессе оформления ;-)
 
 ## Хотите смотреть видео на ускоренном воспроизведении?
-Установите add-on в Firefox - https://addons.mozilla.org/ru/firefox/addon/videospeed/
 
-Работает на всех видео (youtube, vimeo...), можно увеличивать скорость ролика. Есть и для google chrome.
+Установите add-on в Firefox - https://addons.mozilla.org/ru/firefox/addon/videospeed/
 
 Для ускорения нажмите много раз на **D**, для замедления - на **S**
 
-Подробнее о video Speed Controller: https://github.com/codebicycle/videospeed
+Есть и для Google Chrome. Работает для Vimeo, Youtube и для всех остальных HTML5-видео.
+
+Скорость регулируется даже больше, чем в нативной Youtube-настройке, где максимум двойная скорость. Можно увеличивать со звуком до скорости в 4 раза выше начальной.
+
+Постепенно приучайте свой мозг к более высоким скоростям просмотра ролика, и со временем вы будете быстрее осваивать видеоматериалы.
+
+Подробнее о Video Speed Controller: https://github.com/codebicycle/videospeed
 
 ## Thanks
 
