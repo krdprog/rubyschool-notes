@@ -7,6 +7,15 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 
 Продолжение в процессе оформления ;-)
 
+### Хотите смотреть видео на ускоренном воспроизведении?
+Установить add-on в Firefox - https://addons.mozilla.org/ru/firefox/addon/videospeed/
+Работает на всех видео (youtube, vimeo...), можно увеличивать скорость ролика. Есть и для google chrome.
+Для ускорения нажмите много раз на **D**, для замедления - на **S**
+
+Подробнее о video Speed Controller: https://github.com/codebicycle/videospeed
+
+### Thanks
+
 Спасибо автору курса http://rubyschool.us/ - Роману Пушкину (программисту из Сан-Франциско)
 
 ## License
