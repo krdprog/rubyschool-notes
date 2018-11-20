@@ -489,6 +489,12 @@ gem install sqlite3
 ```bash
 sqlite3 --version
 ```
+
+Создать базу данных в терминале:
+
+```bash
+sqlite3 my_base.sqlite
+```
 #### Немного SQL:
 > Пройти упражнения на тренажёре SQL is Hard: http://www.sqlishard.com/
 
@@ -606,16 +612,27 @@ db.close
 ##### 1. Создать для BaberShop бд с таблицами:
 
 Users:
+
 Id - идентификатор, primary key, автоинкремент, тип INTEGER
+
 Name - Varchar
+
 Phone - Varchar
+
 DateStamp - Varchar
+
 Baber - Varchar
+
 Color - Varchar
 
 Contacts:
+
 Id - идентификатор, primary key, автоинкремент, тип INTEGER
+
 Email - Varchar
+
 Message - Varchar
 
 ##### 2. Добавить через терминал и sqlite3 несколько записей в таблицу Users и Contacts
+
+Продолжение конспекта: Урок 26... - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-04.md
