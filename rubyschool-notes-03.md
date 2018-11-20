@@ -354,4 +354,268 @@ end
 
 ### Урок 23
 
-in progress...
+```ruby
+<script src="script.js"></script>
+```
+
+jQuery:
+```ruby
+$('#aaa').css('background-color','yellow');
+$('.ccc').css('background-color','red');
+```
+
+Код в { ... } выполнится после того, как загрузится вся страница:
+```ruby
+<body>
+  <script>
+    $(function() {
+        ...
+      });
+  </script>
+</body>
+```
+
+### Урок 24
+
+#### Валидация - проверка параметров
+
+##### Вариант 1:
+app.rb
+```ruby
+	if @user_name == ''
+		@error = 'Ошибка: Введите имя!'
+		return erb :index
+	end
+```
+views/index.erb
+```ruby
+<p><strong><%= @error %></strong></p>
+```
+> Атомарность коммитов.
+
+Возврат view вынесем отдельно:
+```ruby
+if @error != ''
+  return erb :index
+end
+```
+Для проверки валидации можно использовать хеши:
+
+```ruby
+# хеш для валидации параметров
+hh = { :user_name => 'Введите имя',
+  :phone => 'Введите телефон',
+  :date_time => 'Введите дату и время' }
+
+# для каждой пары ключ-значение
+hh.each do |key, value|
+  # если параметр пустой
+  if params[key] == ''
+    # переменной @error присвоить value из хеша hh
+    @error = hh[key]
+    
+    # вернуть представление
+    return erb :index
+  end
+end
+```
+##### Как сделать, чтобы введённое значение оставалось в поле после вывода ошибки валидации:
+
+Добавим атрибут value в файле views/index.erb:
+```ruby
+Your name:<br> <input type="text" name="user_name" value="<%= @user_name %>">
+```
+В итоге получим улучшенную версию views/index.erb
+```ruby
+<h1>Babershop</h1>
+
+<p><strong><%= @error %></strong></p>
+
+<form action="/" method="POST">
+	Your name:<br> <input type="text" name="user_name" value="<%= @user_name %>"><br>
+	Your phone:<br> <input type="text" name="phone" value="<%= @phone %>"><br>
+	Date and time:<br> <input type="text" name="date_time" value="<%= @date_time %>"><br>
+
+	<br><br>
+	<label for="baber">Выбор парикмахера</label>
+	<select name="baber">
+		<option value="none" selected>Выберите парикмахера...</option>
+		<option value="Петрович">Петрович</option>
+		<option value="Макарыч">Макарыч</option>
+		<option value="Федорыч">Федорыч</option>
+	</select>
+	<br><br>
+
+	<input type="submit">
+</form>
+```
+Ещё можно сделать так (будет выводить через запятую пустые поля):
+
+Edit babershop-2.rb:
+```ruby
+	# хеш для валидации параметров
+	hh = { :user_name => 'Введите имя',
+      :phone => 'Введите телефон', 
+      :date_time => 'Введите дату и время' }
+
+	@error = hh.select {|key,_| params[key] == ''}.values.join(", ")
+
+	if @error != ''
+		return erb :index
+	end
+```
+Вынесем это решение в отдельный метод (сделать самостоятельно).
+
+#### Домашнее задание:
+Сделать отправку данных, которые введены в форму на электронную почту. Через гем Pony. Описание тут: https://stackoverflow.com/questions/2068148/contact-form-in-ruby-sinatra-and-haml
+
+Главное, чтобы на gmail или другом почтовом сервере был открыт 587 порт.
+
+> gem pony: https://github.com/benprew/pony/
+> Документация gem Pony: https://www.rubydoc.info/gems/pony/1.12
+
+### Урок 25
+
+#### Базы данных - gem sqlite3
+
+bash:
+```bash
+gem install sqlite3
+```
+> sqlite - https://sqlite.org/index.html
+
+Язык запросов SQL
+
+```bash
+sqlite3 --version
+```
+#### Немного SQL:
+> Пройти упражнения на тренажёре SQL is Hard: http://www.sqlishard.com/
+
+Выбрать все колонки для таблицы:
+```sql
+SELECT * FROM Customers
+```
+Выбрать определённые колонки:
+```sql
+SELECT Id, FirstName FROM Customers
+```
+или в другом порядке:
+```sql
+SELECT FirstName, Id FROM Customers
+```
+WHERE:
+```sql
+SELECT * FROM Customers WHERE id = 5
+```
+WHERE conditions:
+```sql
+SELECT * FROM Orders WHERE OrderTotal BETWEEN 100 AND 200
+```
+```sql
+SELECT * FROM Orders WHERE DeliveryTime < '2013-06-20'
+```
+LIKE (поиск):
+```sql
+SELECT * FROM Customers WHERE LastName LIKE 'A%'
+```
+OR:
+```sql
+продолжение http://www.sqlishard.com/Exercise#/exercises/SELECT/S2.4
+```
+#### Инструмент:
+> Addon Firefox: https://addons.mozilla.org/ru/firefox/addon/sqlite-manager (установить, перезагрузить браузер, потом нажать Alt - Инструменты - SQLite Manager, или вынести в боковое меню).
+
+- создадим базу данных test.sqlite
+- создадим таблицу Cars со столбцами:
+-- Id (INTEGER) - первичный ключ, автоинкремент: INTEGER PRIMARY KEY AUTOINCREMENT;
+-- Name (VARCHAR)
+-- Price (INTEGER)
+
+```sql
+CREATE TABLE "Cars" ("Id" INTEGER PRIMARY KEY AUTOINCREMENT, "Name" VARCHAR, "Price" INTEGER)
+```
+Пример запроса:
+```sql
+SELECT * FROM Cars WHERE Price > 1000
+```
+Создание - INSERT:
+```sql
+INSERT INTO Cars (Id, Name, Price) VALUES (1, 'BMW', 10000)
+```
+А, с автоинкрементом:
+```sql
+INSERT INTO Cars (Name, Price) VALUES ('Audi', 3000)
+```
+#### Откроем базу через терминал:
+```bash
+sqlite3 test.sqlite
+```
+Список таблиц:
+```bash
+.tables
+```
+Сделаем запрос (в конце запроса точка с запятой, иначе на другую строку переходит вод запроса):
+```sql
+SELECT * FROM Cars
+```
+Фишка .mode column
+```bash
+.mode column
+```
+Включить заголовки:
+```bash
+.headers on
+```
+Добавить:
+```sql
+INSERT INTO Cars (Name, Price) VALUES ('Foo', 6743)
+```
+Выйти:
+```bash
+.exit
+```
+#### Как обращаться к базе данных из программы:
+
+app.rb
+```ruby
+require 'sqlite3'
+
+# подключим базу данных (которую делали выше)
+db = SQLite3::Database.new 'test.sqlite'
+
+# добавим новую информацию в базу данных
+db.execute "INSERT INTO Cars (Name, Price) VALUES ('Jaguar', 7000000)"
+
+# прочитаем данные из базы
+db.execute "SELECT * FROM Cars" do |car|
+	puts car
+	puts "======"
+end
+
+db.close
+```
+Обратить внимание на тему SQL Injection
+```sql
+'DROP TABLE Cars -- 
+```
+Это нужно фильтровать. Как? Будет ниже.
+
+#### Домашнее задание:
+
+##### 1. Создать для BaberShop бд с таблицами:
+
+Users:
+Id - идентификатор, primary key, автоинкремент, тип INTEGER
+Name - Varchar
+Phone - Varchar
+DateStamp - Varchar
+Baber - Varchar
+Color - Varchar
+
+Contacts:
+Id - идентификатор, primary key, автоинкремент, тип INTEGER
+Email - Varchar
+Message - Varchar
+
+##### 2. Добавить через терминал и sqlite3 несколько записей в таблицу Users и Contacts
