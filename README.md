@@ -4,6 +4,14 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 - Урок 1-14 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-01.md
 - Урок 15-19 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-02.md
 - Урок 20-25 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-03.md
+- Урок 26... - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-04.md
+
+**TODO:**
+- урок 26-30
+- урок 31-35
+- урок 36-40
+- урок 40-45
+- урок 46-50
 
 Продолжение в процессе оформления ;-)
 

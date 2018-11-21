@@ -117,6 +117,7 @@ def save_form_data_to_database
 	db = get_db
 	db.execute 'INSERT INTO Messages (username, phone, email, option, comment)
 	VALUES (?, ?, ?, ?, ?)', [@username, @phone, @email, @option, @comment]
+	db.close
 end
 
 get '/' do
