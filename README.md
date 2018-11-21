@@ -7,6 +7,10 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 
 Продолжение в процессе оформления ;-)
 
+**Дополнительно:**
+
+- Шпаргалка по SQLite3 - https://github.com/krdprog/sqlite-3-rus-howto/blob/master/README.md
+
 ## Хотите смотреть видео на ускоренном воспроизведении?
 
 Установите add-on в Firefox - https://addons.mozilla.org/ru/firefox/addon/videospeed/
