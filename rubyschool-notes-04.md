@@ -360,6 +360,7 @@ before - при каждом обращении к программе
 
 > Мой вариант Sinatra Blog:
 > https://github.com/krdprog/sinatra-blog
+<<<<<<< HEAD
 
 
 #### Перенаправление:
@@ -555,3 +556,5 @@ class CreateClients < ActiveRecord::Migration[5.2]
 end
 
 ```
+=======
+>>>>>>> 250a4d411d0101e9625cfdb757ec92a9866cb803
