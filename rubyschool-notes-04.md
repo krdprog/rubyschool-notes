@@ -360,7 +360,6 @@ before - при каждом обращении к программе
 
 > Мой вариант Sinatra Blog:
 > https://github.com/krdprog/sinatra-blog
-<<<<<<< HEAD
 
 
 #### Перенаправление:
@@ -546,15 +545,204 @@ rake db:create_migration NAME=create_clients
 
 class CreateClients < ActiveRecord::Migration[5.2]
   def change
-  	create_table :client do |t|
+  	create_table :clients do |t|
   		t.text :name
   		t.text :phone
   		t.text :datestamp
   		t.text :barber
+
+        t.timestamps
   	end
   end
 end
 
 ```
-=======
->>>>>>> 250a4d411d0101e9625cfdb757ec92a9866cb803
+> id primary key будет создан автоматически
+
+> t.timestamps создаст 2 дополнительных столбца created_at и updated_at
+дата создания и обновления сущности
+
+text -> TEXT
+string -> VARCHAR(255)
+
+#### Запустить миграцию:
+```bash
+rake db:migrate
+```
+Мы настроили mapping (ORM - Object Relational Mapper)
+
+Связка ООП с реляционными БД
+
+Добавим таблицу barbers:
+```ruby
+# + in app.rb
+
+class Barber < ActiveRecord::Base
+end
+```
+Создаём миграцию (bash):
+```bash
+rake db:create_migration NAME=create_barbers
+```
+Правим миграцию (создаём таблицу и вносим данные):
+```ruby
+# db/migrate/37837298_create_barbers.rb
+
+class CreateBarbers < ActiveRecord::Migration[5.2]
+  def change
+  	create_table :barbers do |t|
+  		t.text :name
+
+  		t.timestamps
+  	end
+  
+  	Barber.create :name => "Joe Doe"
+  	Barber.create :name => "Elon Musk"
+  	Barber.create :name => "Alisha Moon"
+  	Barber.create :name => "Marie Fooo-bar"
+    
+  end
+end
+```
+Запустим миграцию:
+```bash
+rake db:migrate
+```
+
+> Совет от @krdprog:
+> чтобы в командной строке sqlite3 каждый раз не писать, показывать в столбец и с заголовками, создайте в домашней директории файл .sqliterc с содержимым:
+```bash
+.headers on
+.mode column
+```
+Теперь, это настройки по-умолчанию.
+
+Едем дальше...
+
+Откроем консоль tux
+```bash
+tux
+```
+И введём:
+```bash
+Barber.count
+```
+Из этой консоли можно создать дополнительные сущности.
+
+#### Замечание:
+```ruby
+Barber.create # создаёт в БД
+
+b = Barber.new # создаёт в памяти
+b.save # после этого надо сделать
+```
+Создадим в консоли tux нового парикмахера:
+```bash
+Barber.create :name => 'Faz Maz'
+```
+или через .new
+```bash
+b = Barber.new :name => 'Vasya' # создадим, но не сохраним в базе
+b.new_record? # покажет, новый ли это объект
+b.save # сохраним в базе
+```
+Все записи Barber:
+```bash
+Barber.all
+```
+rake db:migrate надо запускать в каталоге приложения, где Rakefile
+
+> **Изучи ссылку:**
+> Active Record Query Interface — Ruby on Rails Guides; https://guides.rubyonrails.org/active_record_querying.html
+
+Создадим вывод на страницу список наших парикмахеров:
+```ruby
+# + in app.rb
+
+get '/' do
+	@barbers = Barber.all
+	erb :index
+end
+```
+
+```ruby
+# + in views/index.erb
+
+<h2>Список парикмахеров:</h2>
+
+<ul>
+<% @barbers.each do |barber| %>
+	<li><%= barber.name %></li>
+<% end %>
+</ul>
+```
+Сортировка .order:
+```ruby
+@barbers = Barber.order "created_at DESC"
+```
+
+> Ссылка на полный проект Barbershop Sinatra with ActiveRecord:
+> https://github.com/krdprog/barbershop-sinatra-with-activerecord
+
+Домашнее задание:
+1. сделать сохранение записи к парикмахеру в БД с помощью ActiveRecord
+2. сделать сущность Contact и на странице /contacts сохранять в БД данные с помощью ActiveRecord
+
+### Урок 30
+
+#### 5 шагов по созданию миграции:
+1. подключаем БД
+```ruby
+set :database, "sqlite3.my_database.db"
+```
+2. создаём модель (класс)
+```ruby
+class Client < ActiveRecord::Base
+end
+```
+3. создаём миграцию
+```bash
+rake db:create_migration NAME=create_clients
+```
+4. редактируем миграцию
+```ruby
+class CreateClients < ActiveRecord::Migration[5.2]
+  def change
+  	create_table :clients do |t|
+  		t.text :name
+  		t.text :phone
+  		t.text :datestamp
+  		t.text :barber
+
+  		t.timestamps
+  	end
+  end
+end
+```
+5. делаем миграцию
+```bash
+rake db:migrate
+```
+Необходимо наличие всех гемов и Rakefile
+
+#### Сохранение в БД через ActiveRecord
+
+```ruby
+# + to app.rb
+
+post '/order' do
+	@name = params[:name]
+	@phone = params[:phone]
+	@datestamp = params[:datestamp]
+	@barber = params[:barber]
+
+	c = Client.new
+	c.name = @name
+	c.phone = @phone
+	c.datestamp = @datestamp
+	c.barber = @barber
+	c.save
+
+	erb :sent
+end
+```
