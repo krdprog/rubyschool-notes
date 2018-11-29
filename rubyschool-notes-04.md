@@ -563,6 +563,7 @@ end
 дата создания и обновления сущности
 
 text -> TEXT
+
 string -> VARCHAR(255)
 
 #### Запустить миграцию:
@@ -681,9 +682,6 @@ end
 @barbers = Barber.order "created_at DESC"
 ```
 
-> Ссылка на полный проект Barbershop Sinatra with ActiveRecord:
-> https://github.com/krdprog/barbershop-sinatra-with-activerecord
-
 Домашнее задание:
 1. сделать сохранение записи к парикмахеру в БД с помощью ActiveRecord
 2. сделать сущность Contact и на странице /contacts сохранять в БД данные с помощью ActiveRecord
@@ -727,22 +725,178 @@ rake db:migrate
 
 #### Сохранение в БД через ActiveRecord
 
+##### Ламерский способ:
 ```ruby
 # + to app.rb
 
 post '/order' do
-	@name = params[:name]
-	@phone = params[:phone]
-	@datestamp = params[:datestamp]
-	@barber = params[:barber]
+    @name = params[:name]
+    @phone = params[:phone]
+    @datestamp = params[:datestamp]
+    @barber = params[:barber]
 
-	c = Client.new
-	c.name = @name
-	c.phone = @phone
-	c.datestamp = @datestamp
-	c.barber = @barber
-	c.save
+    c = Client.new
+    c.name = @name
+    c.phone = @phone
+    c.datestamp = @datestamp
+    c.barber = @barber
+    c.save
 
-	erb :sent
+    erb :sent
 end
 ```
+
+##### Способ лучше:
+
+```ruby
+# + to app.rb
+post '/order' do
+    c = Client.new params[:client]
+    c.save
+
+    erb :sent
+end
+```
+
+```ruby
+# + to views/order.erb
+
+<form action="/order" method="POST">
+
+    <p><label for="name">Ваше имя:</label></p>
+    <p><input type="text" name="client[name]" value=""></p>
+
+    <p><label for="phone">Телефон:</label></p>
+    <p><input type="text" name="client[phone]" value=""></p>
+
+    <p><label for="datestamp">Выберите дату:</label></p>
+    <p><input type="text" name="client[datestamp]" value=""></p>
+
+    <p><label for="barber">Парикмахер:</label>
+        <select name="client[barber]">
+            <option value="" selected>Выбрать парикмахера...</option>
+
+            <% @barbers.each do |barber| %>
+            <option value="<%= barber.name %>"><%= barber.name %></option>
+            <% end %>
+
+        </select>
+    </p>
+
+    <br>
+    <p><input type="submit" value="Отправить заявку"></p>
+
+</form>
+```
+Т.е. вместо создания переменных из params. мы сократили код до пары строк:
+```ruby
+    c = Contact.new params[:contact]
+    c.save
+```
+и в представлении:
+```ruby
+    <p><input type="text" name="contact[name]" value=""></p>
+    <p><textarea rows="10" cols="45" name="contact[comment]"></textarea></p>
+```
+> Важное замечание: метод save для новых записей проводит валидацию, если всё правильно, то возвращает true иначе false
+
+#### Настройка валидации:
+
+Можно проверить пустое - не пустое, можно проверить длину
+
+```ruby
+# + to app.rb
+
+class Client < ActiveRecord::Base
+    validates :name, presence: true
+    validates :phone, presence: true
+    validates :datestamp, presence: true
+    validates :barber, presence: true
+end
+```
+Проверка в tux:
+```bash
+c = Client.new
+c.valid?
+c.errors.count
+c.errors.messages
+```
+```ruby
+# + to app.rb
+
+post '/order' do
+    c = Client.new params[:client]
+    c.save
+
+    if c.save
+        erb "<p>Thank you!</p>"
+    else
+        erb "<p>Error</p>"
+    end
+end
+```
+или:
+```ruby
+# + to app.rb
+
+post '/order' do
+    c = Client.new params[:client]
+    c.save
+
+    if c.save
+        erb "<p>Thank you!</p>"
+    else
+        @error = c.errors.full_messages.first
+        erb :order
+    end
+end
+```
+```ruby
+# + views/order.erb
+
+<p style="color: red"><%= @error %></p>
+```
+Чтобы сохранять данные в поле формы после перезагрузки страницы при неправильном заполнении, надо сделать так:
+
+```ruby
+# + to app.rb
+
+get '/order' do
+    @c = Client.new
+
+    erb :order
+end
+
+post '/order' do
+    @c = Client.new params[:client]
+    @c.save
+
+    if @c.save
+        erb "<p>Thank you!</p>"
+    else
+        @error = @c.errors.full_messages.first
+        erb :order
+    end
+end
+```
+```ruby
+# + to views/order.erb
+
+<p><input type="text" name="client[name]" value="<%= @c.name %>"></p>
+<p><input type="text" name="client[phone]" value="<%= @c.phone %>"></p>
+<p><input type="text" name="client[datestamp]" value="<%= @c.datestamp %>"></p>
+```
+Для textarea:
+```ruby
+<p><textarea rows="10" cols="45" name="contact[comment]"><%= @c.comment %></textarea></p>
+```
+
+> Ссылка на полный проект Barbershop Sinatra with ActiveRecord:
+> https://github.com/krdprog/barbershop-sinatra-with-activerecord
+
+#### Популярные свойства валидации ActiveRecord:
+
+> Ссылка:
+> Active Record Validations — Ruby on Rails Guides
+> https://guides.rubyonrails.org/active_record_validations.html
+- length - https://guides.rubyonrails.org/active_record_validations.html#length
