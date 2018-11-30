@@ -1,6 +1,7 @@
 # Конспект леций курса по Ruby/Sinatra/Ruby on Rails
 
 **Конспект составил:** Алексей Цаплин-Купайсинов (Ruby-программист) - https://github.com/krdprog
+
 **Курс:** http://rubyschool.us/
 
 ## Конспект RubySchool.us [1]
