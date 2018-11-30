@@ -1,5 +1,12 @@
-# rubyschool-notes
+# Конспект лекций курса по Ruby/Sinatra/Ruby on Rails
+
 Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 года. В репозитории размещены конспекты данного курса, записанные при его прохождении.
+
+**Конспект составил:** Алексей Цаплин-Купайсинов (Ruby-программист) - https://github.com/krdprog
+
+**Курс:** http://rubyschool.us/
+
+## Содержание конспекта:
 
 - Урок 1-14 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-01.md
 - Урок 15-19 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-02.md
@@ -7,15 +14,14 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 - Урок 26-30 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-04.md
 - Урок 31-35 (in progress) - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-05.md
 
-**TODO:**
+## TODO (закончить оформление):
+
 - урок 31-35
 - урок 36-40
 - урок 41-45
 - урок 46-50
 
-Продолжение в процессе оформления ;-)
-
-**Дополнительно:**
+## Дополнительно:
 
 - Шпаргалка по SQLite3 - https://github.com/krdprog/sqlite-3-rus-howto/blob/master/README.md
 
@@ -33,14 +39,16 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 
 Подробнее о Video Speed Controller: https://github.com/codebicycle/videospeed
 
-## Thanks
+## Благодарности:
 
 Спасибо автору курса http://rubyschool.us/ - Роману Пушкину (программисту из Сан-Франциско)
 
-## License
+## Лицензия:
 
 [![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 To the extent possible under law, [Alexey Tsaplin-Kupaysinov](https://github.com/krdprog) has waived all copyright and related or neighboring rights to this work.
 
-**Заметка:** Мы развиваем Ruby-сообщество в Краснодаре. Если вы из Краснодара и интересуетесь Ruby, присоединяйтесь к нашему сообществу. В наших планах проводить Ruby-митапы и участвовать в развитии сообщества. Сайт http://rubykrd.ru
+## Заметка:
+
+Мы развиваем Ruby-сообщество в Краснодаре. Если вы из Краснодара и интересуетесь Ruby, присоединяйтесь к нашему сообществу. В наших планах проводить Ruby-митапы и участвовать в развитии сообщества. Сайт http://rubykrd.ru
