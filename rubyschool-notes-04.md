@@ -879,6 +879,7 @@ post '/order' do
     end
 end
 ```
+
 ```ruby
 # + to views/order.erb
 
@@ -899,4 +900,101 @@ end
 > Ссылка:
 > Active Record Validations — Ruby on Rails Guides
 > https://guides.rubyonrails.org/active_record_validations.html
-- length - https://guides.rubyonrails.org/active_record_validations.html#length
+
+- length - length: { minimum: 3 } https://guides.rubyonrails.org/active_record_validations.html#length
+- numericality: true - проверка, введены ли числа
+- inclusion - https://guides.rubyonrails.org/active_record_validations.html#inclusion
+
+> **Домашнее задание:** переписать блог с использованием ActiveRecord
+
+#### Создадим отдельные страницы для каждого парикмахера:
+
+```ruby
+# + to app.rb
+
+get '/barber/:id' do
+    @barber = Barber.find(params[:id])
+
+    erb :barber
+end
+```
+
+```ruby
+# + to views/index.erb
+
+<h2>Список парикмахеров:</h2>
+
+<ul>
+<% @barbers.each do |barber| %>
+    <li><a href="/barber/<%= barber.id %>"><%= barber.name %></a></li>
+<% end %>
+</ul>
+```
+
+```ruby
+# + to views/barber.erb
+
+<h2>Barber page</h2>
+
+<p>Name: <%= @barber.name %></p>
+```
+
+> Find в ActiveRecord:
+> https://guides.rubyonrails.org/active_record_querying.html
+
+#### Показать записавшихся в обратном порядке (кто свежий - наверху):
+
+```ruby
+# + to app.rb
+
+get '/clients' do
+    @clients = Client.order('created_at DESC')
+
+    erb :clients
+end
+
+get '/clients/:id' do
+    @client = Client.find(params[:id])
+
+    erb :client
+end
+```
+
+```ruby
+# + to views/clients.erb
+
+<h2>Список записавшихся</h2>
+
+<table border="1" cellpadding="10" cellpadding="0">
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Date</th>
+        <th>Barber</th>
+    </tr>
+
+<% @clients.each do |client| %>
+    <tr>
+        <td><a href="/clients/<%= client.id %>"><%= client.name %></a></td>
+        <td><%= client.phone %></td>
+        <td><%= client.datestamp %></td>
+        <td><%= client.barber %></td>
+    </tr>
+<% end %>
+</table>
+```
+
+```ruby
+# + to views/client.erb
+
+<h2>Страница клиента:</h2>
+
+<p><strong>Имя:</strong> <%= @client.name %></p>
+
+<p><a href="/clients"><< назад к списку записавшихся</a></p>
+```
+
+##### В ActiveRecord есть штука, которая связывает автоматически посты и комментарии. Домашнее задание - найти это и написать движок блога.
+
+> ActiveRecord "one-to-many" (отношение сущностей)
+> https://guides.rubyonrails.org/association_basics.html
