@@ -460,3 +460,106 @@ end
 Можно использовать json.
 
 Теперь напишем это на JS:
+
+```js
+// + to public/js/main.js
+
+function add_to_cart(id)
+{
+  var key = 'product_' + id;
+
+  var x = window.localStorage.getItem(key);
+  x = x * 1 + 1;
+  window.localStorage.setItem(key, x);
+}
+```
+Смотрим на наличие ошибок в консоли Firefox веб-инспектора.
+
+И, смотрим в хранилище веб-инспектора. Или в консоли веб-инспектора набрать:
+
+```txt
+localStorage
+```
+Очистить:
+```txt
+localStorage.clear();
+```
+> Когда нужно делать рефакторинг кода. Ответ: всегда.
+
+Сделаем счётчик товаров в корзине:
+
+- ламерский способ - создать переменную counter, но это не будет учитывать наш localStorage
+
+Нам надо пройтись по хешу и посчитать продукты, которые добавили в корзину:
+
+```ruby
+# + to app-order-calc.rb
+
+# calculate total number of items in cart
+total = 0
+
+order.each do |key, value|
+  total += value
+end
+
+puts "Total: #{total}"
+```
+> javascript - Listing localstorage - Stack Overflow
+> https://stackoverflow.com/questions/2841029/listing-localstorage#2841042
+
+> javascript - enumerating localStorage properties - Stack Overflow
+> https://stackoverflow.com/questions/27946563/enumerating-localstorage-properties
+
+**Домашнее задание:**
+- найти про enumerate localStorage
+- найти как пройтись по каждому элементу хеша localStorage
+- написать JS функцию подсчёта общего количества заказанных продуктов в корзине.
+
+### Урок 34
+
+#### x ||= y
+
+Это сокращённо:
+```ruby
+x = x || y
+```
+Что означает:
+```ruby
+x || y
+```
+|| - логическое ИЛИ
+
+```ruby
+if x == 1 || x == 2
+```
+Срабатывает первое условие, если не срабатывает, берёт второе условие:
+```ruby
+nil || 4 #=> 4
+false || 2 #=> 2
+123 || 2 #=> 123
+
+x = x || 4
+```
+
+```ruby
+x = false
+x = x || 2
+puts x
+#=> 2
+
+x = true
+x = x || 2
+puts x
+#=> true
+
+x = 5
+x = x || 2 # это мы можем заменить на x ||= 2
+puts x
+#=> 5
+
+x = 5
+x ||= 2
+puts x
+#=> 5
+```
+#### x ||= y используется для установки значения по умолчанию
