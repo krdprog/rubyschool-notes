@@ -711,3 +711,81 @@ function update_orders_button()
 - на странице /cart вывести в виде таблицы список продуктов в корзине и их количество
 - на странице /cart сделать так, чтобы форма сабмитилась по адресу /order и чтобы в базу данных заносился заказ: имя, телефон, адрес доставки, список купленных товаров (в виде текстового поля).
 
+### Ruby on Rails
+
+Я устанавливаю ruby через RVM
+
+Посмотрим доступные версии Rails:
+
+```bash
+gem search '^rails$' --all
+```
+Чтобы установить конкретную версию, введите (вместо rails_version - номер версии):
+```bash
+gem install rails -v rails_version
+```
+С помощью gemset-ов можно использовать вместе разные версии Rails и Ruby. Это делается с помощью команды gem.
+
+```ruby
+rvm gemset create gemset_name # create a gemset
+rvm ruby_version@gemset_name  # specify Ruby version and our new gemset
+```
+Gemset-ы позволяют создавать полнофункциональные окружения для gem-ов, а также настраивать неограниченное количество окружений для каждой версии Ruby.
+
+> [GitHub - DefactoSoftware/Hours: Time registration that doesn't suck](https://github.com/DefactoSoftware/Hours)
+
+#### Rails-приложение может запускаться в 3 типах окружения:
+- development
+- test
+- production
+
+#### Создадим новое рейлс-приложение:
+```bash
+rails new blog
+```
+Последовательность запуска rails (для справки):
+```txt
+boot.rb -> rails -> environment.rb -> development.rb (test.rb or production.rb)
+```
+Запуск приложения:
+
+```bash
+rails s
+```
+Если не запустится, установи nodejs:
+```bash
+sudo apt-get install nodejs
+```
+Если всё ок, приложение запустится и можно открывать в браузере: http://localhost:3000/
+
+Обновлять bundle можно командой:
+```bash
+bundle update
+```
+### MVC
+Model, View, Controller
+
+Controller - отвечает за работу с какой-либо сущностью
+
+#### Создадим контроллер:
+```bash
+rails generate controller home index
+```
+Найдём файл /app/controllers/home_controller.rb
+
+Найдём файл /app/views/home/index.html.erb
+
+Откроем в браузере: http://localhost:3000/home/index
+
+> Обычно /home/index создаётся для главной страницы сайта
+> Надо открыть /config/routes.rb и прописать:
+
+```ruby
+Rails.application.routes.draw do
+  get '/' => 'home#index'
+end
+```
+
+> Изучить: Rails Routing from the Outside In — Ruby on Rails Guides 
+> http://guides.rubyonrails.org/routing.html
+
