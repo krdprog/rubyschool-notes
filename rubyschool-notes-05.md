@@ -959,7 +959,8 @@ end
 
 Доделаем PizzaShop не лучшим, но простым путём. Создадим форму и отправим заказ на сервер (сохраним в базе данных).
 
-> [GitHub - krdprog/PizzaShop-rubyschool: Pizza Shop (rubyschool project). Ruby, Sinatra, ActiveRecord, JS, localStorage.](https://github.com/krdprog/PizzaShop-rubyschool)
+> GitHub - krdprog/PizzaShop-rubyschool: Pizza Shop (rubyschool project). Ruby, Sinatra, ActiveRecord, JS, localStorage
+> https://github.com/krdprog/PizzaShop-rubyschool
 
 #### Домашнее задание:
 - сделать модель Order с полями из формы cart.erb, не забыть про миграцию
