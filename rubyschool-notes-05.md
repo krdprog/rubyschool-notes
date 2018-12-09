@@ -887,8 +887,13 @@ post '/cart' do
   orders_input = params[:orders]
 
   @items = parse_orders_input orders_input
+
+  @items.each do |item|
+    # id, cnt
+    item[0] = Product.find(item[0])
+  end
+
   erb :cart
-  # erb "Hello, #{@orders.inspect}"
 end
 
 # Parse orders line:
@@ -912,3 +917,54 @@ def parse_orders_input orders_input
   return arr
 end
 ```
+```ruby
+# + to /views/cart.erb
+
+<h2>Заказанные товары:</h2>
+
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr>
+    <th>Товар</th>
+    <th>Цена</th>
+    <th>Количество</th>
+  </tr>
+
+  <% total_qty = 0 %>
+  <% total_price = 0 %>
+
+  <% @items.each do |item| %>
+  <tr>
+    <td><%= item[0].title %></td>
+    <td><%= item[0].price %> руб.</td>
+    <td><%= item[1] %></td>
+  </tr>
+
+  <% total_qty += item[1].to_i %>
+  <% total_price += item[0].price * total_qty %>
+  <% end %>
+
+  <tr style="background: yellow;">
+    <td><strong>Сумма:</strong></td>
+    <td><%= total_price %> руб.</td>
+    <td><%= total_qty %></td>
+  </tr>
+
+</table>
+```
+#### Отношение между сущностями:
+- один ко многим
+- многие к одному
+- многие ко многим
+- один к одному
+
+Доделаем PizzaShop не лучшим, но простым путём. Создадим форму и отправим заказ на сервер (сохраним в базе данных).
+
+> [GitHub - krdprog/PizzaShop-rubyschool: Pizza Shop (rubyschool project). Ruby, Sinatra, ActiveRecord, JS, localStorage.](https://github.com/krdprog/PizzaShop-rubyschool)
+
+#### Домашнее задание:
+- сделать модель Order с полями из формы cart.erb, не забыть про миграцию
+- добавить post-обработчик /place_order в котором получать данные из страницы и сохранять в базу данных
+- выводить на экран сообщение "Заказ принят"
+- выводить на экран страницу со всеми принятыми заказами
+
+Продолжение конспекта: Урок 36-40 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-06.md
