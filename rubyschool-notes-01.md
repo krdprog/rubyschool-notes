@@ -886,7 +886,7 @@ hh = { name: "Mike", age: 65, address: "123, West Street"}
 print_details hh
 ```
 
-### Урок 14
+### Урок 13
 
 #### Ещё вариант добавления в хеш:
 
