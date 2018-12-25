@@ -53,8 +53,6 @@ end
 ```
 1 аэропорт содержит много самолётов (*):
 
-![0ffed056.png](attachments/0ffed056.png)
-
 #### Задача Аэропорты и самолёты в них:
 
 ```ruby
@@ -125,8 +123,6 @@ airports.each do |airport|
 	puts "========================="
 end
 ```
-
-![beb159ae.png](attachments/beb159ae.png)
 
 #### Вариант задачи Аэропорт-Самолёты со Страной:
 
@@ -944,11 +940,6 @@ puts "Total: #{total}"
 ```ruby
 File.rename("file.txt", "file_foo.txt")
 ```
-
-#### chmod
-![111.png](attachments/510f91f2.png)
-
-![111.png](attachments/a25c8471.png)
 
 #### chmod в Ruby
 ```ruby
