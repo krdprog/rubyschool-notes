@@ -172,3 +172,5 @@ SELECT * FROM Users ORDER BY id DESC
 2. В configure сделать дополнительную таблицу Barbers со списком парикмахеров. Загружать список парикмахеров в configure (вставка в таблицу 1 раз).
 
 3. Загрузить данные из таблицы Barbers в форму в выпадающий список select.
+
+Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-27.md

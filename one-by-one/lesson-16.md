@@ -313,3 +313,5 @@ song2.play
 song3.play
 song3.total_plays
 ```
+
+Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-17.md

@@ -27,3 +27,5 @@ _Имея требования можно написать программу_
 функция = метод = процедура
 
 объект = экземпляр класса
+
+Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-03.md

@@ -153,3 +153,5 @@ fruits = []
 fruits << {"name"=>"banana", "cost"=>10} << {"name"=>"apple", "cost"=>7}
 #=> [{"name"=>"banana", "cost"=>10}, {"name"=>"apple", "cost"=>7}]
 ```
+
+Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-12.md

@@ -38,3 +38,5 @@ if a > 1 || b < 3
   puts "Foo!"
 end
 ```
+
+Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-08.md

@@ -86,3 +86,5 @@ arr << 14
 arr << 22
 
 ```
+
+Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-10.md

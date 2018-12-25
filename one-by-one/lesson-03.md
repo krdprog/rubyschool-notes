@@ -33,3 +33,5 @@ https://ru.wikibooks.org/wiki/Ruby/Базовые_типы_данных
 .to_i - строки в числа
 .to_f - в число с плавающей строчкой
 .to_s - в строку
+
+Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-04.md

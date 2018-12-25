@@ -158,3 +158,5 @@ end
 
 #### Домашнее задание:
 - сделать страницу вывода продуктов
+
+Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-33.md

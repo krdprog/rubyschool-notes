@@ -58,3 +58,5 @@ end
 - нет тестов (в рейлс для всего существуют тесты)
 
 Далее будем писать на Rails и постепенно эти минусы будут уходить.
+
+Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-37.md

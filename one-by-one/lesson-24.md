@@ -96,3 +96,5 @@ Edit babershop-2.rb:
 
 > gem pony: https://github.com/benprew/pony/
 > Документация gem Pony: https://www.rubydoc.info/gems/pony/1.12
+
+Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-25.md

@@ -310,3 +310,5 @@ end
 
 > ActiveRecord "one-to-many" (отношение сущностей)
 > https://guides.rubyonrails.org/association_basics.html
+
+Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-31.md

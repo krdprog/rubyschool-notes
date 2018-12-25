@@ -24,3 +24,5 @@ a.empty? #=> false
 [Class: String (Ruby 2.3.1)](file:///home/alex/a_ruby_doc/String.html)
 
 -----
+
+Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-05.md

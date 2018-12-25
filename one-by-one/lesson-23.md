@@ -20,3 +20,5 @@ $('.ccc').css('background-color','red');
   </script>
 </body>
 ```
+
+Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-24.md
