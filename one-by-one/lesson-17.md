@@ -317,4 +317,5 @@ Dir.entries '/foo/bar/'
 
 > ДЗ: написать программу которая ищет файл на диске
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-18.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-18.md

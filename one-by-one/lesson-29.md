@@ -288,4 +288,5 @@ end
 1. сделать сохранение записи к парикмахеру в БД с помощью ActiveRecord
 2. сделать сущность Contact и на странице /contacts сохранять в БД данные с помощью ActiveRecord
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-30.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-30.md

@@ -148,4 +148,5 @@ ruby app.rb >> file.txt
 
 > вносим в нашу программу html-теги и затем делаем вывод в файл app.rb > file.html - получился вывод в html
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-14.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-14.md

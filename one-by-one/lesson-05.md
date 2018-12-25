@@ -24,4 +24,5 @@ cr lf = \r\n
 puts "\\" #=> \
 ```
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-06.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-06.md

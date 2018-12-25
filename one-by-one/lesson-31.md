@@ -122,4 +122,5 @@ function foo()
 </script>
 ```
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-32.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-32.md

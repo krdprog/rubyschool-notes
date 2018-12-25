@@ -173,4 +173,5 @@ SELECT * FROM Users ORDER BY id DESC
 
 3. Загрузить данные из таблицы Barbers в форму в выпадающий список select.
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-27.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-27.md

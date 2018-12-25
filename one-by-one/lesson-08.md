@@ -30,4 +30,5 @@ GUI framework:
 [Shoes! The easiest little GUI toolkit, for Ruby.](http://shoesrb.com/)
 
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-09.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-09.md

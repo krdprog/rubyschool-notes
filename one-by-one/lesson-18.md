@@ -97,4 +97,5 @@ response = Net::HTTP.post_form uri, :x => "ruby"
 puts response
 ```
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-19.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-19.md

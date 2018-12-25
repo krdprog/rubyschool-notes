@@ -319,4 +319,5 @@ DELETE        /photos/:id     photos#destroy      delete a specific photo
 
 5. Сделать вывод списка всех статей.
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-39.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-39.md

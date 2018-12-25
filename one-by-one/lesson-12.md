@@ -138,4 +138,5 @@ hh = { name: "Mike", age: 65, address: "123, West Street"}
 print_details hh
 ```
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-13.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-13.md

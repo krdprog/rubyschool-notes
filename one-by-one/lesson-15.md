@@ -325,4 +325,5 @@ dog.say_gav
 
 > изучи ссылку [Classes, Objects, and Variables](http://phrogz.net/programmingruby/tut_classes.html)
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-16.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-16.md

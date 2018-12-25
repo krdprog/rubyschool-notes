@@ -230,4 +230,5 @@ puts "Total: #{total}"
 - найти как пройтись по каждому элементу хеша localStorage
 - написать JS функцию подсчёта общего количества заказанных продуктов в корзине.
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-34.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-34.md

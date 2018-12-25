@@ -212,4 +212,5 @@ end
 > Ссылка на репозиторий с учебным блогом на Rails:
 > https://github.com/krdprog/RailsBlog-rubyschool
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-40.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-40.md

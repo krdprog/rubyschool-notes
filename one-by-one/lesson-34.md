@@ -272,4 +272,5 @@ end
 > Изучить: Rails Routing from the Outside In — Ruby on Rails Guides 
 > http://guides.rubyonrails.org/routing.html
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-35.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-35.md

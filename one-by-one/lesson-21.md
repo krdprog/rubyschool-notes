@@ -18,4 +18,5 @@ bundle exec ruby app.rb
 ```
 Результат в браузере: http://localhost:4567
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-22.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-22.md

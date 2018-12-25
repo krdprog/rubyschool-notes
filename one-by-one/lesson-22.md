@@ -105,4 +105,5 @@ end
 ```
 плюс добавили в @message и в код записи в в файл f.write 
 
-Следующий урок: https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-23.md
+---
+**Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-23.md
