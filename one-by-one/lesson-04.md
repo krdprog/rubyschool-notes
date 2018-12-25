@@ -19,9 +19,9 @@ a.empty? #=> false
 ```
 
 #### Homework:
-Class: Integer (Ruby 2.3.1) - https://ruby-doc.org/core-2.5.3/Integer.html
+Class: Integer - https://ruby-doc.org/core-2.5.3/Integer.html
 
-Class: String (Ruby 2.3.1) - https://ruby-doc.org/core-2.5.3/String.html
+Class: String - https://ruby-doc.org/core-2.5.3/String.html
 
 
 ---

@@ -105,13 +105,10 @@ a.empty? #=> false
 ```ruby
 100.times { |i| puts "i = #{i}" }
 ```
----
 #### Homework:
-[Class: Integer (Ruby 2.3.1)](file:///home/alex/a_ruby_doc/Integer.html)
+Class: Integer - https://ruby-doc.org/core-2.5.3/Integer.html
 
-[Class: String (Ruby 2.3.1)](file:///home/alex/a_ruby_doc/String.html)
-
------
+Class: String - https://ruby-doc.org/core-2.5.3/String.html
 
 ## Урок 5
 
