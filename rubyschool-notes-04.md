@@ -999,4 +999,5 @@ end
 > ActiveRecord "one-to-many" (отношение сущностей)
 > https://guides.rubyonrails.org/association_basics.html
 
-Продолжение конспекта: Урок 31-35 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-05.md
+---
+**Продолжение конспекта:** Урок 31-35 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-05.md

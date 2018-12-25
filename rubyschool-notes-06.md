@@ -820,4 +820,5 @@ end
 > Ссылка на репозиторий с учебным блогом на Rails:
 > https://github.com/krdprog/RailsBlog-rubyschool
 
-Продолжение конспекта: Урок 41-45 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-07.md
+---
+**Продолжение конспекта:** Урок 41-45 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-07.md

@@ -1171,4 +1171,5 @@ views/welcome.erb
 ```
 > Отдельная область программирования scraping - парсинг информации
 
-Продолжение конспекта: Урок 20-25 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-03.md
+---
+**Продолжение конспекта:** Урок 20-25 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-03.md

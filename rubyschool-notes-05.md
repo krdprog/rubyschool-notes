@@ -968,4 +968,5 @@ end
 - выводить на экран сообщение "Заказ принят"
 - выводить на экран страницу со всеми принятыми заказами
 
-Продолжение конспекта: Урок 36-40 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-06.md
+---
+**Продолжение конспекта:** Урок 36-40 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-06.md

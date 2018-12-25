@@ -635,4 +635,5 @@ Message - Varchar
 
 ##### 2. Добавить через терминал и sqlite3 несколько записей в таблицу Users и Contacts
 
-Продолжение конспекта: Урок 26-30 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-04.md
+---
+**Продолжение конспекта:** Урок 26-30 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-04.md
