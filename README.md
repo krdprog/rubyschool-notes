@@ -6,6 +6,8 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 
 **Курс:** http://rubyschool.us/
 
+**Телеграм-бот навигатор по конспекту:** @rubyschool_bot
+
 ## Содержание конспекта:
 
 - Урок 1-14 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-01.md
@@ -16,6 +18,19 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 - Урок 36-40 (in progress) - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-06.md
 - Урок 41-45 (in progress) - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-07.md
 - Урок 46-50 (in progress) - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-08.md
+
+## Навигация по конспекту (по-одному уроку в файле):
+
+Урок 1 | Урок 11 | Урок 21 | Урок 31 | Урок 41
+Урок 2 | Урок 12 | Урок 22 | Урок 32 | Урок 42
+Урок 3 | Урок 13 | Урок 23 | Урок 33 | Урок 43
+Урок 4 | Урок 14 | Урок 24 | Урок 34 | Урок 44
+Урок 5 | Урок 15 | Урок 25 | Урок 35 | Урок 45
+Урок 6 | Урок 16 | Урок 26 | Урок 36 | Урок 46
+Урок 7 | Урок 17 | Урок 27 | Урок 37 | Урок 47
+Урок 8 | Урок 18 | Урок 28 | Урок 38 | Урок 48
+Урок 9 | Урок 19 | Урок 29 | Урок 39 | Урок 49
+Урок 10 | Урок 20 | Урок 30 | Урок 40 | Урок 50
 
 ## TODO (закончить оформление):
 
