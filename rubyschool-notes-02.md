@@ -329,10 +329,10 @@ dog.say_gav
 
 ### Урок 16
 
-### Методы:
-public - публичные (обычные)
-protected
-private
+### Существует 3 уровня доступа к методам. Методы бывают:
+- public - публичные (обычные)
+- protected
+- private
 
 ### class API
 
