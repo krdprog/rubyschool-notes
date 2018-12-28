@@ -465,7 +465,7 @@ require "sinatra/activerecord/rake"
 
 > У меня в Debian не заработало, выпадали ошибки. Удалил ruby и поставил всё через rvm - https://rvm.io/
 
-Install RVM:
+### Install RVM:
 ```ruby
 sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
