@@ -371,7 +371,7 @@ cat.jump
 ```
 #### Protected - ... ???
 
-### Статические методы - slef
+### Статические методы - self
 
 ```ruby
 class Man
