@@ -53,9 +53,16 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 
 ## Лицензия:
 
-[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+This is free and unencumbered software released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non-commercial, and by any
+means.
 
 To the extent possible under law, [Alexey Tsaplin-Kupaysinov](https://github.com/krdprog) has waived all copyright and related or neighboring rights to this work.
+
+**Read License:** https://github.com/krdprog/rubyschool-notes/blob/master/LICENSE
 
 ## Заметка:
 
