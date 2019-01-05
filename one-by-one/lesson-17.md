@@ -260,7 +260,8 @@ puts file.read # прочитаем содержимое файла
 
 file.write "Karamba!" # добавим в файл
 
-# puts file.read # почему не читает после записи?
+file.rewind 
+puts file.read # прочитаем ещё раз файл
 
 file.close # закроем файл
 ```
