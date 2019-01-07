@@ -58,7 +58,6 @@ views/index.erb
 	<input type="submit">
 </form>
 ```
-![12.png](attachments/2774d960.png)
 
 #### Расширим:
 
