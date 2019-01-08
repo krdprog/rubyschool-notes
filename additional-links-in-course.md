@@ -44,4 +44,29 @@
 - https://guides.rubyonrails.org/active_record_validations.html#inclusion
 - Find в ActiveRecord - https://guides.rubyonrails.org/active_record_querying.html
 - ActiveRecord "one-to-many" (отношение сущностей) - https://guides.rubyonrails.org/association_basics.html
+- How exacty HTTP protocol works? - https://stackoverflow.com/questions/20918321/how-exacty-http-protocol-works
+- what happens when you type in a URL in browser - https://stackoverflow.com/questions/2092527/what-happens-when-you-type-in-a-url-in-browser
+- Сетевая модель OSI — Википедия - https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%82%D0%B5%D0%B2%D0%B0%D1%8F_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_OSI
+- Why is it said that "HTTP is a stateless protocol"? - https://stackoverflow.com/questions/13200152/why-is-it-said-that-http-is-a-stateless-protocol
+- Протокол без сохранения состояния — https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB_%D0%B1%D0%B5%D0%B7_%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F
+- RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1 - https://tools.ietf.org/html/rfc2616
+- https://github.com/plataformatec/devise
+- https://habr.com/post/208056 - Аутентификация в Rails-приложениях с помощью Devise
+- Vanilla JS - http://vanilla-js.com/
+- 15 Questions to Ask During a Ruby Interview - https://gist.github.com/krdprog/64a463de21fe77a8946019fde6662d67
+- ООП с примерами (часть 1) / Хабр - https://habr.com/post/87119/
+- ООП с примерами (часть 2) / Хабр - https://habr.com/post/87205/
+- Tiny jQuery plugin to display a message to the user on the first visit to a page - https://github.com/ro31337/first-visit-js
+- HTML5 Web Storage https://www.w3schools.com/html/html5_webstorage.asp
+- Почему не стоит использовать LocalStorage / Хабр - https://habr.com/post/349164/
+- LocalStorage на пальцах - https://tproger.ru/articles/localstorage/
+- window.localStorage - Web APIs \| MDN - https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+- Looping through localStorage in HTML5 and JavaScript - https://stackoverflow.com/questions/3138564/looping-through-localstorage-in-html5-and-javascript
+- ActiveRecord::ConnectionAdapters::TableDefinition - https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/TableDefinition.html
+- ActiveRecord::ConnectionAdapters::SchemaStatements - https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html
+- operators - What does \||= (or-equals) mean in Ruby? - https://stackoverflow.com/questions/995593/what-does-or-equals-mean-in-ruby#14697343
+- ruby - Что делает оператор «\|| =» в руби? - https://stackoverrun.com/ru/q/2545320
+- Order counter (Ruby) - https://github.com/krdprog/order-counter-ruby/
+- javascript - Listing localstorage - https://stackoverflow.com/questions/2841029/listing-localstorage#2841042
+- javascript - enumerating localStorage properties - https://stackoverflow.com/questions/27946563/enumerating-localstorage-properties
 - 
