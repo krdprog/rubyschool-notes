@@ -78,8 +78,8 @@ hash - {...}
 bignum - 2^30+1
 ```
 
-https://ru.wikibooks.org/wiki/Ruby
-https://ru.wikibooks.org/wiki/Ruby/Базовые_типы_данных
+- https://ru.wikibooks.org/wiki/Ruby
+- https://ru.wikibooks.org/wiki/Ruby/Базовые_типы_данных
 
 Преобразование типов:
 .to_i - строки в числа
