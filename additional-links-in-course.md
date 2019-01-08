@@ -69,4 +69,18 @@
 - Order counter (Ruby) - https://github.com/krdprog/order-counter-ruby/
 - javascript - Listing localstorage - https://stackoverflow.com/questions/2841029/listing-localstorage#2841042
 - javascript - enumerating localStorage properties - https://stackoverflow.com/questions/27946563/enumerating-localstorage-properties
-- 
+- DefactoSoftware/Hours: Time registration that doesn't suck - https://github.com/DefactoSoftware/Hours
+- Rails Routing from the Outside In — Ruby on Rails Guides - http://guides.rubyonrails.org/routing.html
+- oDesk and Elance Tests 2015 - https://web.archive.org/web/20150220030931/http://odesk-tests.com:80/
+- Ruby on Rails Test 2015 - oDesk - https://web.archive.org/web/20150206003956/http://odesk-tests.com:80/tests/307/questions
+- https://github.com/krdprog/PizzaShop-rubyschool - Pizza Shop (rubyschool project). Ruby, Sinatra, ActiveRecord, JS, localStorage
+- Task Them All - Painless to-do lists to organize your [remote] workers - http://web.archive.org/web/20140929220047/http://taskthemall.com:80/
+- Rusrails: Роутинг в Rails - http://rusrails.ru/rails-routing
+- Rails Routing from the Outside In — Ruby on Rails Guides - https://guides.rubyonrails.org/routing.html#singular-resources
+- https://guides.rubyonrails.org/routing.html#singular-resources
+- https://guides.rubyonrails.org/routing.html#crud-verbs-and-actions
+- Rusrails: Командная строка Rails - http://rusrails.ru/a-guide-to-the-rails-command-line
+- Ссылка на репозиторий с учебным блогом на Rails - https://github.com/krdprog/RailsBlog-rubyschool
+- ...
+
+(список дополнится ссылками с 10 уроков, которые ещё не оформлены)
