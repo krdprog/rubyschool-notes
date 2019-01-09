@@ -31,6 +31,8 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 
 ## Дополнительно:
 
+- Дополнительные ссылки, которые надо изучить (эти ссылки давались на протяжении всего курса и были даны для дополнительной проработки материала) - https://github.com/krdprog/rubyschool-notes/blob/master/additional-links-in-course.md
+- Дополнительные полезные ссылки от сообщества рубистов - https://github.com/krdprog/rubyschool-notes/blob/master/additional-links-from-the-community.md
 - Шпаргалка по SQLite3 - https://github.com/krdprog/sqlite-3-rus-howto/blob/master/README.md
 
 ## Хотите смотреть видео на ускоренном воспроизведении?
