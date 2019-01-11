@@ -25,9 +25,11 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 
 ## TODO (закончить оформление):
 
-- урок 36-40
+- урок 40
 - урок 41-45
 - урок 46-50
+
+https://github.com/krdprog/rubyschool-notes/projects/1 - Kanban-доска проекта с todo и планами.  
 
 ## Дополнительно:
 
