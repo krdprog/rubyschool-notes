@@ -247,6 +247,28 @@ bundle exec ruby app.rb
 
 ### Урок 22
 
+#### Решение, чтобы не перезапускать Sinatra
+
+- https://rubygems.org/gems/sinatra-reloader - gem sinatra reloader
+- https://rubygems.org/gems/sinatra-contrib - gem sinatra contrib (в его состав входит sinatra-reloader, возможно в некоторых случаях надо попробовать поставить его).
+
+Надо установить гем sinatra-reloader:
+```ruby
+gem install sinatra-reloader
+```
+или установить sinatra-contrib:
+```ruby
+gem install sinatra-contrib
+```
+или так:
+```ruby
+sudo apt install ruby-sinatra-contrib
+```
+и, добавляем в свои app.rb строчку:
+```ruby
+require 'sinatra/reloader'
+```
+
 #### Про yield в views/layout.erb
 
 app.rb:
@@ -284,27 +306,6 @@ views/foo.erb
 <p>Text for Foo.</p>
 ```
 
-#### Решение, чтобы не перезапускать Sinatra
-
-- https://rubygems.org/gems/sinatra-reloader - gem sinatra reloader
-- https://rubygems.org/gems/sinatra-contrib - gem sinatra contrib (в его состав входит sinatra-reloader, возможно в некоторых случаях надо попробовать поставить его).
-
-Надо установить гем sinatra-reloader:
-```ruby
-gem install sinatra-reloader
-```
-или установить sinatra-contrib:
-```ruby
-gem install sinatra-contrib
-```
-или так:
-```ruby
-sudo apt install ruby-sinatra-contrib
-```
-и, добавляем в свои app.rb строчку:
-```ruby
-require 'sinatra/reloader'
-```
 #### Напомним, как работает yield:
 ```ruby
 def show_me_text
