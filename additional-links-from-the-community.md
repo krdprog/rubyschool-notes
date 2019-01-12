@@ -1,12 +1,12 @@
 ### Дополнительные полезные ссылки от сообщества рубистов:
 
-Добавляйте свои ссылки, делитесь полезным с сообществом.
-
+Добавляйте свои ссылки, делитесь полезным с сообществом. Отправляйте Pull Request в этот репозиторий.
 
 - https://github.com/Vito300187/Sobes/blob/master/rails.md - Ruby on Rails: вопросы, которые вас могут спросить, на которые идеально знать ответ (спасибо за ссылку @Vito300187)
+
+## Docker:
+
 - https://docker.crank.ru/docs/docker-engine/docker-overview/ - документация по Docker (рус.)
-- https://learn.javascript.ru/js?map - документация и уроки по JavaScript (рус.
-- http://indbooks.in/mirror3.ru/?page_id=233867 - Фултон Хэл. Программирование на языке Ruby (онлайн-версия книги)
 
 ## Ruby:
 
@@ -17,6 +17,7 @@
 - http://onrails.club/ - форум
 - https://www.apiduck.io/ - документация (ещё один сайт с документацией)
 - https://devdocs.io/ - отличный сайт с документацией (с оффлайн-версией в браузере)
+- http://indbooks.in/mirror3.ru/?page_id=233867 - Фултон Хэл. Программирование на языке Ruby (онлайн-версия книги)
 
 ## Ruby Gems Catalogs:
 
@@ -40,6 +41,10 @@
 ## Ruby-блоги:
 
 - https://weblog.rubyonrails.org/
+
+## JavaScript:
+
+- https://learn.javascript.ru/js?map - документация и уроки по JavaScript (рус.)
 
 ## Vue.js:
 
