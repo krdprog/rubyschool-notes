@@ -38,4 +38,13 @@
 
 - https://weblog.rubyonrails.org/
 
+## Vue.js:
+
+- https://ru.vuejs.org/v2/guide/index.html - руководство по Vue.js (на русском языке)
+
+## PostgreSQL, SQLite:
+
+- https://postgrespro.ru/docs - документация PostgreSQL (на русском языке)
+- https://dbdiagram.io/home/ - Visual DB diagram creator
+
 Назад к конспектам курса: https://github.com/krdprog/rubyschool-notes
