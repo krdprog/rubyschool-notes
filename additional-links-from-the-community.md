@@ -5,6 +5,7 @@
 
 - https://github.com/Vito300187/Sobes/blob/master/rails.md - Ruby on Rails: вопросы, которые вас могут спросить, на которые идеально знать ответ (спасибо за ссылку @Vito300187)
 - https://docker.crank.ru/docs/docker-engine/docker-overview/ - документация по Docker (рус.)
-- https://learn.javascript.ru/js?map - документация и уроки по JavaScript (рус.)
+- https://learn.javascript.ru/js?map - документация и уроки по JavaScript (рус.
+- http://indbooks.in/mirror3.ru/?page_id=233867 - Фултон Хэл. Программирование на языке Ruby (онлайн-версия книги)
 
 Назад к конспектам курса: https://github.com/krdprog/rubyschool-notes
