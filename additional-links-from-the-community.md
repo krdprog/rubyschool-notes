@@ -18,6 +18,7 @@
 - https://www.apiduck.io/ - документация (ещё один сайт с документацией)
 - https://devdocs.io/ - отличный сайт с документацией (с оффлайн-версией в браузере)
 - http://indbooks.in/mirror3.ru/?page_id=233867 - Фултон Хэл. Программирование на языке Ruby (онлайн-версия книги)
+- https://www.railstutorial.org/book/ - онлайн-версия книги Хартла "Ruby on Rails" от самого автора (свежая версия, english)
 
 ## Ruby Gems Catalogs:
 
