@@ -496,6 +496,12 @@ gem install sqlite3
 ```
 > sqlite - https://sqlite.org/index.html
 
+**NOTE:** При первой установке и настройке, помимо установки гема, возможно потребуется дополнительно установить libsqlite3-dev по следующей команде:
+
+```bash
+sudo apt-get install libsqlite3-dev
+```
+
 Язык запросов SQL
 
 ```bash
