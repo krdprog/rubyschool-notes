@@ -64,8 +64,190 @@ end
 - создаёт форму, которая будет отправлять с помощью метода delete на URL /articles/2 через POST
 - устанавливает свой обработчик, при котором при нажатии на ссылку вызывается сабмит формы
 
+#### Полезная особенность генераторов, возможность указывать reference columns - делать ссылки на другие сущности
 
+```bash
+rails g model photo album:references
+```
 
+> Изучить ссылку: https://railsguides.net/advanced-rails-model-generators/
+
+#### Добавление комментариев к статьям:
+
+one-to-many:
+
+```text
+Article -1------*- Comment
+```
+
+Создадим модель Comment:
+
+```bash
+rails g model Comment author:string body:text article:references
+rake db:migrate
+```
+Это добавит в файл /models/comment.rb:
+
+```ruby
+class Comment < ApplicationRecord
+  belongs_to :article
+end
+```
+А, вот содержимое миграции (/db/migrate/12312314_create_comments.rb):
+
+```ruby
+class CreateComments < ActiveRecord::Migration[5.2]
+  def change
+    create_table :comments do |t|
+      t.string :author
+      t.text :body
+      t.references :article, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end
+```
+
+Посмотрим в базе данных:
+
+```bash
+cd db
+sqlite3 development.sqlite3
+```
+
+```text
+select * from Articles;
+.tables
+select * from Comments;
+```
+
+**Посмотреть через sqlite3, какие поля есть у сущности:**
+
+```text
+pragma table_info(articles);
+```
+
+Идём дальше, чтобы добавить к статьям комментарии нам надо в /models/article.db добавить:
+
+```ruby
+class Article < ApplicationRecord
+  has_many :comments
+end
+```
+
+Таким образом мы связали 2 сущности между собой.
+
+у нас в /config/routes.rb есть строка:
+
+```ruby
+resources :articles
+```
+
+Допишем и сделаем **вложенный маршрут**:
+
+```ruby
+resources :articles do
+  resources :comments
+end
+```
+
+Команда rake routes покажет нам обновлённую карту маршрутов.
+
+**Теперь добавим контроллер:**
+
+```bash
+rails g controller Comments
+```
+
+**Далее, создадим методы в контроллере.**
+
+Для комментариев нам нужен один метод - create
+
+Посмотрим в rails console:
+```text
+Comment.all
+@article = Article.find(1)
+@article.comments.create({ author: 'Foo', body: 'Bar' })
+@article.comments
+```
+
+Создадим метод create в /app/controllers/comments_controller.rb:
+
+```ruby
+class CommentsController < ApplicationController
+  def create
+    @article = Article.find(params[:article_id])
+    @article.comments.create(comment_params)
+
+    redirect_to article_path(@article)
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:author, :body)
+  end
+
+end
+```
+
+**Добавление формы в представление статьи:**
+
+> Изучить ссылку: https://guides.rubyonrails.org/association_basics.html
+
+> Изучить ссылку: https://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html
+
+```ruby
+<p>
+<%= form_for([@article, @comment]) do |f| %>
+<% end %>
+</p>
+```
+
+build:
+```ruby
+<p>
+<%= form_for([@article, @article.comments.build]) do |f| %>
+<% end %>
+</p>
+```
+
+**Добавим форму в представление (/app/views/articles/show.html.erb):**
+
+```ruby
+<p>
+<%= form_for([@article, @article.comments.build]) do |f| %>
+
+  <p>
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+
+  <p><%= f.submit %></p>
+
+<% end %>
+</p>
+```
+
+Проверим форму, добавив данные. И, посмотрим в рейлс-консоли
+
+```text
+Comment.last
+Comment.all
+@article = Article.find(1)
+@article.comments
+```
+
+#### Домашнее задание:
+
+- Сделать вывод комментариев на странице статьи
+- Избавиться от ненужных маршрутов
+- Сравнить код BarberShop на Rails и на Sinatra
 
 
 ---
