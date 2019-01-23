@@ -685,7 +685,7 @@ Article.all
 ```
 Делают так:
 ```ruby
-<%= link_to  "Показать все статьи", articles_path %>
+<%= link_to "Показать все статьи", articles_path %>
 ```
 
 > Для борьбы с двойным сабмиттом существует паттерн PRG (Post Redirect Get)
@@ -739,7 +739,7 @@ end
 Кнопка на редактирование:
 
 ```ruby
-<%= link_to  "Edit article", edit_article_path(article) %>
+<%= link_to "Edit article", edit_article_path(article) %>
 ```
 
 Добавим в /app/controllers/articles_controller.rb:
