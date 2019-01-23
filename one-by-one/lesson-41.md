@@ -17,9 +17,11 @@ Article            |  Comment
 
 has_many :comments |  belongs_to :article
 id                 |  id, article_id
+```
 
 **Тип 1 - 1 (one-to-one)** - помогает нормализовать БД
 
+```text
 Order              |  Address
 
 has_one :address   |  belongs_to :order
