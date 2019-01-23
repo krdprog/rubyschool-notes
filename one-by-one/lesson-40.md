@@ -249,6 +249,5 @@ Comment.all
 - Избавиться от ненужных маршрутов
 - Сравнить код BarberShop на Rails и на Sinatra
 
-
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-41.md
