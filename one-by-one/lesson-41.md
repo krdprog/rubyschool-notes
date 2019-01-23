@@ -12,6 +12,7 @@
 
 **Тип 1 - * (one-to-many)**
 
+```text
 Article            |  Comment
 
 has_many :comments |  belongs_to :article
@@ -23,6 +24,7 @@ Order              |  Address
 
 has_one :address   |  belongs_to :order
 id                 |  id, order_id
+```
 
 Нормализация, денормализация. Плюсы и минусы подходов. В варианте выше потребуется ещё 1 запрос к базе данных.
 
@@ -30,11 +32,13 @@ id                 |  id, order_id
 
 **Тип * - * (many-to-many)**
 
+```text
 Tag                               |  Article
 
 таблица tags                      |  таблица articles
 id                                |  id
 has_and_belongs_to_many :articles | has_and_belongs_to_many :tags
+```
 
 для связи между ними создаётся ещё одна таблица tags_articles (tag_id, article_id)
 

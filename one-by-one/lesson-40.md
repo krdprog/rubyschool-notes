@@ -200,7 +200,7 @@ end
 
 ```ruby
 <p>
-<%= form_for([@article, @comment]) do |f| %>
+<% form_for([@article, @comment]) do |f| %>
 <% end %>
 </p>
 ```
@@ -208,7 +208,7 @@ end
 build:
 ```ruby
 <p>
-<%= form_for([@article, @article.comments.build]) do |f| %>
+<% form_for([@article, @article.comments.build]) do |f| %>
 <% end %>
 </p>
 ```
@@ -217,7 +217,7 @@ build:
 
 ```ruby
 <p>
-<%= form_for([@article, @article.comments.build]) do |f| %>
+<% form_for([@article, @article.comments.build]) do |f| %>
 
   <p>
     <%= f.label :author %>
