@@ -15,7 +15,7 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 - Урок 20-25 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-03.md
 - Урок 26-30 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-04.md
 - Урок 31-35 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-05.md
-- Урок 36-40 (in progress) - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-06.md
+- Урок 36-40 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-06.md
 - Урок 41-45 (in progress) - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-07.md
 - Урок 46-50 (in progress) - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-08.md
 
@@ -25,11 +25,10 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 
 ## TODO (закончить оформление):
 
-- урок 40
 - урок 41-45
 - урок 46-50
 
-https://github.com/krdprog/rubyschool-notes/projects/1 - Kanban-доска проекта с todo и планами.  
+https://github.com/krdprog/rubyschool-notes/projects/1 - Kanban-доска проекта с todo и планами.
 
 ## Дополнительно:
 
