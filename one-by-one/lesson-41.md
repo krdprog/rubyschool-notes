@@ -44,6 +44,8 @@ has_and_belongs_to_many :articles | has_and_belongs_to_many :tags
 
 для связи между ними создаётся ещё одна таблица tags_articles (tag_id, article_id)
 
+> Изучить: http://www.rusrails.ru/active-record-associations#foreign_key
+
 #### Вывод комментариев в представлении статьи:
 
 Добавим в /app/views/articles/show.html.erb:
@@ -135,7 +137,7 @@ class Hero
   end
 
   def hero_info
-    "У #{@name} есть #{@health} здоровья"
+    "#{@name} has #{@health} health"
   end
 
 end

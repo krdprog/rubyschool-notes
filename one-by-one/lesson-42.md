@@ -1,6 +1,138 @@
 ### Урок 42
 
-на оформлении
+Продолжим рассматривать Rspec и тестирование.
+
+Добавим к нашим тестам в файле hero_spec.rb
+
+```ruby
+  it "can power down" do
+    hero = Hero.new 'foo'
+
+    expect(hero.power_down).to eq 90
+  end
+
+  it "displays full hero info" do
+    hero = Hero.new 'foo'
+
+    expect(hero.hero_info).to eq "Foo has 100 health"
+  end
+```
+
+У нас часто повторяется код hero = Hero.new 'foo', и это не совпадает с DRY (Don`t Repeat Yourself), ниже мы его оптимизируем, добавив before-do-end
+
+Рефакторинг hero_spec.rb:
+
+```ruby
+require './hero'
+
+describe Hero do
+
+  before do
+    @hero = Hero.new 'foo'
+  end
+
+  it "has a capitalized name" do
+    expect(@hero.name).to eq 'Foo'
+  end
+
+  it "can power up" do
+    expect(@hero.power_up).to eq 110
+  end
+
+  it "can power down" do
+    expect(@hero.power_down).to eq 90
+  end
+
+  it "displays full hero info" do
+    expect(@hero.hero_info).to eq "Foo has 100 health"
+  end
+
+end
+
+```
+
+**Тесты должны быть:**
+
+- надёжные (reliable) - дают тот же результат - без зависимостей от соединения, от БД и т.п.
+- easy to write - если тест пишется не легко, то что-то не так с тем, что тестируем.
+- easy to understand - лёгкие для понимания другими программистами.
+- скорость не особо важна
+- не важно DRY
+
+#### Rspec Matchers
+
+> Изучить ссылку: https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+
+**Сделаем ещё одно приложение и тест:**
+
+car.rb:
+
+```ruby
+class Car
+
+  Miles_Per_Gallon = 20
+
+  attr_reader :fuel
+
+  def initialize
+    @fuel = 0
+  end
+
+  def add_fuel amount
+    @fuel += amount
+  end
+
+  # Как далеко мы сможем проехать:
+  def range
+    @fuel * Miles_Per_Gallon
+  end
+
+end
+
+# car = Car.new
+# car.add_fuel 10
+# puts "Range is #{car.range}"
+```
+
+car_spec.rb:
+
+```ruby
+require "./car"
+
+describe Car do
+  it "must return range" do
+    # arrange
+    car = Car.new
+    # act
+    car.add_fuel 10
+    # assert
+    expect(car.range).to eq 200
+  end
+end
+```
+
+**Структура тестов:**
+
+```text
+# arrange
+# act
+# assert
+```
+
+```ruby
+# arrange - подготовка объекта для проведения теста
+  car = Car.new
+# act - действие
+  result = car.add_fuel 10
+# assert - проверка действия
+  expect(result) ...
+```
+
+> Заметка по Issue на Github. У issue есть номер (например #12), если при коммите указать этот номер, то issue сама закроектся и пометится как выполненная.
+
+### Devise
+
+> Примечание: начиная с Rails 5 синтаксис before_filter устарел и заменён на before_action
 
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-43.md
