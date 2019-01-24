@@ -62,5 +62,114 @@ has_and_belongs_to_many :articles | has_and_belongs_to_many :tags
 <% end %>
 ```
 
+#### Ещё раз про ActiveRecord
+
+**Вспомним CRUD:**
+
+- Create - (new) - .create - .save
+- Read - .where - .find(3), .all
+- Update - (update)
+- Delete - (destroy)
+
+> https://github.com/rails/strong_parameters
+
+> https://guides.rubyonrails.org/action_controller_overview.html#more-examples
+
+**Вспомним REST:**
+
+- resource
+- resources
+
+Можно вкладывать, получаются длинные URL:
+
+```ruby
+resources :article do
+  resources :comments
+end
+```
+
+```ruby
+x = 2 != 3
+puts x #=> true
+```
+
+### Rspec - фреймворк для тестирования приложений
+
+```bash
+gem install rspec
+```
+
+Запуск тестов:
+
+```bash
+rspec
+```
+
+**В Rspec существует 2 слова:**
+
+- describe
+- it
+
+**Создадим и протестируем героя компьютерной игры.**
+
+> https://github.com/krdprog/rspec-demo-rubyschool - репозиторий Rspec-demo
+
+Создадим файл hero.rb
+
+```ruby
+class Hero
+
+  def initialize(name, health=100)
+    @name = name.capitalize
+    @health = health
+  end
+
+  attr_reader :name
+
+  def power_up
+    @health += 10
+  end
+
+  def power_down
+    @health -= 10
+  end
+
+  def hero_info
+    "У #{@name} есть #{@health} здоровья"
+  end
+
+end
+```
+
+Создадим файл hero_spec.rb:
+
+```ruby
+require './hero'
+
+describe Hero do
+
+  it "has a capitalized name" do
+    hero = Hero.new 'foo'
+
+    expect(hero.name).to eq 'Foo'
+  end
+
+  it "can power up" do
+    hero = Hero.new 'foo'
+
+    expect(hero.power_up).to eq 110
+  end
+
+end
+```
+
+И, запустим тест:
+
+```bash
+rspec hero_spec.rb
+```
+
+Написание тестов в большом приложении - это вклад в будущее, защита приложения от ошибок.
+
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-42.md
