@@ -10,6 +10,8 @@
 
 #### Типы связей
 
+> http://rusrails.ru/active-record-associations
+
 **Тип 1 - * (one-to-many)**
 
 ```text
