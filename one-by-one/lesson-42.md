@@ -229,14 +229,10 @@ before_action :authenticate_user!
 Добавим в /app/views/layouts/application.html.erb:
 
 ```html
-<p><a href="/users/sign_in">Sign In</a> | <a href="/users/sign_up">Sign Up</a></p>
+<p><a href="/users/sign_in">Sign In</a> | <a href="/users/sign_out" data-method="delete">Sign Out</a></p>
 ```
 
-Чтобы сделать Sign Out, надо добавить:
-
-```html
-<a href="/users/sign_out" data-method="delete">Sign Out</a>
-```
+Далее, мы заменим эти ссылки на ссылки с именноваными маршрутами.
 
 > Документация по гему devise - https://github.com/plataformatec/devise
 
