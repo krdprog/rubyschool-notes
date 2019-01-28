@@ -6,6 +6,19 @@
 <p><%= link_to "Sign In", new_user_session_path %> | <%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
 ```
 
+#### Далее, выведем имя пользователя при авторизации, и уберём Sign Out ссылку, когда мы не авторизованы.
+
+> https://github.com/plataformatec/devise#controller-filters-and-helpers
+
+```ruby
+<% if user_signed_in? %>
+  Hello, <%= current_user.email %> | <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign In", new_user_session_path %>
+<% end %>
+```
+
+
 **Примечание:** в devise начиная с версии 4 параметры Sanitizer Api изменились, используйте вместо этого:
 
 ```ruby
