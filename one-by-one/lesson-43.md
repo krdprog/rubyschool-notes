@@ -161,5 +161,13 @@ rails g devise:views
 - Найти и изучить, что такое индексы в БД.
 - Сделать так, чтобы комментарии оставлялись под именем залогиненого пользователя.
 
+> https://andreyex.ru/bazy-dannyx/uchebnoe-posobie-po-sql/sql-indeksy/
+
+> http://www.sql.ru/articles/mssql/03013101indexes.shtml
+
+> https://habr.com/ru/post/247373/
+
+> https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B4%D0%B5%D0%BA%D1%81_(%D0%B1%D0%B0%D0%B7%D1%8B_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85)
+
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-44.md
