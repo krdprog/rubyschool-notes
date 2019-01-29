@@ -20,6 +20,15 @@
 - http://indbooks.in/mirror3.ru/?page_id=233867 - Фултон Хэл. Программирование на языке Ruby (онлайн-версия книги)
 - https://www.railstutorial.org/book/ - онлайн-версия книги Хартла "Ruby on Rails" от самого автора (свежая версия, english)
 - https://awesome-ruby.com/
+- https://github.com/arbox/rails-style-guide
+- https://github.com/arbox/ruby-style-guide
+- https://github.com/Hexlet/ru-test-assignments
+- https://github.com/ekremkaraca/awesome-rails
+- https://github.com/dreikanter/ruby-bookmarks
+- https://github.com/rubocop-hq/ruby-style-guide
+- https://github.com/markets/awesome-ruby
+- https://github.com/davidgf/design-patterns-in-ruby
+- https://github.com/basecamp/handbook
 
 ## Ruby Gems Catalogs:
 
