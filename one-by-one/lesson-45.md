@@ -95,6 +95,20 @@ Integration tests - watir, selenium
 
 > https://github.com/SeleniumHQ/selenium
 
+> KANBAN-доска: http://kanbanflow.com/
+
+> http://trello.com/
+
+#### Vargant
+
+> https://www.vagrantup.com/
+
+> https://github.com/rails/rails-dev-box
+
+**Домашнее задание:**
+
+- поставить Vargant
+- привязать сущность article в блоге к пользователю. Сделать так, чтобы другие пользователи не могли редактировать статьи.
 
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-46.md
