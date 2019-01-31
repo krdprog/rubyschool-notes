@@ -16,16 +16,31 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 - Урок 26-30 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-04.md
 - Урок 31-35 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-05.md
 - Урок 36-40 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-06.md
-- Урок 41-45 (in progress) - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-07.md
+- Урок 41-45 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-07.md
 - Урок 46-50 (in progress) - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-08.md
 
 ## Навигация по конспекту (по-одному уроку в файле):
 
 Для удобной навигации по конспекту, добавьте телеграм-бот @rubyschool_bot
 
+## Навигация по урокам:
+
+|     |     |     |     |     |
+|-----|-----|-----|-----|-----|
+|  1  |  2  |  3  |  4  |  5  |
+|  6  |  7  |  8  |  9  |  10 |
+|  11 |  12 |  13 |  14 |  15 |
+|  16 |  17 |  18 |  19 |  20 |
+|  21 |  22 |  23 |  24 |  25 |
+|  26 |  27 |  28 |  29 |  30 |
+|  31 |  32 |  33 |  34 |  35 |
+|  36 |  37 |  38 |  39 |  40 |
+|  41 |  42 |  43 |  44 |  45 |
+|  46 |  47 |  48 |  49 |  50 |
+
+
 ## TODO (закончить оформление):
 
-- урок 41-45
 - урок 46-50
 
 https://github.com/krdprog/rubyschool-notes/projects/1 - Kanban-доска проекта с todo и планами.
