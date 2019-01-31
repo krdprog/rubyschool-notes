@@ -2,6 +2,8 @@
 
 Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 года. В репозитории размещены конспекты данного курса, записанные при его прохождении.
 
+![ruby](https://img.shields.io/badge/Made%20with%3A%20-Ruby-red.svg) ![ror](https://img.shields.io/badge/Made%20with%3A%20-Ruby%20on%20Rails-red.svg) ![sinatra](https://img.shields.io/badge/Made%20with%3A%20-Sinatra-red.svg)
+
 **Конспект составил:** Алексей Цаплин-Купайсинов (Ruby-программист) - https://github.com/krdprog
 
 **Курс:** http://rubyschool.us/
@@ -10,28 +12,28 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 
 ## Содержание конспекта:
 
-- Урок 1-14 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-01.md
-- Урок 15-19 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-02.md
-- Урок 20-25 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-03.md
-- Урок 26-30 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-04.md
-- Урок 31-35 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-05.md
-- Урок 36-40 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-06.md
-- Урок 41-45 - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-07.md
-- Урок 46-50 (in progress) - https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-08.md
+|  Конспекты курса       |
+|------------------------|
+|   [Урок 1-14](https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-01.md)  |
+|   [Урок 15-19](https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-02.md)  |
+|   [Урок 20-25](https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-03.md)  |
+|   [Урок 26-30](https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-04.md)  |
+|   [Урок 31-35](https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-05.md)  |
+|   [Урок 36-40](https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-06.md)  |
+|   [Урок 41-45](https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-07.md)  |
+|   [Урок 46-50](https://github.com/krdprog/rubyschool-notes/blob/master/rubyschool-notes-08.md)  |
 
-## Навигация по конспекту (по-одному уроку в файле):
-
-Для удобной навигации по конспекту, **добавьте телеграм-бот @rubyschool_bot**
-
-## Навигация по урокам:
+## Навигация по конспектам (по-одному уроку в файле):
 
 |  N  |  N  |  N  |  N  |  N  |  N  |  N  |  N  |  N  |  N  |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-|  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  10 |
-|  11 |  12 |  13 |  14 |  15 |  16 |  17 |  18 |  19 |  20 |
-|  21 |  22 |  23 |  24 |  25 |  26 |  27 |  28 |  29 |  30 |
-|  31 |  32 |  33 |  34 |  35 |  36 |  37 |  38 |  39 |  40 |
-|  41 |  42 |  43 |  44 |  45 |  46 |  47 |  48 |  49 |  50 |
+|  [1](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-01.md)  |  [2](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-02.md)   |  [3](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-03.md)   |  [4](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-04.md)  |  [5](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-05.md)  |  [6](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-06.md)  |  [7](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-07.md)  |  [8](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-08.md)  |  [9](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-09.md)  |  [10](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-10.md) |
+|  [11](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-11.md) |  [12](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-12.md) |  [13](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-13.md) |  [14](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-14.md) |  [15](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-15.md) |  [16](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-16.md) |  [17](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-17.md) |  [18](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-18.md) |  [19](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-19.md) |  [20](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-20.md) |
+|  [21](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-21.md) |  [22](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-22.md) |  [23](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-23.md) |  [24](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-24.md) |  [25](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-25.md) |  [26](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-26.md) |  [27](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-27.md) |  [28](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-28.md) |  [29](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-29.md) |  [30](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-30.md) |
+|  [31](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-31.md) |  [32](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-32.md) |  [33](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-33.md) |  [34](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-34.md) |  [35](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-35.md) |  [36](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-36.md) |  [37](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-37.md) |  [38](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-38.md) |  [39](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-39.md) |  [40](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-40.md) |
+|  [41](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-41.md) |  [42](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-42.md) |  [43](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-43.md) |  [44](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-44.md) |  [45](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-45.md) |  [46](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-46.md) |  [47](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-47.md) |  [48](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-48.md) |  [49](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-49.md) |  [50](https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-50.md) |
+
+Для удобной навигации по конспекту, **добавьте телеграм-бот @rubyschool_bot**
 
 ## TODO (закончить оформление):
 
@@ -39,9 +41,9 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 
 ## Дополнительно:
 
-- Дополнительные ссылки, которые надо изучить (эти ссылки давались на протяжении всего курса и были даны для дополнительной проработки материала) - https://github.com/krdprog/rubyschool-notes/blob/master/additional-links-in-course.md
-- Дополнительные полезные ссылки от сообщества рубистов - https://github.com/krdprog/rubyschool-notes/blob/master/additional-links-from-the-community.md
-- Шпаргалка по SQLite3 - https://github.com/krdprog/sqlite-3-rus-howto/blob/master/README.md
+- [Дополнительные ссылки, которые надо изучить (эти ссылки давались на протяжении всего курса и были даны для дополнительной проработки материала)](https://github.com/krdprog/rubyschool-notes/blob/master/additional-links-in-course.md)
+- [Дополнительные полезные ссылки от сообщества рубистов](https://github.com/krdprog/rubyschool-notes/blob/master/additional-links-from-the-community.md)
+- [Шпаргалка по SQLite3](https://github.com/krdprog/sqlite-3-rus-howto/blob/master/README.md)
 
 ## Хотите смотреть видео на ускоренном воспроизведении?
 
@@ -71,6 +73,8 @@ binary, for any purpose, commercial or non-commercial, and by any
 means.
 
 To the extent possible under law, [Alexey Tsaplin-Kupaysinov](https://github.com/krdprog) has waived all copyright and related or neighboring rights to this work.
+
+![license](https://img.shields.io/badge/License%3A%20-The%20Unlicense-green.svg)
 
 **Read License:** https://github.com/krdprog/rubyschool-notes/blob/master/LICENSE
 
