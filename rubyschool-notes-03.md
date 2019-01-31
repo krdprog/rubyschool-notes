@@ -1,4 +1,4 @@
-## Конспект RubySchool.us [3]
+# Конспект RubySchool.us [3]
 
 ### Урок 20
 

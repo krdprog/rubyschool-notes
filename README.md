@@ -8,7 +8,7 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 
 **Курс:** http://rubyschool.us/
 
-**Телеграм-бот навигатор по конспекту:** [@rubyschool_bot](tg://resolve?domain=rubyschool_bot)
+**Телеграм-бот навигатор по конспекту:** @rubyschool_bot
 
 ## Содержание конспекта:
 
