@@ -50,7 +50,22 @@ end
 
 Протестируем форму на http://localhost:3000/contacts
 
-**Создадим каталог /spec/features** и создадим файл /spec/features/visitor_create_contact_spec.rb
+**Создадим каталог /spec/features** и создадим файл /spec/features/visitor_create_contact_spec.rb:
+
+```ruby
+require "rails_helper"
+
+feature "Contact creation" do
+  scenario "allows acess to contacts page" do
+    visit '/contacts'
+
+    expect(page).to have_content 'Contact us'
+  end
+end
+```
+
+
+
 
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-48.md
