@@ -20,6 +20,10 @@ feature
 
 feature scenario - это фишка Capybara
 
+### Capybara
+
+> https://www.rubydoc.info/github/teamcapybara/capybara/master
+
 feature - особенность
 scenario - сценарий
 
@@ -50,21 +54,23 @@ end
 
 Протестируем форму на http://localhost:3000/contacts
 
-**Создадим каталог /spec/features** и создадим файл /spec/features/visitor_create_contact_spec.rb:
+new_contacts_path - это именованный маршрут для /contacts
+
+**Создадим каталог /spec/features** и создадим файл /spec/features/visitor_creates_contact_spec.rb:
 
 ```ruby
 require "rails_helper"
 
 feature "Contact creation" do
   scenario "allows acess to contacts page" do
-    visit '/contacts'
+    visit new_contacts_path
 
     expect(page).to have_content 'Contact us'
   end
 end
 ```
 
-### Работа с I18n
+### Работа с i18n (internationalization)
 
 - Открыть файл /config/locales/en.yml
 
@@ -114,7 +120,101 @@ en:
 <h2><%= t('contacts.contact_us') %></h2>
 ```
 
+**Применение i18n в Capybara:** Исправим наш тест с учётом i18n файл /spec/features/visitor_creates_contact_spec.rb:
 
+```ruby
+require "rails_helper"
+
+feature "Contact creation" do
+  scenario "allows acess to contacts page" do
+    visit new_contacts_path
+
+    expect(page).to have_content I18n.t('contacts.contact_us')
+  end
+end
+```
+
+Запустим тест:
+
+```bash
+rake spec
+```
+
+#### Следующий тест, создание самого сообщения:
+
+Откроем страницу с формой заявки и откроем код формы, чтобы узнать id (будем использовать в тесте):
+
+```html
+<input name="contact[email]" id="contact_email" type="text">
+<textarea name="contact[message]" id="contact_message"></textarea>
+```
+
+Наш файл с тестом (features/visitor_creates_contact_spec.rb) будет выглядеть так:
+
+```ruby
+require "rails_helper"
+
+feature "Contact creation" do
+  scenario "allows acess to contacts page" do
+    visit new_contacts_path
+
+    expect(page).to have_content I18n.t('contacts.contact_us')
+  end
+
+  scenario "allows a guest to create contact" do
+    visit new_contacts_path
+    fill_in :contact_email, with: 'foo@bar.ru'
+    fill_in :contact_message, with: 'Foo Bar Baz'
+
+    click_button 'Send message'
+    expect(page).to have_content 'Thanks!'
+  end
+
+end
+```
+
+#### Следующий тест: протестировать функциональность приложения залогинившись под пользователем
+
+Сделаем сначала **тест для гостя, что он может зарегистрироваться на сайте, т.е. протестируем форму регистрации.**
+
+Создадим файл /spec/features/visitor_creates_account_spec.rb
+
+```ruby
+require "rails_helper"
+
+feature "Account Creation" do
+  scenario "allows guest to create account" do
+    visit new_user_registration_path
+
+    fill_in :user_username, with: 'FooBar'
+    fill_in :user_email, with: 'foo@bar.com'
+    fill_in :user_password, with: '1234567'
+    fill_in :user_password_confirmation, with: '1234567'
+
+    click_button 'Sign up'
+    expect(page).to have_content I18n.t('devise.registrations.signed_up')
+  end
+end
+```
+
+devise.registrations.signed_up взято из i18n - config/locales/devise.en.yml
+
+Запустим тест:
+
+```bash
+rake spec
+```
+
+Всё это работает с базой данных test.sqlite3
+
+**Далее проверим функциональность создания статей зарегистрированным пользователем:**
+
+__на оформлении__
+
+
+> Изучить документацию Capybara:
+> - https://github.com/teamcapybara/capybara
+> - https://www.rubydoc.info/github/teamcapybara/capybara/master
 
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-48.md
