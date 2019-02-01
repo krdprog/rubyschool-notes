@@ -64,6 +64,55 @@ feature "Contact creation" do
 end
 ```
 
+### Работа с I18n
+
+- Открыть файл /config/locales/en.yml
+
+```yml
+en:
+  hello: "Hello world"
+```
+
+- Обязательно должны быть 2 пробела, иначе yml не заработает.
+
+Настройка в Sublime Text (Preferences - Settings - Syntax Specific):
+
+```text
+{
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true
+}
+```
+
+Можно создавать перевод для сайта и вызывать константы во views. Например, для русского языка можно создать /config/locales/ru.yml
+
+```text
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+```
+
+Создадим в /config/locales/en.yml:
+
+```yml
+en:
+  contacts:
+    contact_us: "Contact Us!"
+```
+
+И, вызовем в представлении /app/views/contacts/new.html.erb:
+
+```ruby
+<h2><%= t('contacts.contact_us') %></h2>
+```
 
 
 
