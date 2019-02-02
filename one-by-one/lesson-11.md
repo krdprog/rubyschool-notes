@@ -98,22 +98,22 @@ hash[:foo] = 'Bar'
 phonebook = {}
 
 while true
-	print "Enter name (Enter to stop): "
-	name = gets.strip.capitalize
+  print "Enter name (Enter to stop): "
+  name = gets.strip.capitalize
 
-	if name == ""
-		break
-	end
+  if name == ""
+    break
+  end
 
-	print "Enter phone number: "
-	number = gets.strip
+  print "Enter phone number: "
+  number = gets.strip
 
-	phonebook[name] = number
+  phonebook[name] = number
 end
 
 puts "", "=== My Phone Book ==="
 phonebook.each do |name, phone|
-	puts "#{name} number is #{phone}"
+  puts "#{name} number is #{phone}"
 end
 puts "====================="
 ```
@@ -128,22 +128,22 @@ phonebook['Alisha']
 
 #### Решение задачи "Англо-русский переводчик":
 ```ruby
-words = { 
+words = {
   'dog' => 'собака',
   'cat' => 'кошка',
   'frog' => 'лягушка'
   }
 
 while true
-	print "Введите слово: "
-	user_word = gets.strip.downcase
+  print "Введите слово: "
+  user_word = gets.strip.downcase
 
-	if user_word == ""
-		break
-	end
+  if user_word == ""
+    break
+  end
 
-	puts "Перевод: #{words[user_word]}"
-	puts ""
+  puts "Перевод: #{words[user_word]}"
+  puts ""
 end
 ```
 > У слова может быть несколько переводов, поэтому можно переписать программу, где значение хеша = массив.
