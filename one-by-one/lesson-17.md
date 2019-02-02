@@ -20,7 +20,7 @@ send "mm"
 #### Параметры в send:
 ```ruby
 def mm param
-	puts "#{param}"
+  puts "#{param}"
 end
 
 send :mm, 343
@@ -29,7 +29,7 @@ send :mm, 343
 
 ```ruby
 def mm hash
-	hash.each { |key, value| puts "#{key} -- #{value}"}
+  hash.each { |key, value| puts "#{key} -- #{value}"}
 end
 
 send :mm, :foo => 22, :bar => 44
@@ -37,11 +37,11 @@ send :mm, :foo => 22, :bar => 44
 
 ```ruby
 class Foo
-	attr_accessor :name
+  attr_accessor :name
 
-	def initialize
-		send("name=", "Mike") # аналог @name = "Mike"
-	end
+  def initialize
+    send("name=", "Mike") # аналог @name = "Mike"
+  end
 end
 
 bar = Foo.new
@@ -50,13 +50,13 @@ puts bar.name
 
 ```ruby
 class Foo
-	attr_accessor :x, :y
+  attr_accessor :x, :y
 
-	def initialize hash
-		hash.each do |key, value|
-			send "#{key}=", value
-		end
-	end
+  def initialize hash
+    hash.each do |key, value|
+      send "#{key}=", value
+    end
+  end
 
 end
 
@@ -69,13 +69,13 @@ puts s.y
 ```ruby
 class Foo
 
-	attr_accessor :name, :age, :country
+  attr_accessor :name, :age, :country
 
-	def initialize hash
-		hash.each do |key, value|
-			send("#{key}=", value)
-		end
-	end
+  def initialize hash
+    hash.each do |key, value|
+      send("#{key}=", value)
+    end
+  end
 
 end
 
@@ -88,9 +88,9 @@ p bar
 
 ```ruby
 class Foo
-	def method_missing name
-		puts "Метода #{name} не существует"
-	end
+  def method_missing name
+    puts "Метода #{name} не существует"
+  end
 end
 
 bar = Foo.new
@@ -100,14 +100,14 @@ bar.fjsdahuefd
 Ещё пример:
 ```ruby
 class Albu
-	def initialize(actions)
-		@actions = actions
-	end
+  def initialize(actions)
+    @actions = actions
+  end
 
-	def method_missing name
-		value = @actions[name]
-		puts "If you want to #{name}, you must call #{value}."
-	end
+  def method_missing name
+    value = @actions[name]
+    puts "If you want to #{name}, you must call #{value}."
+  end
 end
 
 a = Albu.new :cook => "Joe", :take_a_ride => "Jessie", :die => "Gus"
@@ -158,7 +158,7 @@ arr.map { |x| x*2 }
 ### define_method
 ```ruby
 send :define_method, "aaa" do
-	puts "Hello, I`m new method"
+  puts "Hello, I`m new method"
 end
 
 aaa
@@ -174,7 +174,7 @@ print "Name of method to define: "
 method_name = gets.strip
 
 send :define_method, method_name do
-	puts "Hello, I`m new method"
+  puts "Hello, I`m new method"
 end
 
 send method_name
@@ -184,11 +184,11 @@ send method_name
 
 ```ruby
 def left
-	puts "Robot goes left"
+  puts "Robot goes left"
 end
 
 def right
-	puts "Robot goes right"
+  puts "Robot goes right"
 end
 
 print "Enter your method call: "
@@ -260,7 +260,7 @@ puts file.read # прочитаем содержимое файла
 
 file.write "Karamba!" # добавим в файл
 
-file.rewind 
+file.rewind
 puts file.read # прочитаем ещё раз файл
 
 file.close # закроем файл
@@ -274,13 +274,13 @@ input = File.open("test.txt", "r")
 n = 1
 
 while line = input.gets
-	puts "#{n} #{line}"
-	n += 1
+  puts "#{n} #{line}"
+  n += 1
 end
 
 # or
 while line = input.gets
-	puts line
+  puts line
 end
 ```
 
@@ -306,7 +306,7 @@ input = File.open("task.txt", "r")
 total = 0
 
 while line = input.gets
-	total += line.split(",")[1].to_i
+  total += line.split(",")[1].to_i
 end
 
 input.close

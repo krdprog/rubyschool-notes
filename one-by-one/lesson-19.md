@@ -11,7 +11,7 @@ first program:
 require "sinatra"
 
 get '/' do
-	"Hello!"
+  "Hello!"
 end
 ```
 Создадим каталог views
@@ -27,7 +27,7 @@ touch views/index.erb
 require "sinatra"
 
 get '/' do
-	erb :index
+  erb :index
 end
 ```
 
@@ -38,12 +38,12 @@ app.rb
 require "sinatra"
 
 get '/' do
-	erb :index
+  erb :index
 end
 
 post '/'do
-	@login = params[:login]
-	erb :index
+  @login = params[:login]
+  erb :index
 end
 ```
 views/index.erb
@@ -53,9 +53,9 @@ views/index.erb
 <p>You typed: <%= @login %></p>
 
 <form action="/" method="POST">
-	<input type="text" name="login">
-	<input type="password" name="pass">
-	<input type="submit">
+  <input type="text" name="login">
+  <input type="password" name="pass">
+  <input type="submit">
 </form>
 ```
 
@@ -66,23 +66,23 @@ app.rb
 require "sinatra"
 
 get '/' do
-	erb :index
+  erb :index
 end
 
 post '/' do
-	@login = params[:login]
-	@password = params[:pass]
+  @login = params[:login]
+  @password = params[:pass]
 
-	if @login == 'admin' && @password == '12345'
-	  erb :welcome
-	else
+  if @login == 'admin' && @password == '12345'
+    erb :welcome
+  else
       @if_stop = "STOP!"
       erb :index
-	end
+  end
 end
 
 get '/contacts' do
-	"Contacts: +7 000 000-00-00"
+  "Contacts: +7 000 000-00-00"
 end
 ```
 views/index.erb
@@ -94,9 +94,9 @@ views/index.erb
 <p><%= @if_stop %></p>
 
 <form action="/" method="POST">
-	<input type="text" name="login">
-	<input type="password" name="pass">
-	<input type="submit">
+  <input type="text" name="login">
+  <input type="password" name="pass">
+  <input type="submit">
 </form>
 ```
 views/welcome.erb

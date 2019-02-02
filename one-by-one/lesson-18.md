@@ -10,11 +10,11 @@ output = File.open("password_2.txt", "w")
 # записать это в отдельный файл
 
 while (line = input.gets)
-	line.strip!
-	if line.size == 6
-		puts line
-		output.write "#{line}\n"
-	end
+  line.strip!
+  if line.size == 6
+    puts line
+    output.write "#{line}\n"
+  end
 end
 
 input.close
@@ -32,12 +32,12 @@ password = gets.strip
 
 # Your password is weak / not weak
 while (line = input.gets)
-	line.strip!
+  line.strip!
 
-	if line == password
-		puts "Your password is weak!"
-		exit
-	end
+  if line == password
+    puts "Your password is weak!"
+    exit
+  end
 end
 
 puts "Your password is hard!"

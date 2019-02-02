@@ -83,39 +83,39 @@ end
 #### Решение:
 В views/index.erb добавить часть кода:
 ```ruby
-	<label for="baber">Выбор парикмахера</label>
-	<select name="baber">
-		<option value="none" selected>Выберите парикмахера...</option>
-		<option value="Петрович">Петрович</option>
-		<option value="Макарыч">Макарыч</option>
-		<option value="Федорыч">Федорыч</option>
-	</select>
+  <label for="baber">Выбор парикмахера</label>
+  <select name="baber">
+    <option value="none" selected>Выберите парикмахера...</option>
+    <option value="Петрович">Петрович</option>
+    <option value="Макарыч">Макарыч</option>
+    <option value="Федорыч">Федорыч</option>
+  </select>
 ```
 А, в babershop-2.rb добавить и исправить код:
 ```ruby
 post '/' do
-	# user_name, phone, date_time
-	@user_name = params[:user_name]
-	@phone = params[:phone]
-	@date_time = params[:date_time]
-	@baber = params[:baber]
+  # user_name, phone, date_time
+  @user_name = params[:user_name]
+  @phone = params[:phone]
+  @date_time = params[:date_time]
+  @baber = params[:baber]
 
-	@title = "Thank you!"
-	@message = "Уважаемый #{@user_name}, мы ждём вас #{@date_time} у выбранного парикмахера #{@baber}."
+  @title = "Thank you!"
+  @message = "Уважаемый #{@user_name}, мы ждём вас #{@date_time} у выбранного парикмахера #{@baber}."
 
   # запишем в файл то, что ввёл клиент
-	f = File.open 'users.txt', 'a'
-	f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}. Baber: #{@baber}.\n"
-	f.close
+  f = File.open 'users.txt', 'a'
+  f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}. Baber: #{@baber}.\n"
+  f.close
 
-	erb :message
+  erb :message
 end
 ```
 Здесь мы добавили код:
 ```ruby
 @baber = params[:baber]
 ```
-плюс добавили в @message и в код записи в в файл f.write 
+плюс добавили в @message и в код записи в в файл f.write
 
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-23.md

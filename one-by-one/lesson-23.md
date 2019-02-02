@@ -15,8 +15,8 @@ $('.ccc').css('background-color','red');
 <body>
   <script>
     $(function() {
-        ...
-      });
+      ...
+    });
   </script>
 </body>
 ```

@@ -381,8 +381,8 @@ $('.ccc').css('background-color','red');
 <body>
   <script>
     $(function() {
-        ...
-      });
+      ...
+    });
   </script>
 </body>
 ```
@@ -465,16 +465,16 @@ Your name:<br> <input type="text" name="user_name" value="<%= @user_name %>">
 
 Edit babershop-2.rb:
 ```ruby
-  # хеш для валидации параметров
-  hh = { :user_name => 'Введите имя',
-      :phone => 'Введите телефон',
-      :date_time => 'Введите дату и время' }
+# хеш для валидации параметров
+hh = { :user_name => 'Введите имя',
+    :phone => 'Введите телефон',
+    :date_time => 'Введите дату и время' }
 
-  @error = hh.select {|key,_| params[key] == ''}.values.join(", ")
+@error = hh.select {|key,_| params[key] == ''}.values.join(", ")
 
-  if @error != ''
-    return erb :index
-  end
+if @error != ''
+  return erb :index
+end
 ```
 Вынесем это решение в отдельный метод (сделать самостоятельно).
 

@@ -20,12 +20,12 @@ puts bar.foo
 
 ```ruby
 class Song
-	attr_accessor :name, :duration
+  attr_accessor :name, :duration
 
-	def initialize name, duration
-		@name = name
-		@duration = duration
-	end
+  def initialize name, duration
+    @name = name
+    @duration = duration
+  end
 end
 
 song1 = Song.new 'Obla-di, obla-da', 6
@@ -34,19 +34,19 @@ puts song1.name
 
 ```ruby
 class Airport
-	attr_reader :name
+  attr_reader :name
 
-	def initialize name
-		@name = name
-	end
+  def initialize name
+    @name = name
+  end
 end
 
 class Airplane
-	attr_reader :model
+  attr_reader :model
 
-	def initialize model
-		@model = model
-	end
+  def initialize model
+    @model = model
+  end
 end
 ```
 1 аэропорт содержит много самолётов (*):
@@ -58,24 +58,24 @@ end
 # 2. вывести на экран название аэропортов и какие в нём самолёты
 
 class Airport
-	attr_reader :name, :planes
+  attr_reader :name, :planes
 
-	def initialize(name)
-		@name = name
-		@planes = []
-	end
+  def initialize(name)
+    @name = name
+    @planes = []
+  end
 
-	def add_plane plane
-		@planes << plane
-	end
+  def add_plane plane
+    @planes << plane
+  end
 end
 
 class Plane
-	attr_reader :model
+  attr_reader :model
 
-	def initialize(model)
-		@model = model
-	end
+  def initialize(model)
+    @model = model
+  end
 end
 
 # массив для хранения аэропортов
@@ -111,14 +111,14 @@ airport2.add_plane plane2_4
 
 # выведем информацию об аэропортах и самолётах в них:
 airports.each do |airport|
-	puts "#{airport.name}"
+  puts "#{airport.name}"
 
-	puts "Planes in this airport:"
-	airport.planes.each do |plane|
-		puts "#{plane.model}"
-	end
+  puts "Planes in this airport:"
+  airport.planes.each do |plane|
+    puts "#{plane.model}"
+  end
 
-	puts "========================="
+  puts "========================="
 end
 ```
 
@@ -126,37 +126,37 @@ end
 
 ```ruby
 class Country
-	attr_reader :name, :airports
+  attr_reader :name, :airports
 
-	def initialize(name)
-		@name = name
-		@airports = []
-	end
+  def initialize(name)
+    @name = name
+    @airports = []
+  end
 
-	def add_airport airport
-		@airports << airport
-	end
+  def add_airport airport
+    @airports << airport
+  end
 end
 
 class Airport
-	attr_reader :name, :planes
+  attr_reader :name, :planes
 
-	def initialize(name)
-		@name = name
-		@planes = []
-	end
+  def initialize(name)
+    @name = name
+    @planes = []
+  end
 
-	def add_plane plane
-		@planes << plane
-	end
+  def add_plane plane
+    @planes << plane
+  end
 end
 
 class Plane
-	attr_reader :model
+  attr_reader :model
 
-	def initialize(model)
-		@model = model
-	end
+  def initialize(model)
+    @model = model
+  end
 end
 
 # массив стран
@@ -201,16 +201,16 @@ airport2.add_plane plane2_4
 # выведем информацию о странах, аэропортах и самолётах в них:
 
 countries.each do |country|
-	puts "Airports From #{country.name}:"
-	country.airports.each do |airport|
-		puts "- Airport #{airport.name}"
+  puts "Airports From #{country.name}:"
+  country.airports.each do |airport|
+    puts "- Airport #{airport.name}"
 
-			puts "-- Planes in this airport:"
-			airport.planes.each do |plane|
-				puts "-- #{plane.model}"
-			end
-	end
-	puts "=================="
+      puts "-- Planes in this airport:"
+      airport.planes.each do |plane|
+        puts "-- #{plane.model}"
+      end
+  end
+  puts "=================="
 end
 ```
 #### Задача: альбом с песнями
@@ -219,26 +219,26 @@ end
 # add album and 3 song
 
 class Album
-	attr_reader :name, :songs
+  attr_reader :name, :songs
 
-	def initialize(name)
-		@name = name
-		@songs = []
-	end
+  def initialize(name)
+    @name = name
+    @songs = []
+  end
 
-	def add_song song
-		@songs << song
-	end
+  def add_song song
+    @songs << song
+  end
 
 end
 
 class Song
-	attr_reader :name, :duration
+  attr_reader :name, :duration
 
-	def initialize(name, duration)
-		@name = name
-		@duration = duration
-	end
+  def initialize(name, duration)
+    @name = name
+    @duration = duration
+  end
 
 end
 
@@ -258,10 +258,10 @@ abba.add_song song2
 abba.add_song song3
 
 albums.each do |album|
-	puts "Album: #{album.name}", ""
-	album.songs.each do |song|
-		puts "Song: #{song.name} -- duration: #{song.duration}"
-	end
+  puts "Album: #{album.name}", ""
+  album.songs.each do |song|
+    puts "Song: #{song.name} -- duration: #{song.duration}"
+  end
 end
 ```
 
@@ -282,35 +282,35 @@ end
 
 ```ruby
 class Animal
-	def initialize(name)
-	  @name = name
-	end
+  def initialize(name)
+    @name = name
+  end
 
-	def jump
-		puts "#{@name} is jumping..."
-	end
+  def jump
+    puts "#{@name} is jumping..."
+  end
 end
 
 class Cat < Animal
 
-	def initialize
-		super 'Murzik'
-	end
+  def initialize
+    super 'Murzik'
+  end
 
-	def say_meow
-		puts "#{@name} Meowww!"
-	end
+  def say_meow
+    puts "#{@name} Meowww!"
+  end
 end
 
 class Dog < Animal
 
-	def initialize
-		super 'Sharik'
-	end
+  def initialize
+    super 'Sharik'
+  end
 
-	def say_gav
-		puts "#{@name} Gavvv!"
-	end
+  def say_gav
+    puts "#{@name} Gavvv!"
+  end
 end
 
 cat = Cat.new

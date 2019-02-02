@@ -48,16 +48,16 @@ require 'sqlite3'
 ```ruby
 configure do
   @db = SQLite3::Database.new 'base.db'
-  
+
   @db.execute 'CREATE TABLE IF NOT EXISTS "Messages"
-	  (
-		  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-		  "username" TEXT,
-		  "phone" TEXT,
-		  "email" TEXT,
-		  "option" TEXT,
-		  "comment" TEXT
-		)'
+    (
+      "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+      "username" TEXT,
+      "phone" TEXT,
+      "email" TEXT,
+      "option" TEXT,
+      "comment" TEXT
+    )'
   # db.close (надо?)
 end
 ```
@@ -65,7 +65,7 @@ end
 ```ruby
 configure do
   @db = SQLite3::Database.new 'base.db'
-	
+
   @db.execute 'CREATE TABLE IF NOT EXISTS "Messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT, "username" TEXT, "phone" TEXT, "email" TEXT, "option" TEXT, "comment" TEXT)'
   # @db.close (надо?)
 end
@@ -82,7 +82,7 @@ end
 
 > Документация:
 > https://www.rubydoc.info/github/luislavena/sqlite3-ruby
-> 
+>
 > https://www.rubydoc.info/github/luislavena/sqlite3-ruby/SQLite3/Database
 
 #### Вставка данных в БД в Sinatra app:
@@ -94,46 +94,46 @@ require 'sinatra'
 require 'sqlite3'
 
 def get_db
-	return SQLite3::Database.new 'base.db'
+  return SQLite3::Database.new 'base.db'
 end
 
 configure do
-	db = get_db
-	db.execute 'CREATE TABLE IF NOT EXISTS "Messages"
-	  (
-		  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-		  "username" TEXT,
-		  "phone" TEXT,
-		  "email" TEXT,
-		  "option" TEXT,
-		  "comment" TEXT
-		)'
-	db.close
+  db = get_db
+  db.execute 'CREATE TABLE IF NOT EXISTS "Messages"
+    (
+      "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+      "username" TEXT,
+      "phone" TEXT,
+      "email" TEXT,
+      "option" TEXT,
+      "comment" TEXT
+    )'
+  db.close
 end
 
 def save_form_data_to_database
-	db = get_db
-	db.execute 'INSERT INTO Messages (username, phone, email, option, comment)
-	VALUES (?, ?, ?, ?, ?)', [@username, @phone, @email, @option, @comment]
-	db.close
+  db = get_db
+  db.execute 'INSERT INTO Messages (username, phone, email, option, comment)
+  VALUES (?, ?, ?, ?, ?)', [@username, @phone, @email, @option, @comment]
+  db.close
 end
 
 get '/' do
-	@title = "Форма заявки для Sinatra (Ruby)"
-	erb :index
+  @title = "Форма заявки для Sinatra (Ruby)"
+  erb :index
 end
 
 post '/' do
-	@username = params[:username]
-	@phone = params[:phone]
-	@email = params[:email]
-	@option = params[:option]
-	@comment = params[:comment]
+  @username = params[:username]
+  @phone = params[:phone]
+  @email = params[:email]
+  @option = params[:option]
+  @comment = params[:comment]
 
-	save_form_data_to_database
+  save_form_data_to_database
 
-	@title = "Спасибо, ваше сообщение отправлено"
-	erb :sent
+  @title = "Спасибо, ваше сообщение отправлено"
+  erb :sent
 end
 ```
 > Полная работающая версия формы со всеми файлами тут:
@@ -153,14 +153,14 @@ db.results_as_hash = true
 Добавим в ранее созданный метод и переделаем app.rb:
 ```ruby
 def get_db
-	db = SQLite3::Database.new 'base.db'
-	db.results_as_hash = true
-	return db
+  db = SQLite3::Database.new 'base.db'
+  db.results_as_hash = true
+  return db
 end
 ```
 
 #### Домашнее задание:
-1. сделать страницу показа результата из базы данных используя запрос 
+1. сделать страницу показа результата из базы данных используя запрос
 
 ```sql
 SELECT * FROM Users ORDER BY id DESC

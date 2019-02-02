@@ -338,14 +338,14 @@ end
 
 в views/index.erb в форме заменим статические данные на :
 ```ruby
-  <p>
-    <select name="option">
-      <option value="" selected>Выбрать опцию...</option>
-      <% @options.each do |item| %>
-      <option value="<%= item['option'] %>"><%= item['option'] %></option>
-      <% end %>
-    </select>
-  </p>
+<p>
+  <select name="option">
+    <option value="" selected>Выбрать опцию...</option>
+    <% @options.each do |item| %>
+    <option value="<%= item['option'] %>"><%= item['option'] %></option>
+    <% end %>
+  </select>
+</p>
 ```
 
 Вставка, чтобы сделать select - selected
@@ -730,19 +730,19 @@ rake db:migrate
 # + to app.rb
 
 post '/order' do
-    @name = params[:name]
-    @phone = params[:phone]
-    @datestamp = params[:datestamp]
-    @barber = params[:barber]
+  @name = params[:name]
+  @phone = params[:phone]
+  @datestamp = params[:datestamp]
+  @barber = params[:barber]
 
-    c = Client.new
-    c.name = @name
-    c.phone = @phone
-    c.datestamp = @datestamp
-    c.barber = @barber
-    c.save
+  c = Client.new
+  c.name = @name
+  c.phone = @phone
+  c.datestamp = @datestamp
+  c.barber = @barber
+  c.save
 
-    erb :sent
+  erb :sent
 end
 ```
 
@@ -751,10 +751,10 @@ end
 ```ruby
 # + to app.rb
 post '/order' do
-    c = Client.new params[:client]
-    c.save
+  c = Client.new params[:client]
+  c.save
 
-    erb :sent
+  erb :sent
 end
 ```
 
@@ -763,40 +763,40 @@ end
 
 <form action="/order" method="POST">
 
-    <p><label for="name">Ваше имя:</label></p>
-    <p><input type="text" name="client[name]" value=""></p>
+  <p><label for="name">Ваше имя:</label></p>
+  <p><input type="text" name="client[name]" value=""></p>
 
-    <p><label for="phone">Телефон:</label></p>
-    <p><input type="text" name="client[phone]" value=""></p>
+  <p><label for="phone">Телефон:</label></p>
+  <p><input type="text" name="client[phone]" value=""></p>
 
-    <p><label for="datestamp">Выберите дату:</label></p>
-    <p><input type="text" name="client[datestamp]" value=""></p>
+  <p><label for="datestamp">Выберите дату:</label></p>
+  <p><input type="text" name="client[datestamp]" value=""></p>
 
-    <p><label for="barber">Парикмахер:</label>
-        <select name="client[barber]">
-            <option value="" selected>Выбрать парикмахера...</option>
+  <p><label for="barber">Парикмахер:</label>
+    <select name="client[barber]">
+      <option value="" selected>Выбрать парикмахера...</option>
 
-            <% @barbers.each do |barber| %>
-            <option value="<%= barber.name %>"><%= barber.name %></option>
-            <% end %>
+      <% @barbers.each do |barber| %>
+      <option value="<%= barber.name %>"><%= barber.name %></option>
+      <% end %>
 
-        </select>
-    </p>
+    </select>
+  </p>
 
-    <br>
-    <p><input type="submit" value="Отправить заявку"></p>
+  <br>
+  <p><input type="submit" value="Отправить заявку"></p>
 
 </form>
 ```
 Т.е. вместо создания переменных из params. мы сократили код до пары строк:
 ```ruby
-    c = Contact.new params[:contact]
-    c.save
+c = Contact.new params[:contact]
+c.save
 ```
 и в представлении:
 ```ruby
-    <p><input type="text" name="contact[name]" value=""></p>
-    <p><textarea rows="10" cols="45" name="contact[comment]"></textarea></p>
+<p><input type="text" name="contact[name]" value=""></p>
+<p><textarea rows="10" cols="45" name="contact[comment]"></textarea></p>
 ```
 > Важное замечание: метод save для новых записей проводит валидацию, если всё правильно, то возвращает true иначе false
 
@@ -808,10 +808,10 @@ end
 # + to app.rb
 
 class Client < ActiveRecord::Base
-    validates :name, presence: true
-    validates :phone, presence: true
-    validates :datestamp, presence: true
-    validates :barber, presence: true
+  validates :name, presence: true
+  validates :phone, presence: true
+  validates :datestamp, presence: true
+  validates :barber, presence: true
 end
 ```
 Проверка в tux:
@@ -825,14 +825,14 @@ c.errors.messages
 # + to app.rb
 
 post '/order' do
-    c = Client.new params[:client]
-    c.save
+  c = Client.new params[:client]
+  c.save
 
-    if c.save
-        erb "<p>Thank you!</p>"
-    else
-        erb "<p>Error</p>"
-    end
+  if c.save
+    erb "<p>Thank you!</p>"
+  else
+    erb "<p>Error</p>"
+  end
 end
 ```
 или:
@@ -872,10 +872,10 @@ post '/order' do
   @c.save
 
   if @c.save
-      erb "<p>Thank you!</p>"
+    erb "<p>Thank you!</p>"
   else
-      @error = @c.errors.full_messages.first
-      erb :order
+    @error = @c.errors.full_messages.first
+    erb :order
   end
 end
 ```
@@ -913,9 +913,9 @@ end
 # + to app.rb
 
 get '/barber/:id' do
-    @barber = Barber.find(params[:id])
+  @barber = Barber.find(params[:id])
 
-    erb :barber
+  erb :barber
 end
 ```
 
@@ -926,7 +926,7 @@ end
 
 <ul>
 <% @barbers.each do |barber| %>
-    <li><a href="/barber/<%= barber.id %>"><%= barber.name %></a></li>
+  <li><a href="/barber/<%= barber.id %>"><%= barber.name %></a></li>
 <% end %>
 </ul>
 ```
@@ -948,15 +948,15 @@ end
 # + to app.rb
 
 get '/clients' do
-    @clients = Client.order('created_at DESC')
+  @clients = Client.order('created_at DESC')
 
-    erb :clients
+  erb :clients
 end
 
 get '/clients/:id' do
-    @client = Client.find(params[:id])
+  @client = Client.find(params[:id])
 
-    erb :client
+  erb :client
 end
 ```
 
@@ -966,20 +966,20 @@ end
 <h2>Список записавшихся</h2>
 
 <table border="1" cellpadding="10" cellpadding="0">
-    <tr>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Date</th>
-        <th>Barber</th>
-    </tr>
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Date</th>
+    <th>Barber</th>
+  </tr>
 
 <% @clients.each do |client| %>
-    <tr>
-        <td><a href="/clients/<%= client.id %>"><%= client.name %></a></td>
-        <td><%= client.phone %></td>
-        <td><%= client.datestamp %></td>
-        <td><%= client.barber %></td>
-    </tr>
+  <tr>
+    <td><a href="/clients/<%= client.id %>"><%= client.name %></a></td>
+    <td><%= client.phone %></td>
+    <td><%= client.datestamp %></td>
+    <td><%= client.barber %></td>
+  </tr>
 <% end %>
 </table>
 ```

@@ -21,8 +21,8 @@ end
 app.rb
 ```ruby
 get '/post/:post_id' do
-	@post_id = params[:post_id]
-	erb :post
+  @post_id = params[:post_id]
+  erb :post
 end
 ```
 views/post.erb

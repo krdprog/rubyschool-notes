@@ -125,15 +125,15 @@ db.execute "INSERT INTO Cars (Name, Price) VALUES ('Jaguar', 7000000)"
 
 # прочитаем данные из базы
 db.execute "SELECT * FROM Cars" do |car|
-	puts car
-	puts "======"
+  puts car
+  puts "======"
 end
 
 db.close
 ```
 Обратить внимание на тему SQL Injection
 ```sql
-'DROP TABLE Cars -- 
+'DROP TABLE Cars --
 ```
 Это нужно фильтровать. Как? Будет ниже.
 

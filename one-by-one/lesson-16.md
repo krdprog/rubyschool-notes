@@ -12,27 +12,27 @@
 ```ruby
 class Animal
 
-	attr_reader :name
+  attr_reader :name
 
-	def initialize(name)
-		@name = name
-	end
-
-	def jump
-		eat
-		puts "#{name}: I am jumping..."
-	  sleep
+  def initialize(name)
+    @name = name
   end
 
-	private
+  def jump
+    eat
+    puts "#{name}: I am jumping..."
+    sleep
+  end
 
-	def eat
-		puts "#{name}: I am eating..."
-	end
-  
+  private
+
+  def eat
+    puts "#{name}: I am eating..."
+  end
+
   def sleep
-		puts "I am sleeping..."
-	end
+    puts "I am sleeping..."
+  end
 end
 
 cat = Animal.new "Murzik"
@@ -46,9 +46,9 @@ cat.jump
 
 ```ruby
 class Man
-	def say_hi
-		puts "Hi!"
-	end
+  def say_hi
+    puts "Hi!"
+  end
 end
 
 man = Man.new
@@ -57,9 +57,9 @@ man.say_hi
 # or
 
 class Man
-	def self.say_hi # !!!
-		puts "Hi!"
-	end
+  def self.say_hi # !!!
+    puts "Hi!"
+  end
 end
 
 Man.say_hi
@@ -70,9 +70,9 @@ Man.say_hi
 
 ```ruby
 def run_5_times
-	5.times do
-		yield
-	end
+  5.times do
+    yield
+  end
 end
 
 run_5_times { puts "Foooo!!!" }
@@ -82,11 +82,11 @@ run_5_times { puts "Foooo!!!" }
 
 ```ruby
 def run_5_times
-	x = 0
-	while x < 5
-		yield x
-		x += 1
-	end
+  x = 0
+  while x < 5
+    yield x
+    x += 1
+  end
 end
 
 run_5_times { |i| puts "Foo! Index: #{i}" }
@@ -94,11 +94,11 @@ run_5_times { |i| puts "Foo! Index: #{i}" }
 #### Можно передать несколько параметров:
 ```ruby
 def run_5_times
-	x = 0
-	while x < 5
-		yield x, 55
-		x += 1
-	end
+  x = 0
+  while x < 5
+    yield x, 55
+    x += 1
+  end
 end
 
 run_5_times { |i, v| puts "Foo! Index: #{i}. Value: #{v}" }
@@ -135,14 +135,14 @@ say_bye = lambda { puts "Bye!" }
 week = [ say_hi, say_hi, say_hi, say_hi, say_hi, say_bye, say_bye ]
 
 week.each do |f|
-	f.call
+  f.call
 end
 ```
 return, но можно не писать:
 
 ```ruby
 sub_10 = lambda do |x|
-	return x - 10
+  return x - 10
 end
 
 a = sub_10.call 1000
@@ -172,20 +172,20 @@ balance = 1000
 hh = { 111 => add_10, 222 => add_10, 333 => add_20, 444 => add_20, 555 => add_20, 666 => sub_5, 777 => sub_5 }
 
 while true
-	x = rand(100..999)
-	puts "Combination: #{x}"
+  x = rand(100..999)
+  puts "Combination: #{x}"
 
-	if hh[x]
-		f = hh[x]
-		balance = f.call balance
-		puts "Lambda called."
-	else
-		balance = sub_5.call balance
-	end
+  if hh[x]
+    f = hh[x]
+    balance = f.call balance
+    puts "Lambda called."
+  else
+    balance = sub_5.call balance
+  end
 
-	puts "Balance: #{balance}"
-	puts "Press Enter to continue..."
-	gets
+  puts "Balance: #{balance}"
+  puts "Press Enter to continue..."
+  gets
 end
 ```
 
@@ -206,23 +206,23 @@ baz = Foo::Bar.new
 ```ruby
 module Humans
 
-	class Manager
-		def say_hi
-			puts "Hello!"
-		end
-	end
+  class Manager
+    def say_hi
+      puts "Hello!"
+    end
+  end
 
-	class Hipster
-		def say_hi
-			puts "Yoooouuuuu! Hi!"
-		end
-	end
+  class Hipster
+    def say_hi
+      puts "Yoooouuuuu! Hi!"
+    end
+  end
 
-	class Alisha
-		def say_hi
-			puts "Nihau!"
-		end
-	end
+  class Alisha
+    def say_hi
+      puts "Nihau!"
+    end
+  end
 
 end
 
@@ -282,7 +282,7 @@ samp.s1
 require './foo.rb'
 ```
 
-#### Типы переменных: 
+#### Типы переменных:
 ```ruby
 CONSTANT = 3.14 # константа
 $global_var # глобальная переменная
@@ -294,11 +294,11 @@ local_var # переменная доступная внутри метода
 ```ruby
 class Song
   @@plays = 0
-  
+
   def play
     @@plays += 1
   end
-  
+
   def total_plays
     puts @@plays
   end

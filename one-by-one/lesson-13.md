@@ -40,37 +40,37 @@ hh.delete '123'
 
 # добавление пары в хеш
 def add_person name, age
-  
+
   # if @hh[name]
-	#	 puts "Такой пользователь уже существует!"
-	# end
-  
+  #  puts "Такой пользователь уже существует!"
+  # end
+
   puts "Такой пользователь уже существует!" if @hh[name]
-  
-	@hh[name] = age
+
+  @hh[name] = age
 end
 
 # отображение содержимого хеш
 def show_hash
-	@hh.each do |name, age|
-		puts "#{name} is #{age} years old."
-	end
+  @hh.each do |name, age|
+    puts "#{name} is #{age} years old."
+  end
 end
 
 while true
-	# добавлять пока не введена пустая строка
-	print "Enter name: "
-	@name = gets.strip.capitalize
+  # добавлять пока не введена пустая строка
+  print "Enter name: "
+  @name = gets.strip.capitalize
 
-	if @name == ""
-		show_hash
-		exit
-	end
+  if @name == ""
+    show_hash
+    exit
+  end
 
-	print "Enter age: "
-	@age = gets.to_i
+  print "Enter age: "
+  @age = gets.to_i
 
-	add_person @name, @age
+  add_person @name, @age
 end
 ```
 
@@ -118,9 +118,9 @@ end
 ```ruby
 # выводит на экран записную книгу
 def show_book book
-	book.each do |name, age|
-		puts "#{name} is #{age} years old"
-	end
+  book.each do |name, age|
+    puts "#{name} is #{age} years old"
+  end
 end
 
 book1 = { 'Mike' => 65, 'Joe' => 12 }

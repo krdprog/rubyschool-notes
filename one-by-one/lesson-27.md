@@ -16,41 +16,41 @@
 ```ruby
 # Method connect with database
 def get_db
-	@db = SQLite3::Database.new 'base.db'
-	@db.results_as_hash = true
-	return @db
+  @db = SQLite3::Database.new 'base.db'
+  @db.results_as_hash = true
+  return @db
 end
 
 # Show result in admin panel
 get '/admin/show' do
-	get_db
+  get_db
 
-	@results = @db.execute 'SELECT * FROM Messages ORDER BY id DESC'
-	@db.close
+  @results = @db.execute 'SELECT * FROM Messages ORDER BY id DESC'
+  @db.close
 
-	erb :show
+  erb :show
 end
 ```
 views/show.erb
 ```ruby
 <table border="1">
-	<tr>
-		<th>Имя</th>
-		<th>Телефон</th>
-		<th>E-mail</th>
-		<th>Опция</th>
-		<th>Комментарий</th>
-	</tr>
+  <tr>
+    <th>Имя</th>
+    <th>Телефон</th>
+    <th>E-mail</th>
+    <th>Опция</th>
+    <th>Комментарий</th>
+  </tr>
 
 <% @results.each do |row| %>
 
-	<tr>
-		<td><%= row['username'] %></td>
-		<td><%= row['phone'] %></td>
-		<td><%= row['email'] %></td>
-		<td><%= row['option'] %></td>
-		<td><%= row['comment'] %></td>
-	</tr>
+  <tr>
+    <td><%= row['username'] %></td>
+    <td><%= row['phone'] %></td>
+    <td><%= row['email'] %></td>
+    <td><%= row['option'] %></td>
+    <td><%= row['comment'] %></td>
+  </tr>
 
 <% end %>
 
@@ -66,61 +66,61 @@ erb:
 ```ruby
 <% @results.each do |row| %>
 
-	<tr <%= "style='background-color: red; color: white;'" if row == @results.first %>>
-		<td><%= row['username'] %></td>
-		<td><%= row['phone'] %></td>
-		<td><%= row['email'] %></td>
-		<td><%= row['option'] %></td>
-		<td><%= row['comment'] %></td>
-	</tr>
+  <tr <%= "style='background-color: red; color: white;'" if row == @results.first %>>
+    <td><%= row['username'] %></td>
+    <td><%= row['phone'] %></td>
+    <td><%= row['email'] %></td>
+    <td><%= row['option'] %></td>
+    <td><%= row['comment'] %></td>
+  </tr>
 
 <% end %>
 ```
-#### Решение задания: 
+#### Решение задания:
 > В configure сделать дополнительную таблицу Barbers со списком парикмахеров. Загружать список парикмахеров в configure (вставка в таблицу 1 раз) - сделаю для контактной формы для поля Options:
 
 ```ruby
 # Method validation data Options table in database
 def is_option_exists? base, param
-	base.execute('SELECT * FROM Options WHERE option=?', [param]).length > 0
+  base.execute('SELECT * FROM Options WHERE option=?', [param]).length > 0
 end
 
 # Method add data to table in database
 def seed_db base, options
-	options.each do |option|
-		if !is_option_exists? @db, option
-			base.execute 'INSERT INTO Options (option) VALUES (?)', [option]
-		end
-	end
+  options.each do |option|
+    if !is_option_exists? @db, option
+      base.execute 'INSERT INTO Options (option) VALUES (?)', [option]
+    end
+  end
 end
 ```
 
 ```ruby
 # Configure application
 configure do
-	get_db
-	# create table Messages in database
-	@db.execute 'CREATE TABLE IF NOT EXISTS "Messages"
-	  (
-		  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-		  "username" TEXT,
-		  "phone" TEXT,
-		  "email" TEXT,
-		  "option" TEXT,
-		  "comment" TEXT
-		)'
+  get_db
+  # create table Messages in database
+  @db.execute 'CREATE TABLE IF NOT EXISTS "Messages"
+    (
+      "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+      "username" TEXT,
+      "phone" TEXT,
+      "email" TEXT,
+      "option" TEXT,
+      "comment" TEXT
+    )'
 
-	# create table Options in database
-	@db.execute 'CREATE TABLE IF NOT EXISTS "Options"
-	  (
-		  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-		  "option" TEXT
-		)'
+  # create table Options in database
+  @db.execute 'CREATE TABLE IF NOT EXISTS "Options"
+    (
+      "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+      "option" TEXT
+    )'
 
-	# add data to table
-	seed_db @db, ['Foo', 'Faa', 'Moo', 'Zoo', 'Faz', 'Maz', 'Kraz']
+  # add data to table
+  seed_db @db, ['Foo', 'Faa', 'Moo', 'Zoo', 'Faz', 'Maz', 'Kraz']
 
-	@db.close
+  @db.close
 end
 ```
 seed_db - seed устоявшееся выражение - наполнить
@@ -149,26 +149,26 @@ end
 # Index page with form
 get '/' do
 
-	# Write to array data from database table Options
-	get_db
-	@options = @db.execute 'SELECT * FROM Options'
-	@db.close
+  # Write to array data from database table Options
+  get_db
+  @options = @db.execute 'SELECT * FROM Options'
+  @db.close
 
-	@title = "Форма заявки для Sinatra (Ruby)"
-	erb :index
+  @title = "Форма заявки для Sinatra (Ruby)"
+  erb :index
 end
 ```
 
 в views/index.erb в форме заменим статические данные на :
 ```ruby
-	<p>
-		<select name="option">
-			<option value="" selected>Выбрать опцию...</option>
-			<% @options.each do |item| %>
-			<option value="<%= item['option'] %>"><%= item['option'] %></option>
-			<% end %>
-		</select>
-	</p>
+<p>
+  <select name="option">
+    <option value="" selected>Выбрать опцию...</option>
+    <% @options.each do |item| %>
+    <option value="<%= item['option'] %>"><%= item['option'] %></option>
+    <% end %>
+  </select>
+</p>
 ```
 
 Вставка, чтобы сделать select - selected

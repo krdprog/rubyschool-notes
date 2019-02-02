@@ -36,28 +36,28 @@ end
 # класс записной книжки
 class Book
 
-	def initialize
-		@hh = {}
+  def initialize
+    @hh = {}
     @last_person = ''
-	end
+  end
 
-	def add_person options
+  def add_person options
     @last_person = options[:name]
-    
-		puts "Уже есть!" if @hh[options[:name]]
 
-		@hh[options[:name]] = options[:age]
-	end
+    puts "Уже есть!" if @hh[options[:name]]
 
-	def show_all
-		@hh.each do |name, age|
-			puts "#{name} is #{age} years old."
-		end
-	end
-  
+    @hh[options[:name]] = options[:age]
+  end
+
+  def show_all
+    @hh.each do |name, age|
+      puts "#{name} is #{age} years old."
+    end
+  end
+
   def show_last_person
-		puts "Last person: #{@last_person}."
-	end
+    puts "Last person: #{@last_person}."
+  end
 
 end
 
@@ -75,7 +75,7 @@ class Cat
   def initialize
     @foo = 12
   end
-  
+
   def aaa
     return @foo
   end
@@ -103,29 +103,29 @@ attr_accessor :last_person
 ```ruby
 class Airplane
 
-	attr_reader :model
-	attr_reader :speed
-	attr_reader :altitude
+  attr_reader :model
+  attr_reader :speed
+  attr_reader :altitude
 
-	def initialize(model)
-		@model = model
-		@speed = 0
-		@altitude = 0
-	end
+  def initialize(model)
+    @model = model
+    @speed = 0
+    @altitude = 0
+  end
 
-	def fly
-		@speed = 800
-		@altitude = 10000
-	end
+  def fly
+    @speed = 800
+    @altitude = 10000
+  end
 
-	def land
-		@speed = 0
-		@altitude = 0
-	end
-	
+  def land
+    @speed = 0
+    @altitude = 0
+  end
+
   def moving?
-		return @speed > 0
-	end
+    return @speed > 0
+  end
 
 end
 
@@ -142,29 +142,29 @@ puts "Is moving: #{plane1.moving?}"
 # самолёт
 class Airplane
 
-	attr_reader :model
-	attr_reader :speed
-	attr_reader :altitude
+  attr_reader :model
+  attr_reader :speed
+  attr_reader :altitude
 
-	def initialize(model)
-		@model = model
-		@speed = 0
-		@altitude = 0
-	end
+  def initialize(model)
+    @model = model
+    @speed = 0
+    @altitude = 0
+  end
 
-	def fly
-		@speed = 800
-		@altitude = 10000
-	end
+  def fly
+    @speed = 800
+    @altitude = 10000
+  end
 
-	def land
-		@speed = 0
-		@altitude = 0
-	end
+  def land
+    @speed = 0
+    @altitude = 0
+  end
 
-	def moving?
-		return @speed > 0
-	end
+  def moving?
+    return @speed > 0
+  end
 
 end
 
@@ -173,20 +173,20 @@ models = ['Il-76', 'Boeing-777', 'Airbus-320']
 planes = []
 
 20.times do
-	model = models[rand(0..2)]
-	plane = Airplane.new(model)
+  model = models[rand(0..2)]
+  plane = Airplane.new(model)
 
-	if rand(0..1) == 1
-		plane.fly
-	end
+  if rand(0..1) == 1
+    plane.fly
+  end
 
-	planes << plane
+  planes << plane
 
 end
 
 planes.each do |plane|
-	puts "Model: #{plane.model}, Speed: #{plane.speed}, Altitude: #{plane.altitude}"
-	puts "Plane moving: #{plane.moving?}"
+  puts "Model: #{plane.model}, Speed: #{plane.speed}, Altitude: #{plane.altitude}"
+  puts "Plane moving: #{plane.moving?}"
 end
 ```
 

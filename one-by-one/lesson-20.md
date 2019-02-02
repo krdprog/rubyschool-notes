@@ -5,29 +5,29 @@ app.rb
 require "sinatra"
 
 get '/' do
-	"Hello Foo Bar"
+  "Hello Foo Bar"
 end
 
 get '/contacts' do
-	@title = "Contacts"
-	@message = "Hello all! Phone me now."
-	erb :message
+  @title = "Contacts"
+  @message = "Hello all! Phone me now."
+  erb :message
 end
 
 get '/faq' do
-	@title = "FAQ about our products"
-	@message = "It`s FAQ"
-	erb :message
+  @title = "FAQ about our products"
+  @message = "It`s FAQ"
+  erb :message
 end
 
 get '/none-page' do
-	under_construction
+  under_construction
 end
 
 def under_construction
-	@title = "Under Construction"
-	@message = "This page is under construction."
-	erb :message
+  @title = "Under Construction"
+  @message = "This page is under construction."
+  erb :message
 end
 ```
 views/message.erb
@@ -46,25 +46,25 @@ Listing babershop.rb
 require 'sinatra'
 
 get '/' do
-	erb :index
+  erb :index
 end
 
 # спросим Имя, номер телефона и дату, когда придёт клиент.
 post '/' do
-	# user_name, phone, date_time
-	@user_name = params[:user_name]
-	@phone = params[:phone]
-	@date_time = params[:date_time]
+  # user_name, phone, date_time
+  @user_name = params[:user_name]
+  @phone = params[:phone]
+  @date_time = params[:date_time]
 
-	@title = "Thank you!"
-	@message = "Уважаемый #{@user_name}, мы ждём вас #{@date_time}"
+  @title = "Thank you!"
+  @message = "Уважаемый #{@user_name}, мы ждём вас #{@date_time}"
 
   # запишем в файл то, что ввёл клиент
- 	f = File.open 'users.txt', 'a'
-	f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}.\n"
-	f.close
+  f = File.open 'users.txt', 'a'
+  f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}.\n"
+  f.close
 
-	erb :message
+  erb :message
 end
 ```
 
@@ -73,11 +73,11 @@ Listing views/index.erb
 <h1>Babershop</h1>
 
 <form action="/" method="POST">
-	Your name:<br> <input type="text" name="user_name"><br>
-	Your phone:<br> <input type="text" name="phone"><br>
-	Date and time:<br> <input type="text" name="date_time"><br>
+  Your name:<br> <input type="text" name="user_name"><br>
+  Your phone:<br> <input type="text" name="phone"><br>
+  Date and time:<br> <input type="text" name="date_time"><br>
 
-	<input type="submit">
+  <input type="submit">
 </form>
 ```
 
@@ -132,25 +132,25 @@ babershop-2.rb
 require 'sinatra'
 
 get '/' do
-	erb :index
+  erb :index
 end
 
 # спросим Имя, номер телефона и дату, когда придёт клиент.
 post '/' do
-	# user_name, phone, date_time
-	@user_name = params[:user_name]
-	@phone = params[:phone]
-	@date_time = params[:date_time]
+  # user_name, phone, date_time
+  @user_name = params[:user_name]
+  @phone = params[:phone]
+  @date_time = params[:date_time]
 
-	@title = "Thank you!"
-	@message = "Уважаемый #{@user_name}, мы ждём вас #{@date_time}"
+  @title = "Thank you!"
+  @message = "Уважаемый #{@user_name}, мы ждём вас #{@date_time}"
 
   # запишем в файл то, что ввёл клиент
-	f = File.open 'users.txt', 'a'
-	f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}.\n"
-	f.close
+  f = File.open 'users.txt', 'a'
+  f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}.\n"
+  f.close
 
-	erb :message
+  erb :message
 end
 
 # Добавить зону /admin где по паролю будет выдаваться список тех, кто записался (из users.txt)
@@ -161,18 +161,18 @@ get '/admin' do
 end
 
 post '/admin' do
-	@login = params[:login]
-	@password = params[:password]
+  @login = params[:login]
+  @password = params[:password]
 
-	# проверим логин и пароль, и пускаем внутрь или нет:
-	if @login == 'admin' && @password == 'krdprog'
-  	@file = File.open("./users.txt","r")
-  	erb :watch_result
-	  # @file.close - должно быть, но тогда не работает. указал в erb
-	else
-		@report = '<p>Доступ запрещён! Неправильный логин или пароль.</p>'
-		erb :admin
-	end
+  # проверим логин и пароль, и пускаем внутрь или нет:
+  if @login == 'admin' && @password == 'krdprog'
+    @file = File.open("./users.txt","r")
+    erb :watch_result
+    # @file.close - должно быть, но тогда не работает. указал в erb
+  else
+    @report = '<p>Доступ запрещён! Неправильный логин или пароль.</p>'
+    erb :admin
+  end
 end
 ```
 views/index.erb
@@ -180,11 +180,11 @@ views/index.erb
 <h1>Babershop 2</h1>
 
 <form action="/" method="POST">
-	Your name:<br> <input type="text" name="user_name"><br>
-	Your phone:<br> <input type="text" name="phone"><br>
-	Date and time:<br> <input type="text" name="date_time"><br>
+  Your name:<br> <input type="text" name="user_name"><br>
+  Your phone:<br> <input type="text" name="phone"><br>
+  Date and time:<br> <input type="text" name="date_time"><br>
 
-	<input type="submit">
+  <input type="submit">
 </form>
 ```
 
@@ -193,10 +193,10 @@ views/admin.erb
 <h1>Admin Panel</h1>
 
 <form action="/admin" method="POST">
-	Login:<br> <input type="text" name="login"><br>
-	Password:<br> <input type="password" name="password"><br>
+  Login:<br> <input type="text" name="login"><br>
+  Password:<br> <input type="password" name="password"><br>
 
-	<input type="submit">
+  <input type="submit">
 </form>
 
 <%= @report %>

@@ -12,7 +12,7 @@ gem "activerecord"
 gem "sinatra-activerecord"
 
 group :development do
-	gem "tux"
+  gem "tux"
 end
 ```
 #### Установка
@@ -32,7 +32,7 @@ require 'sinatra/activerecord'
 set :database, "sqlite3.my_database.db"
 
 get '/' do
-	erb :index
+  erb :index
 end
 ```
 
@@ -147,14 +147,14 @@ rake db:create_migration NAME=create_clients
 
 class CreateClients < ActiveRecord::Migration[5.2]
   def change
-  	create_table :clients do |t|
-  		t.text :name
-  		t.text :phone
-  		t.text :datestamp
-  		t.text :barber
+    create_table :clients do |t|
+      t.text :name
+      t.text :phone
+      t.text :datestamp
+      t.text :barber
 
         t.timestamps
-  	end
+    end
   end
 end
 
@@ -193,17 +193,17 @@ rake db:create_migration NAME=create_barbers
 
 class CreateBarbers < ActiveRecord::Migration[5.2]
   def change
-  	create_table :barbers do |t|
-  		t.text :name
+    create_table :barbers do |t|
+      t.text :name
 
-  		t.timestamps
-  	end
-  
-  	Barber.create :name => "Joe Doe"
-  	Barber.create :name => "Elon Musk"
-  	Barber.create :name => "Alisha Moon"
-  	Barber.create :name => "Marie Fooo-bar"
-    
+      t.timestamps
+    end
+
+    Barber.create :name => "Joe Doe"
+    Barber.create :name => "Elon Musk"
+    Barber.create :name => "Alisha Moon"
+    Barber.create :name => "Marie Fooo-bar"
+
   end
 end
 ```
@@ -263,8 +263,8 @@ rake db:migrate надо запускать в каталоге приложен
 # + in app.rb
 
 get '/' do
-	@barbers = Barber.all
-	erb :index
+  @barbers = Barber.all
+  erb :index
 end
 ```
 
@@ -275,7 +275,7 @@ end
 
 <ul>
 <% @barbers.each do |barber| %>
-	<li><%= barber.name %></li>
+  <li><%= barber.name %></li>
 <% end %>
 </ul>
 ```

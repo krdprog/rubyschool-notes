@@ -24,10 +24,10 @@ hash.keys и hash.values - это массивы, к ним можно прим�
 
 ```ruby
 words = {
-	'dog' => ['собака', 'шавка', 'бобик'],
-	'cat' => ['кошка', 'кошечка'],
-	'frog' => ['лягушка', 'квакушка'],
-	'mouse' => ['мышь', 'мышка']
+  'dog' => ['собака', 'шавка', 'бобик'],
+  'cat' => ['кошка', 'кошечка'],
+  'frog' => ['лягушка', 'квакушка'],
+  'mouse' => ['мышь', 'мышка']
 }
 
 result = 0
@@ -67,37 +67,37 @@ puts words.has_value? 'кит'
 # onehand bandit with hash
 
 win_variant = {
-	'111' => 100,
-	'222' => 200,
-	'333' => 300,
-	'444' => 400,
-	'555' => 500,
-	'666' => 600,
-	'777' => 7000,
-	'888' => 800,
-	'999' => 900,
+  '111' => 100,
+  '222' => 200,
+  '333' => 300,
+  '444' => 400,
+  '555' => 500,
+  '666' => 600,
+  '777' => 7000,
+  '888' => 800,
+  '999' => 900,
 }
 
 money = 100
 
 while true
 
-	puts 'Press ENTER for game...'
-	gets
-	random = rand(100..999).to_s
+  puts 'Press ENTER for game...'
+  gets
+  random = rand(100..999).to_s
 
 
-	if win_variant[random]
-		puts "Win #{win_variant[random]} dollars."
-		money += win_variant[random]
-	else
-		puts "You lost 10 dollars."
-		money -= 10
-	end
+  if win_variant[random]
+    puts "Win #{win_variant[random]} dollars."
+    money += win_variant[random]
+  else
+    puts "You lost 10 dollars."
+    money -= 10
+  end
 
 
- 	puts "Combination: #{random}"
-	puts "Your balance is #{money}", ""
+  puts "Combination: #{random}"
+  puts "Your balance is #{money}", ""
 end
 ```
 
@@ -128,9 +128,9 @@ puts "Fooo!" if 2+2 = 4
 
 ```ruby
 def print_details details
-	puts details[:name] if details[:name]
-	puts details[:age] if details[:age]
-	puts details[:address] if details[:address]
+  puts details[:name] if details[:name]
+  puts details[:age] if details[:age]
+  puts details[:address] if details[:address]
 end
 
 hh = { name: "Mike", age: 65, address: "123, West Street"}
