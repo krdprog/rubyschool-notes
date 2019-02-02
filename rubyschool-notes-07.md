@@ -568,13 +568,13 @@ rails g devise:views
 Авторизация только для создания и редактирования статьи /app/controllers/articles_controller.rb:
 
 ```ruby
-  before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 ```
 
 И, для комментирования /app/controllers/comments_controller.rb:
 
 ```ruby
-  before_action :authenticate_user!, :only => [:create]
+before_action :authenticate_user!, :only => [:create]
 ```
 
 **Домашнее задание:**

@@ -85,7 +85,7 @@ end
 js:
 ```js
 function add_to_cart() {
-    alert('hello all!');
+  alert('hello all!');
 }
 ```
 html:
@@ -108,12 +108,12 @@ class Product < ActiveRecord::Base
 end
 
 get '/' do
-    erb :index
+  erb :index
 end
 
 get '/products' do
-    @products = Product.all
-    erb :products
+  @products = Product.all
+  erb :products
 end
 ```
 
@@ -124,20 +124,20 @@ end
 
 <table cellpadding="10" cellspacing="0" border="1">
 <% @products.each do |product| %>
-    <tr>
-        <td>
-            <h2><%= product.title %></h2>
-            <p><strong>Описание:</strong> <%= product.description %></p>
-        </td>
+  <tr>
+    <td>
+      <h2><%= product.title %></h2>
+      <p><strong>Описание:</strong> <%= product.description %></p>
+    </td>
 
-        <td><img src="<%= product.path_to_image %>" alt="<%= product.title %>"></td>
+    <td><img src="<%= product.path_to_image %>" alt="<%= product.title %>"></td>
 
-        <td>
-            <p><strong>Цена:</strong> <%= product.price %> руб.</p>
-            <p><strong>Размер:</strong> <%= product.size %> см</p>
-            <p><button onclick="add_to_cart(<%= product.id %>)">Добавить в корзину</button></p>
-        </td>
-    </tr>
+    <td>
+      <p><strong>Цена:</strong> <%= product.price %> руб.</p>
+      <p><strong>Размер:</strong> <%= product.size %> см</p>
+      <p><button onclick="add_to_cart(<%= product.id %>)">Добавить в корзину</button></p>
+    </td>
+  </tr>
 <% end %>
 </table>
 ```

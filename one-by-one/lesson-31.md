@@ -103,7 +103,7 @@ function foo()
 
 <script>
   function foo() {
-      alert("Hello!");
+    alert("Hello!");
   }
 </script>
 ```
@@ -116,7 +116,7 @@ function foo()
   var x = 1;
 
   function foo() {
-      alert(x);
+    alert(x);
     x = x+1;
   }
 </script>

@@ -105,7 +105,7 @@ function foo()
 
 <script>
   function foo() {
-      alert("Hello!");
+    alert("Hello!");
   }
 </script>
 ```
@@ -118,7 +118,7 @@ function foo()
   var x = 1;
 
   function foo() {
-      alert(x);
+    alert(x);
     x = x+1;
   }
 </script>
@@ -157,24 +157,24 @@ window.localStorage
 
 ```js
 function foo() {
-    var x = window.localStorage.getItem('score');
+  var x = window.localStorage.getItem('score');
 
-    window.localStorage.setItem('score', 555);
+  window.localStorage.setItem('score', 555);
 
-    alert(x);
+  alert(x);
 }
 ```
 
 ```js
 function foo() {
-    var x = window.localStorage.getItem('score'); // это как x = hh['score'] в ruby
+  var x = window.localStorage.getItem('score'); // это как x = hh['score'] в ruby
 
-    // x * 1 - чтобы преобразовать строку в число
-    x = x * 1 + 1;
+  // x * 1 - чтобы преобразовать строку в число
+  x = x * 1 + 1;
 
-    window.localStorage.setItem('score', x); // hh['score'] = x
+  window.localStorage.setItem('score', x); // hh['score'] = x
 
-    alert(x);
+  alert(x);
 }
 ```
 
@@ -216,7 +216,7 @@ class Product < ActiveRecord::Base
 end
 
 get '/' do
-    erb :index
+  erb :index
 end
 ```
 ```bash
@@ -228,16 +228,16 @@ rake db:create_migration NAME=create_products
 class CreateProducts < ActiveRecord::Migration[5.2]
   def change
     create_table :products do |t|
-        t.string :title
-        t.text :description
-        t.decimal :price
-        t.decimal :size
-        t.boolean :is_spicy
-        t.boolean :is_veg
-        t.boolean :is_best_offer
-        t.string :path_to_image
+      t.string :title
+      t.text :description
+      t.decimal :price
+      t.decimal :size
+      t.boolean :is_spicy
+      t.boolean :is_veg
+      t.boolean :is_best_offer
+      t.string :path_to_image
 
-        t.timestamps
+      t.timestamps
     end
   end
 end
@@ -253,31 +253,31 @@ rake db:create_migration NAME=add_products
 class AddProducts < ActiveRecord::Migration[5.2]
   def change
     Product.create :title => 'Гавайская',
-        :description => 'Это гавайская пицца',
-        :price => 350,
-        :size => 30,
-        :is_spicy => false,
-        :is_veg => false,
-        :is_best_offer => false,
-        :path_to_image => '/images/01.jpg'
+      :description => 'Это гавайская пицца',
+      :price => 350,
+      :size => 30,
+      :is_spicy => false,
+      :is_veg => false,
+      :is_best_offer => false,
+      :path_to_image => '/images/01.jpg'
 
     Product.create :title => 'Пепперони',
-        :description => 'Это пицца Пепперони',
-        :price => 450,
-        :size => 30,
-        :is_spicy => false,
-        :is_veg => false,
-        :is_best_offer => true,
-        :path_to_image => '/images/02.jpg'
+      :description => 'Это пицца Пепперони',
+      :price => 450,
+      :size => 30,
+      :is_spicy => false,
+      :is_veg => false,
+      :is_best_offer => true,
+      :path_to_image => '/images/02.jpg'
 
     Product.create :title => 'Вегетарианская',
-        :description => 'Это вегетарианская пицца',
-        :price => 400,
-        :size => 30,
-        :is_spicy => false,
-        :is_veg => true,
-        :is_best_offer => false,
-        :path_to_image => '/images/03.jpg'
+      :description => 'Это вегетарианская пицца',
+      :price => 400,
+      :size => 30,
+      :is_spicy => false,
+      :is_veg => true,
+      :is_best_offer => false,
+      :path_to_image => '/images/03.jpg'
   end
 end
 ```
@@ -372,7 +372,7 @@ end
 js:
 ```js
 function add_to_cart() {
-    alert('hello all!');
+  alert('hello all!');
 }
 ```
 html:
@@ -395,12 +395,12 @@ class Product < ActiveRecord::Base
 end
 
 get '/' do
-    erb :index
+  erb :index
 end
 
 get '/products' do
-    @products = Product.all
-    erb :products
+  @products = Product.all
+  erb :products
 end
 ```
 
@@ -411,20 +411,20 @@ end
 
 <table cellpadding="10" cellspacing="0" border="1">
 <% @products.each do |product| %>
-    <tr>
-        <td>
-            <h2><%= product.title %></h2>
-            <p><strong>Описание:</strong> <%= product.description %></p>
-        </td>
+  <tr>
+    <td>
+      <h2><%= product.title %></h2>
+      <p><strong>Описание:</strong> <%= product.description %></p>
+    </td>
 
-        <td><img src="<%= product.path_to_image %>" alt="<%= product.title %>"></td>
+    <td><img src="<%= product.path_to_image %>" alt="<%= product.title %>"></td>
 
-        <td>
-            <p><strong>Цена:</strong> <%= product.price %> руб.</p>
-            <p><strong>Размер:</strong> <%= product.size %> см</p>
-            <p><button onclick="add_to_cart(<%= product.id %>)">Добавить в корзину</button></p>
-        </td>
-    </tr>
+    <td>
+      <p><strong>Цена:</strong> <%= product.price %> руб.</p>
+      <p><strong>Размер:</strong> <%= product.size %> см</p>
+      <p><button onclick="add_to_cart(<%= product.id %>)">Добавить в корзину</button></p>
+    </td>
+  </tr>
 <% end %>
 </table>
 ```

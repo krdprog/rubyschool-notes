@@ -31,24 +31,24 @@ window.localStorage
 
 ```js
 function foo() {
-    var x = window.localStorage.getItem('score');
+  var x = window.localStorage.getItem('score');
 
-    window.localStorage.setItem('score', 555);
+  window.localStorage.setItem('score', 555);
 
-    alert(x);
+  alert(x);
 }
 ```
 
 ```js
 function foo() {
-    var x = window.localStorage.getItem('score'); // это как x = hh['score'] в ruby
+  var x = window.localStorage.getItem('score'); // это как x = hh['score'] в ruby
 
-    // x * 1 - чтобы преобразовать строку в число
-    x = x * 1 + 1;
+  // x * 1 - чтобы преобразовать строку в число
+  x = x * 1 + 1;
 
-    window.localStorage.setItem('score', x); // hh['score'] = x
+  window.localStorage.setItem('score', x); // hh['score'] = x
 
-    alert(x);
+  alert(x);
 }
 ```
 
@@ -90,7 +90,7 @@ class Product < ActiveRecord::Base
 end
 
 get '/' do
-    erb :index
+  erb :index
 end
 ```
 ```bash
@@ -102,16 +102,16 @@ rake db:create_migration NAME=create_products
 class CreateProducts < ActiveRecord::Migration[5.2]
   def change
     create_table :products do |t|
-        t.string :title
-        t.text :description
-        t.decimal :price
-        t.decimal :size
-        t.boolean :is_spicy
-        t.boolean :is_veg
-        t.boolean :is_best_offer
-        t.string :path_to_image
+      t.string :title
+      t.text :description
+      t.decimal :price
+      t.decimal :size
+      t.boolean :is_spicy
+      t.boolean :is_veg
+      t.boolean :is_best_offer
+      t.string :path_to_image
 
-        t.timestamps
+      t.timestamps
     end
   end
 end
@@ -127,31 +127,31 @@ rake db:create_migration NAME=add_products
 class AddProducts < ActiveRecord::Migration[5.2]
   def change
     Product.create :title => 'Гавайская',
-        :description => 'Это гавайская пицца',
-        :price => 350,
-        :size => 30,
-        :is_spicy => false,
-        :is_veg => false,
-        :is_best_offer => false,
-        :path_to_image => '/images/01.jpg'
+      :description => 'Это гавайская пицца',
+      :price => 350,
+      :size => 30,
+      :is_spicy => false,
+      :is_veg => false,
+      :is_best_offer => false,
+      :path_to_image => '/images/01.jpg'
 
     Product.create :title => 'Пепперони',
-        :description => 'Это пицца Пепперони',
-        :price => 450,
-        :size => 30,
-        :is_spicy => false,
-        :is_veg => false,
-        :is_best_offer => true,
-        :path_to_image => '/images/02.jpg'
+      :description => 'Это пицца Пепперони',
+      :price => 450,
+      :size => 30,
+      :is_spicy => false,
+      :is_veg => false,
+      :is_best_offer => true,
+      :path_to_image => '/images/02.jpg'
 
     Product.create :title => 'Вегетарианская',
-        :description => 'Это вегетарианская пицца',
-        :price => 400,
-        :size => 30,
-        :is_spicy => false,
-        :is_veg => true,
-        :is_best_offer => false,
-        :path_to_image => '/images/03.jpg'
+      :description => 'Это вегетарианская пицца',
+      :price => 400,
+      :size => 30,
+      :is_spicy => false,
+      :is_veg => true,
+      :is_best_offer => false,
+      :path_to_image => '/images/03.jpg'
   end
 end
 ```

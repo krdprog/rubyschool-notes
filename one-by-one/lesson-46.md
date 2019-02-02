@@ -227,7 +227,7 @@ end
 describe Article do
   describe "#last_comment" do
     it "returns the last comment" do
-      
+
     end
   end
 end

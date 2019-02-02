@@ -269,7 +269,7 @@ Rails.application.routes.draw do
 end
 ```
 
-> Изучить: Rails Routing from the Outside In — Ruby on Rails Guides 
+> Изучить: Rails Routing from the Outside In — Ruby on Rails Guides
 > http://guides.rubyonrails.org/routing.html
 
 ---
