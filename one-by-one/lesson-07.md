@@ -4,12 +4,12 @@
 ```ruby
 a = true
 while a == true
-	print "Выйти из программы? (Y/N): "
-	answer = gets.strip.capitalize
+  print "Выйти из программы? (Y/N): "
+  answer = gets.strip.capitalize
 
-	if answer == "Y"
-		a = false
-	end
+  if answer == "Y"
+    a = false
+  end
 
 end
 ```

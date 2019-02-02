@@ -1,6 +1,6 @@
 # Конспект RubySchool.us [5]
 
-### Урок 31
+## Урок 31
 
 #### Как работает HTTP
 
@@ -124,7 +124,7 @@ function foo()
 </script>
 ```
 
-### Урок 32
+## Урок 32
 
 #### Разбор вопросов:
 
@@ -285,7 +285,7 @@ end
 #### Домашнее задание:
 - сделать страницу вывода продуктов
 
-### Урок 33
+## Урок 33
 
 #### Разбор вопросов (2):
 
@@ -517,7 +517,7 @@ puts "Total: #{total}"
 - найти как пройтись по каждому элементу хеша localStorage
 - написать JS функцию подсчёта общего количества заказанных продуктов в корзине.
 
-### Урок 34
+## Урок 34
 
 #### x ||= y
 
@@ -788,10 +788,10 @@ Rails.application.routes.draw do
 end
 ```
 
-> Изучить: Rails Routing from the Outside In — Ruby on Rails Guides 
+> Изучить: Rails Routing from the Outside In — Ruby on Rails Guides
 > http://guides.rubyonrails.org/routing.html
 
-### Урок 35
+## Урок 35
 
 #### Разбор вопросов на интервью
 
@@ -817,12 +817,12 @@ end
  #=> Started
  #=> F
  #=> Finished in 0.663831 seconds.
- #=> 
+ #=>
  #=>   1) Failure:
  #=> test_uh_oh:11
  #=> <"I'm all better!"> expected but was
  #=> <"I needs fixing">.
- #=> 
+ #=>
  #=> 1 tests, 1 assertions, 1 failures, 0 errors
 ```
 > Вызываем метод и проверяем, что результат совпадает с эталоном

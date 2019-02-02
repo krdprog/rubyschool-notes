@@ -1,6 +1,6 @@
 # Конспект RubySchool.us [2]
 
-### Урок 15
+## Урок 15
 
 #### Атрибуты (свойства класса):
 
@@ -22,12 +22,12 @@ puts bar.foo
 
 ```ruby
 class Song
-	attr_accessor :name, :duration
+  attr_accessor :name, :duration
 
-	def initialize name, duration
-		@name = name
-		@duration = duration
-	end
+  def initialize name, duration
+    @name = name
+    @duration = duration
+  end
 end
 
 song1 = Song.new 'Obla-di, obla-da', 6
@@ -36,19 +36,19 @@ puts song1.name
 
 ```ruby
 class Airport
-	attr_reader :name
+  attr_reader :name
 
-	def initialize name
-		@name = name
-	end
+  def initialize name
+    @name = name
+  end
 end
 
 class Airplane
-	attr_reader :model
+  attr_reader :model
 
-	def initialize model
-		@model = model
-	end
+  def initialize model
+    @model = model
+  end
 end
 ```
 1 аэропорт содержит много самолётов (*):
@@ -60,24 +60,24 @@ end
 # 2. вывести на экран название аэропортов и какие в нём самолёты
 
 class Airport
-	attr_reader :name, :planes
+  attr_reader :name, :planes
 
-	def initialize(name)
-		@name = name
-		@planes = []
-	end
+  def initialize(name)
+    @name = name
+    @planes = []
+  end
 
-	def add_plane plane
-		@planes << plane
-	end
+  def add_plane plane
+    @planes << plane
+  end
 end
 
 class Plane
-	attr_reader :model
+  attr_reader :model
 
-	def initialize(model)
-		@model = model
-	end
+  def initialize(model)
+    @model = model
+  end
 end
 
 # массив для хранения аэропортов
@@ -113,14 +113,14 @@ airport2.add_plane plane2_4
 
 # выведем информацию об аэропортах и самолётах в них:
 airports.each do |airport|
-	puts "#{airport.name}"
+  puts "#{airport.name}"
 
-	puts "Planes in this airport:"
-	airport.planes.each do |plane|
-		puts "#{plane.model}"
-	end
+  puts "Planes in this airport:"
+  airport.planes.each do |plane|
+    puts "#{plane.model}"
+  end
 
-	puts "========================="
+  puts "========================="
 end
 ```
 
@@ -128,37 +128,37 @@ end
 
 ```ruby
 class Country
-	attr_reader :name, :airports
+  attr_reader :name, :airports
 
-	def initialize(name)
-		@name = name
-		@airports = []
-	end
+  def initialize(name)
+    @name = name
+    @airports = []
+  end
 
-	def add_airport airport
-		@airports << airport
-	end
+  def add_airport airport
+    @airports << airport
+  end
 end
 
 class Airport
-	attr_reader :name, :planes
+  attr_reader :name, :planes
 
-	def initialize(name)
-		@name = name
-		@planes = []
-	end
+  def initialize(name)
+    @name = name
+    @planes = []
+  end
 
-	def add_plane plane
-		@planes << plane
-	end
+  def add_plane plane
+    @planes << plane
+  end
 end
 
 class Plane
-	attr_reader :model
+  attr_reader :model
 
-	def initialize(model)
-		@model = model
-	end
+  def initialize(model)
+    @model = model
+  end
 end
 
 # массив стран
@@ -203,16 +203,16 @@ airport2.add_plane plane2_4
 # выведем информацию о странах, аэропортах и самолётах в них:
 
 countries.each do |country|
-	puts "Airports From #{country.name}:"
-	country.airports.each do |airport|
-		puts "- Airport #{airport.name}"
+  puts "Airports From #{country.name}:"
+  country.airports.each do |airport|
+    puts "- Airport #{airport.name}"
 
-			puts "-- Planes in this airport:"
-			airport.planes.each do |plane|
-				puts "-- #{plane.model}"
-			end
-	end
-	puts "=================="
+      puts "-- Planes in this airport:"
+      airport.planes.each do |plane|
+        puts "-- #{plane.model}"
+      end
+  end
+  puts "=================="
 end
 ```
 #### Задача: альбом с песнями
@@ -221,26 +221,26 @@ end
 # add album and 3 song
 
 class Album
-	attr_reader :name, :songs
+  attr_reader :name, :songs
 
-	def initialize(name)
-		@name = name
-		@songs = []
-	end
+  def initialize(name)
+    @name = name
+    @songs = []
+  end
 
-	def add_song song
-		@songs << song
-	end
+  def add_song song
+    @songs << song
+  end
 
 end
 
 class Song
-	attr_reader :name, :duration
+  attr_reader :name, :duration
 
-	def initialize(name, duration)
-		@name = name
-		@duration = duration
-	end
+  def initialize(name, duration)
+    @name = name
+    @duration = duration
+  end
 
 end
 
@@ -260,10 +260,10 @@ abba.add_song song2
 abba.add_song song3
 
 albums.each do |album|
-	puts "Album: #{album.name}", ""
-	album.songs.each do |song|
-		puts "Song: #{song.name} -- duration: #{song.duration}"
-	end
+  puts "Album: #{album.name}", ""
+  album.songs.each do |song|
+    puts "Song: #{song.name} -- duration: #{song.duration}"
+  end
 end
 ```
 
@@ -284,35 +284,35 @@ end
 
 ```ruby
 class Animal
-	def initialize(name)
-	  @name = name
-	end
+  def initialize(name)
+    @name = name
+  end
 
-	def jump
-		puts "#{@name} is jumping..."
-	end
+  def jump
+    puts "#{@name} is jumping..."
+  end
 end
 
 class Cat < Animal
 
-	def initialize
-		super 'Murzik'
-	end
+  def initialize
+    super 'Murzik'
+  end
 
-	def say_meow
-		puts "#{@name} Meowww!"
-	end
+  def say_meow
+    puts "#{@name} Meowww!"
+  end
 end
 
 class Dog < Animal
 
-	def initialize
-		super 'Sharik'
-	end
+  def initialize
+    super 'Sharik'
+  end
 
-	def say_gav
-		puts "#{@name} Gavvv!"
-	end
+  def say_gav
+    puts "#{@name} Gavvv!"
+  end
 end
 
 cat = Cat.new
@@ -327,7 +327,7 @@ dog.say_gav
 
 > изучи ссылку [Classes, Objects, and Variables](http://phrogz.net/programmingruby/tut_classes.html)
 
-### Урок 16
+## Урок 16
 
 ### Существует 3 уровня доступа к методам. Методы бывают:
 - public - публичные (обычные)
@@ -341,27 +341,27 @@ dog.say_gav
 ```ruby
 class Animal
 
-	attr_reader :name
+  attr_reader :name
 
-	def initialize(name)
-		@name = name
-	end
-
-	def jump
-		eat
-		puts "#{name}: I am jumping..."
-	  sleep
+  def initialize(name)
+    @name = name
   end
 
-	private
+  def jump
+    eat
+    puts "#{name}: I am jumping..."
+    sleep
+  end
 
-	def eat
-		puts "#{name}: I am eating..."
-	end
+  private
+
+  def eat
+    puts "#{name}: I am eating..."
+  end
   
   def sleep
-		puts "I am sleeping..."
-	end
+    puts "I am sleeping..."
+  end
 end
 
 cat = Animal.new "Murzik"
@@ -375,9 +375,9 @@ cat.jump
 
 ```ruby
 class Man
-	def say_hi
-		puts "Hi!"
-	end
+  def say_hi
+    puts "Hi!"
+  end
 end
 
 man = Man.new
@@ -386,9 +386,9 @@ man.say_hi
 # or
 
 class Man
-	def self.say_hi # !!!
-		puts "Hi!"
-	end
+  def self.say_hi # !!!
+    puts "Hi!"
+  end
 end
 
 Man.say_hi
@@ -399,9 +399,9 @@ Man.say_hi
 
 ```ruby
 def run_5_times
-	5.times do
-		yield
-	end
+  5.times do
+    yield
+  end
 end
 
 run_5_times { puts "Foooo!!!" }
@@ -411,11 +411,11 @@ run_5_times { puts "Foooo!!!" }
 
 ```ruby
 def run_5_times
-	x = 0
-	while x < 5
-		yield x
-		x += 1
-	end
+  x = 0
+  while x < 5
+    yield x
+    x += 1
+  end
 end
 
 run_5_times { |i| puts "Foo! Index: #{i}" }
@@ -423,11 +423,11 @@ run_5_times { |i| puts "Foo! Index: #{i}" }
 #### Можно передать несколько параметров:
 ```ruby
 def run_5_times
-	x = 0
-	while x < 5
-		yield x, 55
-		x += 1
-	end
+  x = 0
+  while x < 5
+    yield x, 55
+    x += 1
+  end
 end
 
 run_5_times { |i, v| puts "Foo! Index: #{i}. Value: #{v}" }
@@ -464,14 +464,14 @@ say_bye = lambda { puts "Bye!" }
 week = [ say_hi, say_hi, say_hi, say_hi, say_hi, say_bye, say_bye ]
 
 week.each do |f|
-	f.call
+  f.call
 end
 ```
 return, но можно не писать:
 
 ```ruby
 sub_10 = lambda do |x|
-	return x - 10
+  return x - 10
 end
 
 a = sub_10.call 1000
@@ -501,20 +501,20 @@ balance = 1000
 hh = { 111 => add_10, 222 => add_10, 333 => add_20, 444 => add_20, 555 => add_20, 666 => sub_5, 777 => sub_5 }
 
 while true
-	x = rand(100..999)
-	puts "Combination: #{x}"
+  x = rand(100..999)
+  puts "Combination: #{x}"
 
-	if hh[x]
-		f = hh[x]
-		balance = f.call balance
-		puts "Lambda called."
-	else
-		balance = sub_5.call balance
-	end
+  if hh[x]
+    f = hh[x]
+    balance = f.call balance
+    puts "Lambda called."
+  else
+    balance = sub_5.call balance
+  end
 
-	puts "Balance: #{balance}"
-	puts "Press Enter to continue..."
-	gets
+  puts "Balance: #{balance}"
+  puts "Press Enter to continue..."
+  gets
 end
 ```
 
@@ -535,23 +535,23 @@ baz = Foo::Bar.new
 ```ruby
 module Humans
 
-	class Manager
-		def say_hi
-			puts "Hello!"
-		end
-	end
+  class Manager
+    def say_hi
+      puts "Hello!"
+    end
+  end
 
-	class Hipster
-		def say_hi
-			puts "Yoooouuuuu! Hi!"
-		end
-	end
+  class Hipster
+    def say_hi
+      puts "Yoooouuuuu! Hi!"
+    end
+  end
 
-	class Alisha
-		def say_hi
-			puts "Nihau!"
-		end
-	end
+  class Alisha
+    def say_hi
+      puts "Nihau!"
+    end
+  end
 
 end
 
@@ -643,7 +643,7 @@ song3.play
 song3.total_plays
 ```
 
-### Урок 17
+## Урок 17
 
 #### Метапрограммирование
 
@@ -665,7 +665,7 @@ send "mm"
 #### Параметры в send:
 ```ruby
 def mm param
-	puts "#{param}"
+  puts "#{param}"
 end
 
 send :mm, 343
@@ -674,7 +674,7 @@ send :mm, 343
 
 ```ruby
 def mm hash
-	hash.each { |key, value| puts "#{key} -- #{value}"}
+  hash.each { |key, value| puts "#{key} -- #{value}"}
 end
 
 send :mm, :foo => 22, :bar => 44
@@ -682,11 +682,11 @@ send :mm, :foo => 22, :bar => 44
 
 ```ruby
 class Foo
-	attr_accessor :name
+  attr_accessor :name
 
-	def initialize
-		send("name=", "Mike") # аналог @name = "Mike"
-	end
+  def initialize
+    send("name=", "Mike") # аналог @name = "Mike"
+  end
 end
 
 bar = Foo.new
@@ -695,13 +695,13 @@ puts bar.name
 
 ```ruby
 class Foo
-	attr_accessor :x, :y
+  attr_accessor :x, :y
 
-	def initialize hash
-		hash.each do |key, value|
-			send "#{key}=", value
-		end
-	end
+  def initialize hash
+    hash.each do |key, value|
+      send "#{key}=", value
+    end
+  end
 
 end
 
@@ -714,13 +714,13 @@ puts s.y
 ```ruby
 class Foo
 
-	attr_accessor :name, :age, :country
+  attr_accessor :name, :age, :country
 
-	def initialize hash
-		hash.each do |key, value|
-			send("#{key}=", value)
-		end
-	end
+  def initialize hash
+    hash.each do |key, value|
+      send("#{key}=", value)
+    end
+  end
 
 end
 
@@ -733,9 +733,9 @@ p bar
 
 ```ruby
 class Foo
-	def method_missing name
-		puts "Метода #{name} не существует"
-	end
+  def method_missing name
+    puts "Метода #{name} не существует"
+  end
 end
 
 bar = Foo.new
@@ -745,14 +745,14 @@ bar.fjsdahuefd
 Ещё пример:
 ```ruby
 class Albu
-	def initialize(actions)
-		@actions = actions
-	end
+  def initialize(actions)
+    @actions = actions
+  end
 
-	def method_missing name
-		value = @actions[name]
-		puts "If you want to #{name}, you must call #{value}."
-	end
+  def method_missing name
+    value = @actions[name]
+    puts "If you want to #{name}, you must call #{value}."
+  end
 end
 
 a = Albu.new :cook => "Joe", :take_a_ride => "Jessie", :die => "Gus"
@@ -803,7 +803,7 @@ arr.map { |x| x*2 }
 ### define_method
 ```ruby
 send :define_method, "aaa" do
-	puts "Hello, I`m new method"
+  puts "Hello, I`m new method"
 end
 
 aaa
@@ -819,7 +819,7 @@ print "Name of method to define: "
 method_name = gets.strip
 
 send :define_method, method_name do
-	puts "Hello, I`m new method"
+  puts "Hello, I`m new method"
 end
 
 send method_name
@@ -829,11 +829,11 @@ send method_name
 
 ```ruby
 def left
-	puts "Robot goes left"
+  puts "Robot goes left"
 end
 
 def right
-	puts "Robot goes right"
+  puts "Robot goes right"
 end
 
 print "Enter your method call: "
@@ -919,13 +919,13 @@ input = File.open("test.txt", "r")
 n = 1
 
 while line = input.gets
-	puts "#{n} #{line}"
-	n += 1
+  puts "#{n} #{line}"
+  n += 1
 end
 
 # or
 while line = input.gets
-	puts line
+  puts line
 end
 ```
 
@@ -951,7 +951,7 @@ input = File.open("task.txt", "r")
 total = 0
 
 while line = input.gets
-	total += line.split(",")[1].to_i
+  total += line.split(",")[1].to_i
 end
 
 input.close
@@ -986,7 +986,7 @@ Dir.entries '/foo/bar/'
 
 > ДЗ: написать программу которая ищет файл на диске 
 
-### Урок 18
+## Урок 18
 
 #### Задача с password:
 ```ruby
@@ -998,11 +998,11 @@ output = File.open("password_2.txt", "w")
 # записать это в отдельный файл
 
 while (line = input.gets)
-	line.strip!
-	if line.size == 6
-		puts line
-		output.write "#{line}\n"
-	end
+  line.strip!
+  if line.size == 6
+    puts line
+    output.write "#{line}\n"
+  end
 end
 
 input.close
@@ -1020,12 +1020,12 @@ password = gets.strip
 
 # Your password is weak / not weak
 while (line = input.gets)
-	line.strip!
+  line.strip!
 
-	if line == password
-		puts "Your password is weak!"
-		exit
-	end
+  if line == password
+    puts "Your password is weak!"
+    exit
+  end
 end
 
 puts "Your password is hard!"
@@ -1084,7 +1084,7 @@ response = Net::HTTP.post_form uri, :x => "ruby"
 
 puts response
 ```
-### Урок 19
+## Урок 19
 
 #### Sinatra
 
@@ -1097,7 +1097,7 @@ first program:
 require "sinatra"
 
 get '/' do
-	"Hello!"
+  "Hello!"
 end
 ```
 Создадим каталог views
@@ -1113,7 +1113,7 @@ touch views/index.erb
 require "sinatra"
 
 get '/' do
-	erb :index
+  erb :index
 end
 ```
 
@@ -1124,12 +1124,12 @@ app.rb
 require "sinatra"
 
 get '/' do
-	erb :index
+  erb :index
 end
 
 post '/'do
-	@login = params[:login]
-	erb :index
+  @login = params[:login]
+  erb :index
 end
 ```
 views/index.erb
@@ -1139,9 +1139,9 @@ views/index.erb
 <p>You typed: <%= @login %></p>
 
 <form action="/" method="POST">
-	<input type="text" name="login">
-	<input type="password" name="pass">
-	<input type="submit">
+  <input type="text" name="login">
+  <input type="password" name="pass">
+  <input type="submit">
 </form>
 ```
 
@@ -1152,23 +1152,23 @@ app.rb
 require "sinatra"
 
 get '/' do
-	erb :index
+  erb :index
 end
 
 post '/' do
-	@login = params[:login]
-	@password = params[:pass]
+  @login = params[:login]
+  @password = params[:pass]
 
-	if @login == 'admin' && @password == '12345'
-	  erb :welcome
-	else
+  if @login == 'admin' && @password == '12345'
+    erb :welcome
+  else
       @if_stop = "STOP!"
       erb :index
-	end
+  end
 end
 
 get '/contacts' do
-	"Contacts: +7 000 000-00-00"
+  "Contacts: +7 000 000-00-00"
 end
 ```
 views/index.erb
@@ -1180,9 +1180,9 @@ views/index.erb
 <p><%= @if_stop %></p>
 
 <form action="/" method="POST">
-	<input type="text" name="login">
-	<input type="password" name="pass">
-	<input type="submit">
+  <input type="text" name="login">
+  <input type="password" name="pass">
+  <input type="submit">
 </form>
 ```
 views/welcome.erb

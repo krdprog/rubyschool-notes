@@ -10,6 +10,8 @@
 
 Приветствую! В этом конспекте я фиксирую важные мысли и моменты из видеоуроков rubyschool.us, конспекты первых уроков не содержат много информации, но не переживайте, чем дальше по урокам, тем ценнее материал.
 
+Для более интенсивного освоения рекомендую вам использовать GNU/Linux сразу.
+
 Удачного освоения!
 
 git, sql
@@ -40,7 +42,7 @@ name = gets.chomp
 
 print - оператор не переводит строку после своей работы, в отличии от puts
 
-### Спец.символы: 
+### Спец.символы:
 
 \n - перевод строки
 
@@ -117,8 +119,8 @@ Class: String - https://ruby-doc.org/core-2.5.3/String.html
 ## Урок 5
 
 ```ruby
-5.upto(10) { |x| print x, " " } #=> 5 6 7 8 9 10 
-50.downto(-50) { |x| print x, " " } 
+5.upto(10) { |x| print x, " " } #=> 5 6 7 8 9 10
+50.downto(-50) { |x| print x, " " }
 ```
 i - писать, когда индекс (принимает значение от нуля)
 
@@ -188,7 +190,7 @@ end
 10.upto(20) do |x|
   1.upto(x) { |i| p "#{i} Foo!" }
 end
-``` 
+```
 
 Rand Charset:
 ```ruby
@@ -213,12 +215,12 @@ end
 ```ruby
 a = true
 while a == true
-	print "Выйти из программы? (Y/N): "
-	answer = gets.strip.capitalize
+  print "Выйти из программы? (Y/N): "
+  answer = gets.strip.capitalize
 
-	if answer == "Y"
-		a = false
-	end
+  if answer == "Y"
+    a = false
+  end
 
 end
 ```
@@ -268,7 +270,7 @@ Ranges:
 ```
 
 ```ruby
-(1..5).each => 1 2 3 4 5 
+(1..5).each => 1 2 3 4 5
 (1...5).each => 1 2 3 4
 
 # можно не только цифры:
@@ -285,7 +287,7 @@ GUI framework:
 
 ```ruby
 def foo
-  
+
 end
 ```
 Методу можно передать какой-либо параметр, и он вернёт какое-либо значение.
@@ -303,7 +305,7 @@ puts "Был введён пароль #{xx}"
 
 return - можно не писать
 
-По умолчанию руби возвращает результат последнего выражения. 
+По умолчанию руби возвращает результат последнего выражения.
 
 ```ruby
 def print_name name
@@ -372,21 +374,21 @@ arr << 22
 
 ```ruby
 def movie
-	action = [:left, :right, :up, :down]
+  action = [:left, :right, :up, :down]
 
-	x = rand(0..3)
+  x = rand(0..3)
 
-	return action[x]
+  return action[x]
 end
 
 def say
-	sleep 0.06
+  sleep 0.06
 end
 
 while true
-	speech = movie
-	puts "Go to #{speech}"
-	sleep 0.4
+  speech = movie
+  puts "Go to #{speech}"
+  sleep 0.4
 end
 ```
 
@@ -395,7 +397,7 @@ capitalize every name:
 arr = %w{joe matt mary olga oleg peter vasya}
 
 arr.each do |x|
-	puts x.capitalize
+  puts x.capitalize
 end
 ```
 индекс arr[2]
@@ -426,17 +428,17 @@ person = %w{vasiliy mariya joe bob marley}
 
 while true
 
-	person.size.times do |x|
-		puts "#{x}. #{person[x].capitalize}"
-	end
+  person.size.times do |x|
+    puts "#{x}. #{person[x].capitalize}"
+  end
 
-	puts ""
-	print "Кого удалить? (порядковый номер): "
-	del = gets.to_i
+  puts ""
+  print "Кого удалить? (порядковый номер): "
+  del = gets.to_i
 
-	person.delete_at del
+  person.delete_at del
 
-	puts "====="
+  puts "====="
 
 end
 ```
@@ -446,19 +448,19 @@ end
 person = %w{vasiliy mariya joe bob marley}
 
 while true
-	i = 0
-	person.each do |x|
-		puts "#{i}. #{x.capitalize}"
-		i += 1
-	end
+  i = 0
+  person.each do |x|
+    puts "#{i}. #{x.capitalize}"
+    i += 1
+  end
 
-	puts ""
-	print "Кого удалить? (порядковый номер): "
-	del = gets.to_i
+  puts ""
+  print "Кого удалить? (порядковый номер): "
+  del = gets.to_i
 
-	person.delete_at del
+  person.delete_at del
 
-	puts "====="
+  puts "====="
 
 end
 ```
@@ -469,23 +471,23 @@ end
 arr = []
 
 while true
-	print "Enter name to add: "
-	name = gets.strip.capitalize
+  print "Enter name to add: "
+  name = gets.strip.capitalize
 
   if name == ""
     break
   end
-  
-	arr << name
 
-	puts "==="
+  arr << name
 
-	x = 0
+  puts "==="
 
-	arr.each do |name|
-		puts "#{x}. #{name}"
-		x += 1
-	end
+  x = 0
+
+  arr.each do |name|
+    puts "#{x}. #{name}"
+    x += 1
+  end
 
 end
 ```
@@ -510,23 +512,23 @@ puts arr[0][1] #=> 2
 persons = []
 
 while true
-	person = []
+  person = []
 
-	print "Enter your name: "
-	name = gets.strip.capitalize
+  print "Enter your name: "
+  name = gets.strip.capitalize
 
-	if name == ""
-		break
-	end
+  if name == ""
+    break
+  end
 
-	person << name
+  person << name
 
-	print "Enter your age: "
-	age = gets.to_i
+  print "Enter your age: "
+  age = gets.to_i
 
-	person << age
+  person << age
 
-	persons << person
+  persons << person
 
 end
 
@@ -534,7 +536,7 @@ puts "", "===="
 puts "RESULT:"
 
 persons.each do |x|
-	puts "#{x[0]}, #{x[1]}"
+  puts "#{x[0]}, #{x[1]}"
 end
 
 puts "====", ""
@@ -544,48 +546,48 @@ puts "====", ""
 ```ruby
 while true
 
-	puts "", "========================"
-	print "(R)ock, (S)cissors, (P)aper? "
-	s = gets.strip.capitalize
+  puts "", "========================"
+  print "(R)ock, (S)cissors, (P)aper? "
+  s = gets.strip.capitalize
 
-	if s == "R"
-		@user_choice = :rock
-	elsif s == "S"
-		@user_choice = :scissors
-	elsif s == "P"
-		@user_choice = :paper
-	else
-		puts "What? I don`t know."
-		exit
-	end
+  if s == "R"
+    @user_choice = :rock
+  elsif s == "S"
+    @user_choice = :scissors
+  elsif s == "P"
+    @user_choice = :paper
+  else
+    puts "What? I don`t know."
+    exit
+  end
 
-	arr = [:rock, :scissors, :paper]
+  arr = [:rock, :scissors, :paper]
 
-	@computer_choice = arr[rand(0..2)]
+  @computer_choice = arr[rand(0..2)]
 
-	# report about win
-	def your_win
-		puts "You win! Your choice is #{@user_choice} and computer choice is #{@computer_choice}."
-	end
+  # report about win
+  def your_win
+    puts "You win! Your choice is #{@user_choice} and computer choice is #{@computer_choice}."
+  end
 
-	def computer_win
-		puts "Computer win! Your choice is #{@user_choice} and computer choice is #{@computer_choice}."
-	end
+  def computer_win
+    puts "Computer win! Your choice is #{@user_choice} and computer choice is #{@computer_choice}."
+  end
 
-	# game variants
-	if @user_choice == @computer_choice
-		puts "Nobody wins. Your choice is #{@user_choice} and computer choice is #{@computer_choice}."
-	# user:
-	elsif @user_choice == :rock && @computer_choice == :scissors
-		your_win
-	elsif @user_choice == :scissors && @computer_choice == :paper
-		your_win
-	elsif @user_choice == :paper && @computer_choice == :rock
-		your_win
-	# computer
-	else
-		computer_win
-	end
+  # game variants
+  if @user_choice == @computer_choice
+    puts "Nobody wins. Your choice is #{@user_choice} and computer choice is #{@computer_choice}."
+  # user:
+  elsif @user_choice == :rock && @computer_choice == :scissors
+    your_win
+  elsif @user_choice == :scissors && @computer_choice == :paper
+    your_win
+  elsif @user_choice == :paper && @computer_choice == :rock
+    your_win
+  # computer
+  else
+    computer_win
+  end
 
 end
 ```
@@ -690,22 +692,22 @@ hash[:foo] = 'Bar'
 phonebook = {}
 
 while true
-	print "Enter name (Enter to stop): "
-	name = gets.strip.capitalize
+  print "Enter name (Enter to stop): "
+  name = gets.strip.capitalize
 
-	if name == ""
-		break
-	end
+  if name == ""
+    break
+  end
 
-	print "Enter phone number: "
-	number = gets.strip
+  print "Enter phone number: "
+  number = gets.strip
 
-	phonebook[name] = number
+  phonebook[name] = number
 end
 
 puts "", "=== My Phone Book ==="
 phonebook.each do |name, phone|
-	puts "#{name} number is #{phone}"
+  puts "#{name} number is #{phone}"
 end
 puts "====================="
 ```
@@ -720,22 +722,22 @@ phonebook['Alisha']
 
 #### Решение задачи "Англо-русский переводчик":
 ```ruby
-words = { 
+words = {
   'dog' => 'собака',
   'cat' => 'кошка',
   'frog' => 'лягушка'
   }
 
 while true
-	print "Введите слово: "
-	user_word = gets.strip.downcase
+  print "Введите слово: "
+  user_word = gets.strip.downcase
 
-	if user_word == ""
-		break
-	end
+  if user_word == ""
+    break
+  end
 
-	puts "Перевод: #{words[user_word]}"
-	puts ""
+  puts "Перевод: #{words[user_word]}"
+  puts ""
 end
 ```
 > У слова может быть несколько переводов, поэтому можно переписать программу, где значение хеша = массив.
@@ -747,7 +749,7 @@ fruits << {"name"=>"banana", "cost"=>10} << {"name"=>"apple", "cost"=>7}
 ```
 
 
-### Урок 12
+## Урок 12
 
 #### Перечисление ключей и значений хеша:
 
@@ -773,10 +775,10 @@ hash.keys и hash.values - это массивы, к ним можно прим�
 
 ```ruby
 words = {
-	'dog' => ['собака', 'шавка', 'бобик'],
-	'cat' => ['кошка', 'кошечка'],
-	'frog' => ['лягушка', 'квакушка'],
-	'mouse' => ['мышь', 'мышка']
+  'dog' => ['собака', 'шавка', 'бобик'],
+  'cat' => ['кошка', 'кошечка'],
+  'frog' => ['лягушка', 'квакушка'],
+  'mouse' => ['мышь', 'мышка']
 }
 
 result = 0
@@ -816,37 +818,37 @@ puts words.has_value? 'кит'
 # onehand bandit with hash
 
 win_variant = {
-	'111' => 100,
-	'222' => 200,
-	'333' => 300,
-	'444' => 400,
-	'555' => 500,
-	'666' => 600,
-	'777' => 7000,
-	'888' => 800,
-	'999' => 900,
+  '111' => 100,
+  '222' => 200,
+  '333' => 300,
+  '444' => 400,
+  '555' => 500,
+  '666' => 600,
+  '777' => 7000,
+  '888' => 800,
+  '999' => 900,
 }
 
 money = 100
 
 while true
 
-	puts 'Press ENTER for game...'
-	gets
-	random = rand(100..999).to_s
+  puts 'Press ENTER for game...'
+  gets
+  random = rand(100..999).to_s
 
 
-	if win_variant[random]
-		puts "Win #{win_variant[random]} dollars."
-		money += win_variant[random]
-	else
-		puts "You lost 10 dollars."
-		money -= 10
-	end
+  if win_variant[random]
+    puts "Win #{win_variant[random]} dollars."
+    money += win_variant[random]
+  else
+    puts "You lost 10 dollars."
+    money -= 10
+  end
 
 
- 	puts "Combination: #{random}"
-	puts "Your balance is #{money}", ""
+  puts "Combination: #{random}"
+  puts "Your balance is #{money}", ""
 end
 ```
 
@@ -877,9 +879,9 @@ puts "Fooo!" if 2+2 = 4
 
 ```ruby
 def print_details details
-	puts details[:name] if details[:name]
-	puts details[:age] if details[:age]
-	puts details[:address] if details[:address]
+  puts details[:name] if details[:name]
+  puts details[:age] if details[:age]
+  puts details[:address] if details[:address]
 end
 
 hh = { name: "Mike", age: 65, address: "123, West Street"}
@@ -887,7 +889,7 @@ hh = { name: "Mike", age: 65, address: "123, West Street"}
 print_details hh
 ```
 
-### Урок 13
+## Урок 13
 
 #### Ещё вариант добавления в хеш:
 
@@ -929,37 +931,37 @@ hh.delete '123'
 
 # добавление пары в хеш
 def add_person name, age
-  
+
   # if @hh[name]
-	#	 puts "Такой пользователь уже существует!"
-	# end
-  
+  #  puts "Такой пользователь уже существует!"
+  # end
+
   puts "Такой пользователь уже существует!" if @hh[name]
-  
-	@hh[name] = age
+
+  @hh[name] = age
 end
 
 # отображение содержимого хеш
 def show_hash
-	@hh.each do |name, age|
-		puts "#{name} is #{age} years old."
-	end
+  @hh.each do |name, age|
+    puts "#{name} is #{age} years old."
+  end
 end
 
 while true
-	# добавлять пока не введена пустая строка
-	print "Enter name: "
-	@name = gets.strip.capitalize
+  # добавлять пока не введена пустая строка
+  print "Enter name: "
+  @name = gets.strip.capitalize
 
-	if @name == ""
-		show_hash
-		exit
-	end
+  if @name == ""
+    show_hash
+    exit
+  end
 
-	print "Enter age: "
-	@age = gets.to_i
+  print "Enter age: "
+  @age = gets.to_i
 
-	add_person @name, @age
+  add_person @name, @age
 end
 ```
 
@@ -1007,9 +1009,9 @@ end
 ```ruby
 # выводит на экран записную книгу
 def show_book book
-	book.each do |name, age|
-		puts "#{name} is #{age} years old"
-	end
+  book.each do |name, age|
+    puts "#{name} is #{age} years old"
+  end
 end
 
 book1 = { 'Mike' => 65, 'Joe' => 12 }
@@ -1037,7 +1039,7 @@ ruby app.rb >> file.txt
 
 > вносим в нашу программу html-теги и затем делаем вывод в файл app.rb > file.html - получился вывод в html
 
-### Урок 14
+## Урок 14
 
 #### ООП, Класс, Объект (экземпляр класса, instance)
 
@@ -1075,28 +1077,28 @@ end
 # класс записной книжки
 class Book
 
-	def initialize
-		@hh = {}
+  def initialize
+    @hh = {}
     @last_person = ''
-	end
+  end
 
-	def add_person options
+  def add_person options
     @last_person = options[:name]
-    
-		puts "Уже есть!" if @hh[options[:name]]
 
-		@hh[options[:name]] = options[:age]
-	end
+    puts "Уже есть!" if @hh[options[:name]]
 
-	def show_all
-		@hh.each do |name, age|
-			puts "#{name} is #{age} years old."
-		end
-	end
-  
+    @hh[options[:name]] = options[:age]
+  end
+
+  def show_all
+    @hh.each do |name, age|
+      puts "#{name} is #{age} years old."
+    end
+  end
+
   def show_last_person
-		puts "Last person: #{@last_person}."
-	end
+    puts "Last person: #{@last_person}."
+  end
 
 end
 
@@ -1114,7 +1116,7 @@ class Cat
   def initialize
     @foo = 12
   end
-  
+
   def aaa
     return @foo
   end
@@ -1142,29 +1144,29 @@ attr_accessor :last_person
 ```ruby
 class Airplane
 
-	attr_reader :model
-	attr_reader :speed
-	attr_reader :altitude
+  attr_reader :model
+  attr_reader :speed
+  attr_reader :altitude
 
-	def initialize(model)
-		@model = model
-		@speed = 0
-		@altitude = 0
-	end
+  def initialize(model)
+    @model = model
+    @speed = 0
+    @altitude = 0
+  end
 
-	def fly
-		@speed = 800
-		@altitude = 10000
-	end
+  def fly
+    @speed = 800
+    @altitude = 10000
+  end
 
-	def land
-		@speed = 0
-		@altitude = 0
-	end
-	
+  def land
+    @speed = 0
+    @altitude = 0
+  end
+
   def moving?
-		return @speed > 0
-	end
+    return @speed > 0
+  end
 
 end
 
@@ -1181,29 +1183,29 @@ puts "Is moving: #{plane1.moving?}"
 # самолёт
 class Airplane
 
-	attr_reader :model
-	attr_reader :speed
-	attr_reader :altitude
+  attr_reader :model
+  attr_reader :speed
+  attr_reader :altitude
 
-	def initialize(model)
-		@model = model
-		@speed = 0
-		@altitude = 0
-	end
+  def initialize(model)
+    @model = model
+    @speed = 0
+    @altitude = 0
+  end
 
-	def fly
-		@speed = 800
-		@altitude = 10000
-	end
+  def fly
+    @speed = 800
+    @altitude = 10000
+  end
 
-	def land
-		@speed = 0
-		@altitude = 0
-	end
+  def land
+    @speed = 0
+    @altitude = 0
+  end
 
-	def moving?
-		return @speed > 0
-	end
+  def moving?
+    return @speed > 0
+  end
 
 end
 
@@ -1212,20 +1214,20 @@ models = ['Il-76', 'Boeing-777', 'Airbus-320']
 planes = []
 
 20.times do
-	model = models[rand(0..2)]
-	plane = Airplane.new(model)
+  model = models[rand(0..2)]
+  plane = Airplane.new(model)
 
-	if rand(0..1) == 1
-		plane.fly
-	end
+  if rand(0..1) == 1
+    plane.fly
+  end
 
-	planes << plane
+  planes << plane
 
 end
 
 planes.each do |plane|
-	puts "Model: #{plane.model}, Speed: #{plane.speed}, Altitude: #{plane.altitude}"
-	puts "Plane moving: #{plane.moving?}"
+  puts "Model: #{plane.model}, Speed: #{plane.speed}, Altitude: #{plane.altitude}"
+  puts "Plane moving: #{plane.moving?}"
 end
 ```
 

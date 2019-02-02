@@ -1,4 +1,4 @@
-### Урок 29 - введение в Active Record
+## Урок 29 - введение в Active Record
 
 #### Gemfile
 

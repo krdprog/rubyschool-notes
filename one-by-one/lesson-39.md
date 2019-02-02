@@ -1,4 +1,4 @@
-### Урок 39
+## Урок 39
 
 resource и resources отвечают за REST маршруты приложения, они записываются в /config/routes.rb
 

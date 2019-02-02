@@ -1,6 +1,6 @@
 # Конспект RubySchool.us [6]
 
-### Урок 36
+## Урок 36
 
 HTTP запросы:
 
@@ -61,7 +61,7 @@ end
 
 Далее будем писать на Rails и постепенно эти минусы будут уходить.
 
-### Урок 37
+## Урок 37
 
 #### Задача: посчитать все слова в файле:
 
@@ -73,25 +73,25 @@ f = File.open 'file.txt', 'r'
 @hh = {}
 
 def add_to_hash word
-	if !word.empty?
-		word.downcase!
+  if !word.empty?
+    word.downcase!
 
-		cnt = @hh[word].to_i
-		cnt += 1
+    cnt = @hh[word].to_i
+    cnt += 1
 
-		@hh[word] = cnt
-	end
+    @hh[word] = cnt
+  end
 end
 
 f.each_line do |line|
-	arr = line.split(/\s|\n|\.|,|:|;/)
-	arr.each { |word| add_to_hash(word) }
+  arr = line.split(/\s|\n|\.|,|:|;/)
+  arr.each { |word| add_to_hash(word) }
 end
 
 f.close
 
 @hh.each do |k, v|
-	puts "#{v} - #{k}"
+  puts "#{v} - #{k}"
 end
 ```
 #### Продолжаем Rails
@@ -190,8 +190,8 @@ rails g controller articles
 ```ruby
 class ArticlesController < ApplicationController
 
-	def new
-	end
+  def new
+  end
 
 end
 ```
@@ -233,13 +233,13 @@ test
 ```ruby
 <h1>New article</h1>
 <%= form_for :article, url: '/articles' do |f| %>
-	<p><%= f.label :title %>
-	<%= f.text_field :title %></p>
-    
-	<p><%= f.label :text %>
-	<%= f.text_area :text %></p>
-    
-	<p><%= f.submit %></p>
+  <p><%= f.label :title %>
+  <%= f.text_field :title %></p>
+
+  <p><%= f.label :text %>
+  <%= f.text_area :text %></p>
+
+  <p><%= f.submit %></p>
 <% end %>
 ```
 Создали форму, но при нажати на кнопку submit ничего не произойдёт, т.к. у new у нас метод GET. (было <%= form_for :article do |f| %>)
@@ -258,17 +258,17 @@ test
 Добавим в app/controllers/articles_controller.rb экшен:
 
 ```ruby
-	def create
-	end
+  def create
+  end
 ```
 Теперь при нажатии на кнопку будет выпадать ошибка: No template found for ArticlesController#create, т.к. отсутствует представление create
 
 Попробуем вывести на экран параметры, которые нам передаются.
 
 ```ruby
-	def create
-		render plain: params[:article].inspect
-	end
+  def create
+    render plain: params[:article].inspect
+  end
 ```
 У нас есть create и к нему идут обращения.
 
@@ -287,7 +287,7 @@ rails g controller ...
 ```
 Сделать простым способом без REST.
 
-### Урок 38
+## Урок 38
 
 #### Разбор вопросов на интервью:
 
@@ -608,7 +608,7 @@ DELETE        /photos/:id     photos#destroy      delete a specific photo
 
 5. Сделать вывод списка всех статей.
 
-### Урок 39
+## Урок 39
 
 resource и resources отвечают за REST маршруты приложения, они записываются в /config/routes.rb
 
@@ -822,7 +822,7 @@ end
 > Ссылка на репозиторий с учебным блогом на Rails:
 > https://github.com/krdprog/RailsBlog-rubyschool
 
-### Урок 40
+## Урок 40
 
 #### Повторение:
 

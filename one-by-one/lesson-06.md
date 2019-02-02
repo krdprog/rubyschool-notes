@@ -46,7 +46,7 @@ end
 10.upto(20) do |x|
   1.upto(x) { |i| p "#{i} Foo!" }
 end
-``` 
+```
 
 Rand Charset:
 ```ruby

@@ -2,21 +2,21 @@
 
 ```ruby
 def movie
-	action = [:left, :right, :up, :down]
+  action = [:left, :right, :up, :down]
 
-	x = rand(0..3)
+  x = rand(0..3)
 
-	return action[x]
+  return action[x]
 end
 
 def say
-	sleep 0.06
+  sleep 0.06
 end
 
 while true
-	speech = movie
-	puts "Go to #{speech}"
-	sleep 0.4
+  speech = movie
+  puts "Go to #{speech}"
+  sleep 0.4
 end
 ```
 
@@ -25,7 +25,7 @@ capitalize every name:
 arr = %w{joe matt mary olga oleg peter vasya}
 
 arr.each do |x|
-	puts x.capitalize
+  puts x.capitalize
 end
 ```
 индекс arr[2]
@@ -56,17 +56,17 @@ person = %w{vasiliy mariya joe bob marley}
 
 while true
 
-	person.size.times do |x|
-		puts "#{x}. #{person[x].capitalize}"
-	end
+  person.size.times do |x|
+    puts "#{x}. #{person[x].capitalize}"
+  end
 
-	puts ""
-	print "Кого удалить? (порядковый номер): "
-	del = gets.to_i
+  puts ""
+  print "Кого удалить? (порядковый номер): "
+  del = gets.to_i
 
-	person.delete_at del
+  person.delete_at del
 
-	puts "====="
+  puts "====="
 
 end
 ```
@@ -76,19 +76,19 @@ end
 person = %w{vasiliy mariya joe bob marley}
 
 while true
-	i = 0
-	person.each do |x|
-		puts "#{i}. #{x.capitalize}"
-		i += 1
-	end
+  i = 0
+  person.each do |x|
+    puts "#{i}. #{x.capitalize}"
+    i += 1
+  end
 
-	puts ""
-	print "Кого удалить? (порядковый номер): "
-	del = gets.to_i
+  puts ""
+  print "Кого удалить? (порядковый номер): "
+  del = gets.to_i
 
-	person.delete_at del
+  person.delete_at del
 
-	puts "====="
+  puts "====="
 
 end
 ```
@@ -99,23 +99,23 @@ end
 arr = []
 
 while true
-	print "Enter name to add: "
-	name = gets.strip.capitalize
+  print "Enter name to add: "
+  name = gets.strip.capitalize
 
   if name == ""
     break
   end
-  
-	arr << name
 
-	puts "==="
+  arr << name
 
-	x = 0
+  puts "==="
 
-	arr.each do |name|
-		puts "#{x}. #{name}"
-		x += 1
-	end
+  x = 0
+
+  arr.each do |name|
+    puts "#{x}. #{name}"
+    x += 1
+  end
 
 end
 ```
@@ -140,23 +140,23 @@ puts arr[0][1] #=> 2
 persons = []
 
 while true
-	person = []
+  person = []
 
-	print "Enter your name: "
-	name = gets.strip.capitalize
+  print "Enter your name: "
+  name = gets.strip.capitalize
 
-	if name == ""
-		break
-	end
+  if name == ""
+    break
+  end
 
-	person << name
+  person << name
 
-	print "Enter your age: "
-	age = gets.to_i
+  print "Enter your age: "
+  age = gets.to_i
 
-	person << age
+  person << age
 
-	persons << person
+  persons << person
 
 end
 
@@ -164,7 +164,7 @@ puts "", "===="
 puts "RESULT:"
 
 persons.each do |x|
-	puts "#{x[0]}, #{x[1]}"
+  puts "#{x[0]}, #{x[1]}"
 end
 
 puts "====", ""
@@ -174,48 +174,48 @@ puts "====", ""
 ```ruby
 while true
 
-	puts "", "========================"
-	print "(R)ock, (S)cissors, (P)aper? "
-	s = gets.strip.capitalize
+  puts "", "========================"
+  print "(R)ock, (S)cissors, (P)aper? "
+  s = gets.strip.capitalize
 
-	if s == "R"
-		@user_choice = :rock
-	elsif s == "S"
-		@user_choice = :scissors
-	elsif s == "P"
-		@user_choice = :paper
-	else
-		puts "What? I don`t know."
-		exit
-	end
+  if s == "R"
+    @user_choice = :rock
+  elsif s == "S"
+    @user_choice = :scissors
+  elsif s == "P"
+    @user_choice = :paper
+  else
+    puts "What? I don`t know."
+    exit
+  end
 
-	arr = [:rock, :scissors, :paper]
+  arr = [:rock, :scissors, :paper]
 
-	@computer_choice = arr[rand(0..2)]
+  @computer_choice = arr[rand(0..2)]
 
-	# report about win
-	def your_win
-		puts "You win! Your choice is #{@user_choice} and computer choice is #{@computer_choice}."
-	end
+  # report about win
+  def your_win
+    puts "You win! Your choice is #{@user_choice} and computer choice is #{@computer_choice}."
+  end
 
-	def computer_win
-		puts "Computer win! Your choice is #{@user_choice} and computer choice is #{@computer_choice}."
-	end
+  def computer_win
+    puts "Computer win! Your choice is #{@user_choice} and computer choice is #{@computer_choice}."
+  end
 
-	# game variants
-	if @user_choice == @computer_choice
-		puts "Nobody wins. Your choice is #{@user_choice} and computer choice is #{@computer_choice}."
-	# user:
-	elsif @user_choice == :rock && @computer_choice == :scissors
-		your_win
-	elsif @user_choice == :scissors && @computer_choice == :paper
-		your_win
-	elsif @user_choice == :paper && @computer_choice == :rock
-		your_win
-	# computer
-	else
-		computer_win
-	end
+  # game variants
+  if @user_choice == @computer_choice
+    puts "Nobody wins. Your choice is #{@user_choice} and computer choice is #{@computer_choice}."
+  # user:
+  elsif @user_choice == :rock && @computer_choice == :scissors
+    your_win
+  elsif @user_choice == :scissors && @computer_choice == :paper
+    your_win
+  elsif @user_choice == :paper && @computer_choice == :rock
+    your_win
+  # computer
+  else
+    computer_win
+  end
 
 end
 ```

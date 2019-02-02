@@ -1,4 +1,4 @@
-### Урок 23
+## Урок 23
 
 ```ruby
 <script src="script.js"></script>

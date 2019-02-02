@@ -1,35 +1,35 @@
 # Конспект RubySchool.us [3]
 
-### Урок 20
+## Урок 20
 
 app.rb
 ```ruby
 require "sinatra"
 
 get '/' do
-	"Hello Foo Bar"
+  "Hello Foo Bar"
 end
 
 get '/contacts' do
-	@title = "Contacts"
-	@message = "Hello all! Phone me now."
-	erb :message
+  @title = "Contacts"
+  @message = "Hello all! Phone me now."
+  erb :message
 end
 
 get '/faq' do
-	@title = "FAQ about our products"
-	@message = "It`s FAQ"
-	erb :message
+  @title = "FAQ about our products"
+  @message = "It`s FAQ"
+  erb :message
 end
 
 get '/none-page' do
-	under_construction
+  under_construction
 end
 
 def under_construction
-	@title = "Under Construction"
-	@message = "This page is under construction."
-	erb :message
+  @title = "Under Construction"
+  @message = "This page is under construction."
+  erb :message
 end
 ```
 views/message.erb
@@ -48,25 +48,25 @@ Listing babershop.rb
 require 'sinatra'
 
 get '/' do
-	erb :index
+  erb :index
 end
 
 # спросим Имя, номер телефона и дату, когда придёт клиент.
 post '/' do
-	# user_name, phone, date_time
-	@user_name = params[:user_name]
-	@phone = params[:phone]
-	@date_time = params[:date_time]
+  # user_name, phone, date_time
+  @user_name = params[:user_name]
+  @phone = params[:phone]
+  @date_time = params[:date_time]
 
-	@title = "Thank you!"
-	@message = "Уважаемый #{@user_name}, мы ждём вас #{@date_time}"
+  @title = "Thank you!"
+  @message = "Уважаемый #{@user_name}, мы ждём вас #{@date_time}"
 
   # запишем в файл то, что ввёл клиент
- 	f = File.open 'users.txt', 'a'
-	f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}.\n"
-	f.close
+  f = File.open 'users.txt', 'a'
+  f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}.\n"
+  f.close
 
-	erb :message
+  erb :message
 end
 ```
 
@@ -75,11 +75,11 @@ Listing views/index.erb
 <h1>Babershop</h1>
 
 <form action="/" method="POST">
-	Your name:<br> <input type="text" name="user_name"><br>
-	Your phone:<br> <input type="text" name="phone"><br>
-	Date and time:<br> <input type="text" name="date_time"><br>
+  Your name:<br> <input type="text" name="user_name"><br>
+  Your phone:<br> <input type="text" name="phone"><br>
+  Date and time:<br> <input type="text" name="date_time"><br>
 
-	<input type="submit">
+  <input type="submit">
 </form>
 ```
 
@@ -134,25 +134,25 @@ babershop-2.rb
 require 'sinatra'
 
 get '/' do
-	erb :index
+  erb :index
 end
 
 # спросим Имя, номер телефона и дату, когда придёт клиент.
 post '/' do
-	# user_name, phone, date_time
-	@user_name = params[:user_name]
-	@phone = params[:phone]
-	@date_time = params[:date_time]
+  # user_name, phone, date_time
+  @user_name = params[:user_name]
+  @phone = params[:phone]
+  @date_time = params[:date_time]
 
-	@title = "Thank you!"
-	@message = "Уважаемый #{@user_name}, мы ждём вас #{@date_time}"
+  @title = "Thank you!"
+  @message = "Уважаемый #{@user_name}, мы ждём вас #{@date_time}"
 
   # запишем в файл то, что ввёл клиент
-	f = File.open 'users.txt', 'a'
-	f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}.\n"
-	f.close
+  f = File.open 'users.txt', 'a'
+  f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}.\n"
+  f.close
 
-	erb :message
+  erb :message
 end
 
 # Добавить зону /admin где по паролю будет выдаваться список тех, кто записался (из users.txt)
@@ -163,18 +163,18 @@ get '/admin' do
 end
 
 post '/admin' do
-	@login = params[:login]
-	@password = params[:password]
+  @login = params[:login]
+  @password = params[:password]
 
-	# проверим логин и пароль, и пускаем внутрь или нет:
-	if @login == 'admin' && @password == 'krdprog'
-  	@file = File.open("./users.txt","r")
-  	erb :watch_result
-	  # @file.close - должно быть, но тогда не работает. указал в erb
-	else
-		@report = '<p>Доступ запрещён! Неправильный логин или пароль.</p>'
-		erb :admin
-	end
+  # проверим логин и пароль, и пускаем внутрь или нет:
+  if @login == 'admin' && @password == 'krdprog'
+    @file = File.open("./users.txt","r")
+    erb :watch_result
+    # @file.close - должно быть, но тогда не работает. указал в erb
+  else
+    @report = '<p>Доступ запрещён! Неправильный логин или пароль.</p>'
+    erb :admin
+  end
 end
 ```
 views/index.erb
@@ -182,11 +182,11 @@ views/index.erb
 <h1>Babershop 2</h1>
 
 <form action="/" method="POST">
-	Your name:<br> <input type="text" name="user_name"><br>
-	Your phone:<br> <input type="text" name="phone"><br>
-	Date and time:<br> <input type="text" name="date_time"><br>
+  Your name:<br> <input type="text" name="user_name"><br>
+  Your phone:<br> <input type="text" name="phone"><br>
+  Date and time:<br> <input type="text" name="date_time"><br>
 
-	<input type="submit">
+  <input type="submit">
 </form>
 ```
 
@@ -195,10 +195,10 @@ views/admin.erb
 <h1>Admin Panel</h1>
 
 <form action="/admin" method="POST">
-	Login:<br> <input type="text" name="login"><br>
-	Password:<br> <input type="password" name="password"><br>
+  Login:<br> <input type="text" name="login"><br>
+  Password:<br> <input type="password" name="password"><br>
 
-	<input type="submit">
+  <input type="submit">
 </form>
 
 <%= @report %>
@@ -225,7 +225,7 @@ views/watch_result.erb
 <%= @file.close %>
 ```
 
-### Урок 21
+## Урок 21
 
 > Посмотри ссылку про git: http://think-like-a-git.net/
 
@@ -245,7 +245,7 @@ bundle exec ruby app.rb
 ```
 Результат в браузере: http://localhost:4567
 
-### Урок 22
+## Урок 22
 
 #### Решение, чтобы не перезапускать Sinatra
 
@@ -330,41 +330,41 @@ end
 #### Решение:
 В views/index.erb добавить часть кода:
 ```ruby
-	<label for="baber">Выбор парикмахера</label>
-	<select name="baber">
-		<option value="none" selected>Выберите парикмахера...</option>
-		<option value="Петрович">Петрович</option>
-		<option value="Макарыч">Макарыч</option>
-		<option value="Федорыч">Федорыч</option>
-	</select>
+  <label for="baber">Выбор парикмахера</label>
+  <select name="baber">
+    <option value="none" selected>Выберите парикмахера...</option>
+    <option value="Петрович">Петрович</option>
+    <option value="Макарыч">Макарыч</option>
+    <option value="Федорыч">Федорыч</option>
+  </select>
 ```
 А, в babershop-2.rb добавить и исправить код:
 ```ruby
 post '/' do
-	# user_name, phone, date_time
-	@user_name = params[:user_name]
-	@phone = params[:phone]
-	@date_time = params[:date_time]
-	@baber = params[:baber]
+  # user_name, phone, date_time
+  @user_name = params[:user_name]
+  @phone = params[:phone]
+  @date_time = params[:date_time]
+  @baber = params[:baber]
 
-	@title = "Thank you!"
-	@message = "Уважаемый #{@user_name}, мы ждём вас #{@date_time} у выбранного парикмахера #{@baber}."
+  @title = "Thank you!"
+  @message = "Уважаемый #{@user_name}, мы ждём вас #{@date_time} у выбранного парикмахера #{@baber}."
 
   # запишем в файл то, что ввёл клиент
-	f = File.open 'users.txt', 'a'
-	f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}. Baber: #{@baber}.\n"
-	f.close
+  f = File.open 'users.txt', 'a'
+  f.write "User: #{@user_name}, phone: #{@phone}, date and time: #{@date_time}. Baber: #{@baber}.\n"
+  f.close
 
-	erb :message
+  erb :message
 end
 ```
 Здесь мы добавили код:
 ```ruby
 @baber = params[:baber]
 ```
-плюс добавили в @message и в код записи в в файл f.write 
+плюс добавили в @message и в код записи в в файл f.write
 
-### Урок 23
+## Урок 23
 
 ```ruby
 <script src="script.js"></script>
@@ -387,17 +387,17 @@ $('.ccc').css('background-color','red');
 </body>
 ```
 
-### Урок 24
+## Урок 24
 
 #### Валидация - проверка параметров
 
 ##### Вариант 1:
 app.rb
 ```ruby
-	if @user_name == ''
-		@error = 'Ошибка: Введите имя!'
-		return erb :index
-	end
+  if @user_name == ''
+    @error = 'Ошибка: Введите имя!'
+    return erb :index
+  end
 ```
 views/index.erb
 ```ruby
@@ -425,7 +425,7 @@ hh.each do |key, value|
   if params[key] == ''
     # переменной @error присвоить value из хеша hh
     @error = hh[key]
-    
+
     # вернуть представление
     return erb :index
   end
@@ -444,37 +444,37 @@ Your name:<br> <input type="text" name="user_name" value="<%= @user_name %>">
 <p><strong><%= @error %></strong></p>
 
 <form action="/" method="POST">
-	Your name:<br> <input type="text" name="user_name" value="<%= @user_name %>"><br>
-	Your phone:<br> <input type="text" name="phone" value="<%= @phone %>"><br>
-	Date and time:<br> <input type="text" name="date_time" value="<%= @date_time %>"><br>
+  Your name:<br> <input type="text" name="user_name" value="<%= @user_name %>"><br>
+  Your phone:<br> <input type="text" name="phone" value="<%= @phone %>"><br>
+  Date and time:<br> <input type="text" name="date_time" value="<%= @date_time %>"><br>
 
-	<br><br>
-	<label for="baber">Выбор парикмахера</label>
-	<select name="baber">
-		<option value="none" selected>Выберите парикмахера...</option>
-		<option value="Петрович">Петрович</option>
-		<option value="Макарыч">Макарыч</option>
-		<option value="Федорыч">Федорыч</option>
-	</select>
-	<br><br>
+  <br><br>
+  <label for="baber">Выбор парикмахера</label>
+  <select name="baber">
+    <option value="none" selected>Выберите парикмахера...</option>
+    <option value="Петрович">Петрович</option>
+    <option value="Макарыч">Макарыч</option>
+    <option value="Федорыч">Федорыч</option>
+  </select>
+  <br><br>
 
-	<input type="submit">
+  <input type="submit">
 </form>
 ```
 Ещё можно сделать так (будет выводить через запятую пустые поля):
 
 Edit babershop-2.rb:
 ```ruby
-	# хеш для валидации параметров
-	hh = { :user_name => 'Введите имя',
-      :phone => 'Введите телефон', 
+  # хеш для валидации параметров
+  hh = { :user_name => 'Введите имя',
+      :phone => 'Введите телефон',
       :date_time => 'Введите дату и время' }
 
-	@error = hh.select {|key,_| params[key] == ''}.values.join(", ")
+  @error = hh.select {|key,_| params[key] == ''}.values.join(", ")
 
-	if @error != ''
-		return erb :index
-	end
+  if @error != ''
+    return erb :index
+  end
 ```
 Вынесем это решение в отдельный метод (сделать самостоятельно).
 
@@ -486,7 +486,7 @@ Edit babershop-2.rb:
 > gem pony: https://github.com/benprew/pony/
 > Документация gem Pony: https://www.rubydoc.info/gems/pony/1.12
 
-### Урок 25
+## Урок 25
 
 #### Базы данных - gem sqlite3
 
@@ -613,15 +613,15 @@ db.execute "INSERT INTO Cars (Name, Price) VALUES ('Jaguar', 7000000)"
 
 # прочитаем данные из базы
 db.execute "SELECT * FROM Cars" do |car|
-	puts car
-	puts "======"
+  puts car
+  puts "======"
 end
 
 db.close
 ```
 Обратить внимание на тему SQL Injection
 ```sql
-'DROP TABLE Cars -- 
+'DROP TABLE Cars --
 ```
 Это нужно фильтровать. Как? Будет ниже.
 

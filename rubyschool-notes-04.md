@@ -1,6 +1,6 @@
 # Конспект RubySchool.us [4]
 
-### Урок 26
+## Урок 26
 
 Как сохранять введённые данные в поле selected (html):
 ```ruby
@@ -50,16 +50,16 @@ require 'sqlite3'
 ```ruby
 configure do
   @db = SQLite3::Database.new 'base.db'
-  
+
   @db.execute 'CREATE TABLE IF NOT EXISTS "Messages"
-	  (
-		  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-		  "username" TEXT,
-		  "phone" TEXT,
-		  "email" TEXT,
-		  "option" TEXT,
-		  "comment" TEXT
-		)'
+    (
+      "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+      "username" TEXT,
+      "phone" TEXT,
+      "email" TEXT,
+      "option" TEXT,
+      "comment" TEXT
+    )'
   # db.close (надо?)
 end
 ```
@@ -67,7 +67,7 @@ end
 ```ruby
 configure do
   @db = SQLite3::Database.new 'base.db'
-	
+
   @db.execute 'CREATE TABLE IF NOT EXISTS "Messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT, "username" TEXT, "phone" TEXT, "email" TEXT, "option" TEXT, "comment" TEXT)'
   # @db.close (надо?)
 end
@@ -84,7 +84,7 @@ end
 
 > Документация:
 > https://www.rubydoc.info/github/luislavena/sqlite3-ruby
-> 
+>
 > https://www.rubydoc.info/github/luislavena/sqlite3-ruby/SQLite3/Database
 
 #### Вставка данных в БД в Sinatra app:
@@ -96,46 +96,46 @@ require 'sinatra'
 require 'sqlite3'
 
 def get_db
-	return SQLite3::Database.new 'base.db'
+  return SQLite3::Database.new 'base.db'
 end
 
 configure do
-	db = get_db
-	db.execute 'CREATE TABLE IF NOT EXISTS "Messages"
-	  (
-		  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-		  "username" TEXT,
-		  "phone" TEXT,
-		  "email" TEXT,
-		  "option" TEXT,
-		  "comment" TEXT
-		)'
-	db.close
+  db = get_db
+  db.execute 'CREATE TABLE IF NOT EXISTS "Messages"
+    (
+      "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+      "username" TEXT,
+      "phone" TEXT,
+      "email" TEXT,
+      "option" TEXT,
+      "comment" TEXT
+    )'
+  db.close
 end
 
 def save_form_data_to_database
-	db = get_db
-	db.execute 'INSERT INTO Messages (username, phone, email, option, comment)
-	VALUES (?, ?, ?, ?, ?)', [@username, @phone, @email, @option, @comment]
-	db.close
+  db = get_db
+  db.execute 'INSERT INTO Messages (username, phone, email, option, comment)
+  VALUES (?, ?, ?, ?, ?)', [@username, @phone, @email, @option, @comment]
+  db.close
 end
 
 get '/' do
-	@title = "Форма заявки для Sinatra (Ruby)"
-	erb :index
+  @title = "Форма заявки для Sinatra (Ruby)"
+  erb :index
 end
 
 post '/' do
-	@username = params[:username]
-	@phone = params[:phone]
-	@email = params[:email]
-	@option = params[:option]
-	@comment = params[:comment]
+  @username = params[:username]
+  @phone = params[:phone]
+  @email = params[:email]
+  @option = params[:option]
+  @comment = params[:comment]
 
-	save_form_data_to_database
+  save_form_data_to_database
 
-	@title = "Спасибо, ваше сообщение отправлено"
-	erb :sent
+  @title = "Спасибо, ваше сообщение отправлено"
+  erb :sent
 end
 ```
 > Полная работающая версия формы со всеми файлами тут:
@@ -155,14 +155,14 @@ db.results_as_hash = true
 Добавим в ранее созданный метод и переделаем app.rb:
 ```ruby
 def get_db
-	db = SQLite3::Database.new 'base.db'
-	db.results_as_hash = true
-	return db
+  db = SQLite3::Database.new 'base.db'
+  db.results_as_hash = true
+  return db
 end
 ```
 
 #### Домашнее задание:
-1. сделать страницу показа результата из базы данных используя запрос 
+1. сделать страницу показа результата из базы данных используя запрос
 
 ```sql
 SELECT * FROM Users ORDER BY id DESC
@@ -175,7 +175,7 @@ SELECT * FROM Users ORDER BY id DESC
 
 3. Загрузить данные из таблицы Barbers в форму в выпадающий список select.
 
-### Урок 27
+## Урок 27
 
 > Отделить логику от представления.
 
@@ -193,41 +193,41 @@ SELECT * FROM Users ORDER BY id DESC
 ```ruby
 # Method connect with database
 def get_db
-	@db = SQLite3::Database.new 'base.db'
-	@db.results_as_hash = true
-	return @db
+  @db = SQLite3::Database.new 'base.db'
+  @db.results_as_hash = true
+  return @db
 end
 
 # Show result in admin panel
 get '/admin/show' do
-	get_db
+  get_db
 
-	@results = @db.execute 'SELECT * FROM Messages ORDER BY id DESC'
-	@db.close
+  @results = @db.execute 'SELECT * FROM Messages ORDER BY id DESC'
+  @db.close
 
-	erb :show
+  erb :show
 end
 ```
 views/show.erb
 ```ruby
 <table border="1">
-	<tr>
-		<th>Имя</th>
-		<th>Телефон</th>
-		<th>E-mail</th>
-		<th>Опция</th>
-		<th>Комментарий</th>
-	</tr>
+  <tr>
+    <th>Имя</th>
+    <th>Телефон</th>
+    <th>E-mail</th>
+    <th>Опция</th>
+    <th>Комментарий</th>
+  </tr>
 
 <% @results.each do |row| %>
 
-	<tr>
-		<td><%= row['username'] %></td>
-		<td><%= row['phone'] %></td>
-		<td><%= row['email'] %></td>
-		<td><%= row['option'] %></td>
-		<td><%= row['comment'] %></td>
-	</tr>
+  <tr>
+    <td><%= row['username'] %></td>
+    <td><%= row['phone'] %></td>
+    <td><%= row['email'] %></td>
+    <td><%= row['option'] %></td>
+    <td><%= row['comment'] %></td>
+  </tr>
 
 <% end %>
 
@@ -243,61 +243,61 @@ erb:
 ```ruby
 <% @results.each do |row| %>
 
-	<tr <%= "style='background-color: red; color: white;'" if row == @results.first %>>
-		<td><%= row['username'] %></td>
-		<td><%= row['phone'] %></td>
-		<td><%= row['email'] %></td>
-		<td><%= row['option'] %></td>
-		<td><%= row['comment'] %></td>
-	</tr>
+  <tr <%= "style='background-color: red; color: white;'" if row == @results.first %>>
+    <td><%= row['username'] %></td>
+    <td><%= row['phone'] %></td>
+    <td><%= row['email'] %></td>
+    <td><%= row['option'] %></td>
+    <td><%= row['comment'] %></td>
+  </tr>
 
 <% end %>
 ```
-#### Решение задания: 
+#### Решение задания:
 > В configure сделать дополнительную таблицу Barbers со списком парикмахеров. Загружать список парикмахеров в configure (вставка в таблицу 1 раз) - сделаю для контактной формы для поля Options:
 
 ```ruby
 # Method validation data Options table in database
 def is_option_exists? base, param
-	base.execute('SELECT * FROM Options WHERE option=?', [param]).length > 0
+  base.execute('SELECT * FROM Options WHERE option=?', [param]).length > 0
 end
 
 # Method add data to table in database
 def seed_db base, options
-	options.each do |option|
-		if !is_option_exists? @db, option
-			base.execute 'INSERT INTO Options (option) VALUES (?)', [option]
-		end
-	end
+  options.each do |option|
+    if !is_option_exists? @db, option
+      base.execute 'INSERT INTO Options (option) VALUES (?)', [option]
+    end
+  end
 end
 ```
 
 ```ruby
 # Configure application
 configure do
-	get_db
-	# create table Messages in database
-	@db.execute 'CREATE TABLE IF NOT EXISTS "Messages"
-	  (
-		  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-		  "username" TEXT,
-		  "phone" TEXT,
-		  "email" TEXT,
-		  "option" TEXT,
-		  "comment" TEXT
-		)'
+  get_db
+  # create table Messages in database
+  @db.execute 'CREATE TABLE IF NOT EXISTS "Messages"
+    (
+      "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+      "username" TEXT,
+      "phone" TEXT,
+      "email" TEXT,
+      "option" TEXT,
+      "comment" TEXT
+    )'
 
-	# create table Options in database
-	@db.execute 'CREATE TABLE IF NOT EXISTS "Options"
-	  (
-		  "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-		  "option" TEXT
-		)'
+  # create table Options in database
+  @db.execute 'CREATE TABLE IF NOT EXISTS "Options"
+    (
+      "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+      "option" TEXT
+    )'
 
-	# add data to table
-	seed_db @db, ['Foo', 'Faa', 'Moo', 'Zoo', 'Faz', 'Maz', 'Kraz']
+  # add data to table
+  seed_db @db, ['Foo', 'Faa', 'Moo', 'Zoo', 'Faz', 'Maz', 'Kraz']
 
-	@db.close
+  @db.close
 end
 ```
 seed_db - seed устоявшееся выражение - наполнить
@@ -326,26 +326,26 @@ end
 # Index page with form
 get '/' do
 
-	# Write to array data from database table Options
-	get_db
-	@options = @db.execute 'SELECT * FROM Options'
-	@db.close
+  # Write to array data from database table Options
+  get_db
+  @options = @db.execute 'SELECT * FROM Options'
+  @db.close
 
-	@title = "Форма заявки для Sinatra (Ruby)"
-	erb :index
+  @title = "Форма заявки для Sinatra (Ruby)"
+  erb :index
 end
 ```
 
 в views/index.erb в форме заменим статические данные на :
 ```ruby
-	<p>
-		<select name="option">
-			<option value="" selected>Выбрать опцию...</option>
-			<% @options.each do |item| %>
-			<option value="<%= item['option'] %>"><%= item['option'] %></option>
-			<% end %>
-		</select>
-	</p>
+  <p>
+    <select name="option">
+      <option value="" selected>Выбрать опцию...</option>
+      <% @options.each do |item| %>
+      <option value="<%= item['option'] %>"><%= item['option'] %></option>
+      <% end %>
+    </select>
+  </p>
 ```
 
 Вставка, чтобы сделать select - selected
@@ -356,7 +356,7 @@ end
 configure - при запуске программы
 before - при каждом обращении к программе
 
-### Урок 28
+## Урок 28
 
 > Мой вариант Sinatra Blog:
 > https://github.com/krdprog/sinatra-blog
@@ -379,8 +379,8 @@ end
 app.rb
 ```ruby
 get '/post/:post_id' do
-	@post_id = params[:post_id]
-	erb :post
+  @post_id = params[:post_id]
+  erb :post
 end
 ```
 views/post.erb
@@ -396,7 +396,7 @@ This is post: <%= @post_id %>
 - [sinatra/README.ru.md at master · sinatra/sinatra · GitHub](https://github.com/sinatra/sinatra/blob/master/README.ru.md#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D1%8B-%D0%BE%D1%82-%D0%B0%D1%82%D0%B0%D0%BA)
 
 
-### Урок 29 - введение в Active Record
+## Урок 29 - введение в Active Record
 
 #### Gemfile
 
@@ -410,7 +410,7 @@ gem "activerecord"
 gem "sinatra-activerecord"
 
 group :development do
-	gem "tux"
+  gem "tux"
 end
 ```
 #### Установка
@@ -430,7 +430,7 @@ require 'sinatra/activerecord'
 set :database, "sqlite3.my_database.db"
 
 get '/' do
-	erb :index
+  erb :index
 end
 ```
 
@@ -545,14 +545,14 @@ rake db:create_migration NAME=create_clients
 
 class CreateClients < ActiveRecord::Migration[5.2]
   def change
-  	create_table :clients do |t|
-  		t.text :name
-  		t.text :phone
-  		t.text :datestamp
-  		t.text :barber
+    create_table :clients do |t|
+      t.text :name
+      t.text :phone
+      t.text :datestamp
+      t.text :barber
 
         t.timestamps
-  	end
+    end
   end
 end
 
@@ -591,17 +591,17 @@ rake db:create_migration NAME=create_barbers
 
 class CreateBarbers < ActiveRecord::Migration[5.2]
   def change
-  	create_table :barbers do |t|
-  		t.text :name
+    create_table :barbers do |t|
+      t.text :name
 
-  		t.timestamps
-  	end
-  
-  	Barber.create :name => "Joe Doe"
-  	Barber.create :name => "Elon Musk"
-  	Barber.create :name => "Alisha Moon"
-  	Barber.create :name => "Marie Fooo-bar"
-    
+      t.timestamps
+    end
+
+    Barber.create :name => "Joe Doe"
+    Barber.create :name => "Elon Musk"
+    Barber.create :name => "Alisha Moon"
+    Barber.create :name => "Marie Fooo-bar"
+
   end
 end
 ```
@@ -661,8 +661,8 @@ rake db:migrate надо запускать в каталоге приложен
 # + in app.rb
 
 get '/' do
-	@barbers = Barber.all
-	erb :index
+  @barbers = Barber.all
+  erb :index
 end
 ```
 
@@ -673,7 +673,7 @@ end
 
 <ul>
 <% @barbers.each do |barber| %>
-	<li><%= barber.name %></li>
+  <li><%= barber.name %></li>
 <% end %>
 </ul>
 ```
@@ -686,7 +686,7 @@ end
 1. сделать сохранение записи к парикмахеру в БД с помощью ActiveRecord
 2. сделать сущность Contact и на странице /contacts сохранять в БД данные с помощью ActiveRecord
 
-### Урок 30
+## Урок 30
 
 #### 5 шагов по созданию миграции:
 1. подключаем БД
@@ -706,14 +706,14 @@ rake db:create_migration NAME=create_clients
 ```ruby
 class CreateClients < ActiveRecord::Migration[5.2]
   def change
-  	create_table :clients do |t|
-  		t.text :name
-  		t.text :phone
-  		t.text :datestamp
-  		t.text :barber
+    create_table :clients do |t|
+      t.text :name
+      t.text :phone
+      t.text :datestamp
+      t.text :barber
 
-  		t.timestamps
-  	end
+      t.timestamps
+    end
   end
 end
 ```
@@ -840,15 +840,15 @@ end
 # + to app.rb
 
 post '/order' do
-    c = Client.new params[:client]
-    c.save
+  c = Client.new params[:client]
+  c.save
 
-    if c.save
-        erb "<p>Thank you!</p>"
-    else
-        @error = c.errors.full_messages.first
-        erb :order
-    end
+  if c.save
+    erb "<p>Thank you!</p>"
+  else
+    @error = c.errors.full_messages.first
+    erb :order
+  end
 end
 ```
 ```ruby
@@ -862,21 +862,21 @@ end
 # + to app.rb
 
 get '/order' do
-    @c = Client.new
+  @c = Client.new
 
-    erb :order
+  erb :order
 end
 
 post '/order' do
-    @c = Client.new params[:client]
-    @c.save
+  @c = Client.new params[:client]
+  @c.save
 
-    if @c.save
-        erb "<p>Thank you!</p>"
-    else
-        @error = @c.errors.full_messages.first
-        erb :order
-    end
+  if @c.save
+      erb "<p>Thank you!</p>"
+  else
+      @error = @c.errors.full_messages.first
+      erb :order
+  end
 end
 ```
 
