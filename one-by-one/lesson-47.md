@@ -209,7 +209,120 @@ rake spec
 
 **Далее проверим функциональность создания статей зарегистрированным пользователем:**
 
-__на оформлении__
+Чтобы не зависеть от порядка исполнения тестов и не повотояться в коде, вынесем часть кода в метод sign_up
+
+/spec/features/visitor_creates_account_spec.rb:
+```ruby
+require "rails_helper"
+
+feature "Account Creation" do
+  scenario "allows guest to create account" do
+    sign_up
+    expect(page).to have_content I18n.t('devise.registrations.signed_up')
+  end
+end
+
+def sign_up
+  visit new_user_registration_path
+
+  fill_in :user_username, with: 'FooBar'
+  fill_in :user_email, with: 'foo@bar.com'
+  fill_in :user_password, with: '1234567'
+  fill_in :user_password_confirmation, with: '1234567'
+
+  click_button 'Sign up'
+end
+```
+
+Далее вынесем код метода sign_up в файл в каталоге /spec/support
+
+#### RSpec: before, after hooks
+
+> https://relishapp.com/rspec/rspec-core/v/3-8/docs/hooks/before-and-after-hooks
+
+Нам надо использовать sign_up в разных тестах, и чтобы не повторяться и не писать один и тот же код, мы используем before, after hooks
+
+Исполняется перед каждым тестом в feature или describe:
+```ruby
+before(:each) do
+end
+```
+
+Исполняется перед всеми тестами в feature или describe:
+```ruby
+before(:all) do
+end
+```
+
+Перепишем тест /spec/features/visitor_creates_account_spec.rb:
+
+```ruby
+require "rails_helper"
+
+feature "Account Creation" do
+  scenario "allows guest to create account" do
+    sign_up
+    expect(page).to have_content I18n.t('devise.registrations.signed_up')
+  end
+end
+```
+
+Мы вынесли код метода sign_up в файл /spec/support/session_helper.rb:
+
+```ruby
+def sign_up
+  visit new_user_registration_path
+
+  fill_in :user_username, with: 'FooBar'
+  fill_in :user_email, with: 'foo@bar.com'
+  fill_in :user_password, with: '1234567'
+  fill_in :user_password_confirmation, with: '1234567'
+
+  click_button 'Sign up'
+end
+```
+
+Создадим тест для проверки создания статьи залогиненым пользователем /spec/features/user_creates_article_spec.rb:
+
+```ruby
+
+```
+
+Решение вопроса с тем, что при выполнении тестов в нескольких тестах вызывается sign_up (и выпадает ошибка о том, что этот этот пользователь уже есть). БД создаётся перед тестами.
+
+> https://github.com/teamcapybara/capybara#transactions-and-database-setup
+
+> https://github.com/DatabaseCleaner/database_cleaner#rspec-example
+
+Добавить в Gemfile:
+
+```ruby
+group :test do
+  gem 'database_cleaner'
+end
+```
+
+```bash
+bundle install
+```
+Создадим файл конфигурации database_cleaner в файле /spec/support/database_cleaner.rb:
+
+```ruby
+RSpec.configure do |config|
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
+
+end
+```
 
 
 > Изучить документацию Capybara:
