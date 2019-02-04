@@ -2,6 +2,46 @@
 
 ### Скаффолдинг
 
+```bash
+rails new toy_app
+bundle install
+bundle update
+```
+
+Сделаем мини-приложение микропостинг:
+
+```text
+---------------------
+|  users            |
+---------------------
+id     integer
+name   string
+email  string
+---------------------
+
+---------------------
+|  microposts       |
+---------------------
+id      integer
+content text
+user_id integer
+---------------------
+```
+
+```bash
+rails g scaffold User name:string email:string
+```
+Создаст одновременно модель, контроллер, экшены, представления, тесты.
+
+```bash
+bundle exec rake db:migrate
+```
+
+```bash
+rails g scaffold Micropost content:text user_id:integer
+```
+
+
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-49.md
 
