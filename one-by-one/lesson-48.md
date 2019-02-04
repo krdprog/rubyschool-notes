@@ -1,6 +1,6 @@
 ## Урок 48
 
-на оформлении
+### Скаффолдинг
 
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-49.md

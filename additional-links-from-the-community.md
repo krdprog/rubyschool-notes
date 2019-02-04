@@ -29,6 +29,9 @@
 - https://github.com/markets/awesome-ruby
 - https://github.com/davidgf/design-patterns-in-ruby
 - https://github.com/basecamp/handbook
+- https://thoughtbot.com/upcase/rails
+- https://thoughtbot.com/upcase/the-weekly-iteration
+- https://thoughtbot.com/upcase/
 
 ## Ruby Gems Catalogs:
 
