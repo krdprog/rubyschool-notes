@@ -40,7 +40,71 @@ bundle exec rake db:migrate
 ```bash
 rails g scaffold Micropost content:text user_id:integer
 ```
+Валидация Micropost (в модели):
 
+```ruby
+validates :content, length: { maximum: 140 }, presence: true
+validates :user_id, presence: true
+```
+
+Валидация User (в модели):
+
+```ruby
+validates :name, presence: true
+validates :email, presence: true
+```
+
+Добавим ассоциации one-to-many между пользователем и микропостом.
+
+```text
+User --1--------*-- Micropost
+```
+
+Модель User:
+
+```ruby
+has_many :microposts
+```
+
+Модель Micropost:
+
+```ruby
+belongs_to :user
+```
+
+Откроем rails console:
+
+```ruby
+first_user = User.first
+first_user.microposts
+first_user.microposts.count # обратится к БД
+first_user.microposts.length # прочитает то, что уже есть в памяти, без БД
+micropost = first_user.microposts.first # первый микропост первого пользователя
+micropost.user # получить пользователя микропоста
+```
+
+- Модели наследуются от ActiveRecord::Base
+- Контроллеры наследуются от ApplicationController, а ApplicationController от ActionController::Base
+
+### Отправка e-mail
+
+- SMTP-сервер
+- хостинг - большой процент попадания в спам
+- gmail - надо включить options, есть ограничения
+- postmarkapp - для Transactional emails, но через него нельзя делать почтовую рассылку. Письма должны быть с кнопкой Unsubscribe.
+- bulk email messaging - для рассылки
+
+> https://postmarkapp.com/developer/user-guide/sending-email/sending-with-api
+
+> https://github.com/wildbit/postmark-gem
+
+> https://github.com/wildbit/postmark-rails
+
+> http://rusrails.ru/action-mailer-basics
+
+> https://www.youtube.com/watch?v=FNOhpAWbiKA
+
+> https://github.com/mikel/mail
 
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-49.md
