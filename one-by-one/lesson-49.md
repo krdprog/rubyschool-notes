@@ -143,10 +143,172 @@ select * from posts;
 select * from images;
 ```
 
-### Паттерн Singleton
+### Про развёртывание на Heroku
+
+> См. инструкцию тут: https://github.com/krdprog/prog-conspects/blob/master/hartl-rails.md
+
+### Паттерн Singleton (один объект на всех)
+
+Банда Четырёх - GoF (Gang of Four)
+
+> https://habr.com/ru/post/210288/
+
+> https://ru.wikipedia.org/wiki/Design_Patterns
+
+#### Hапишем логгер, который будет сначала выводить на экран, а затем сохранять в файл.
+
+app.rb:
+```ruby
+class Logger
+  def say_foo
+    puts "Fooo!"
+  end
+end
+
+logger = Logger.new
+logger.say_foo
+```
+Создадим ещё логгеры. Есть недостаток такого подхода. В этом случае, объектов создаётся много, а действие совершается одно.
+
+Попробуем исправить:
+
+app.rb:
+```ruby
+class Logger
+  def self.say_foo
+    puts "Fooo!"
+  end
+end
+
+Logger.say_foo
+```
+
+Добавим ещё метод:
+
+```ruby
+class Logger
+  def self.say_foo
+    puts "Fooo!"
+  end
+
+  def self.log_foo bar
+    f = File.open 'log.txt', 'a'
+    f.puts bar
+    f.close
+  end
+end
+
+Logger.say_foo
+Logger.log_foo 'Wow!'
+Logger.log_foo 'Meow!'
+```
+
+Недостаток в том, что мы постоянно открываем и закрываем файл log.txt - это увеличивает нагрузку.
+
+class method
+```ruby
+Logger.say_foo)
+```
+instance method
+```ruby
+logger = Logger.new
+logger.say_foo
+```
+
+**Чтобы решить это, нам потребуется паттерн Singleton**
+
+Наша цель сделать один объект на всех.
 
 
+Всё это принадлежит к экземпляру класса (к объекту):
 
+@foo - instance variables
+
+instance method:
+```ruby
+def foo
+end
+```
+
+Это принадлежит к статическому классу:
+
+@@foo - class variable
+
+class method:
+```ruby
+def self.foo
+end
+```
+
+**Решение:**
+
+logger.rb:
+```ruby
+class Loggeer
+  def initialize
+    @f = File.open 'log.txt', 'a'
+  end
+
+  # сделаем, чтобы метод возвращал экземпляр нашего класса
+  @@x = Loggeer.new
+
+  def self.instance
+    return @@x
+  end
+
+  # instance method
+  def log bar
+    @f.puts bar
+    @f.flush
+  end
+
+  # механизм защиты, чтобы Loggeer.new можно было написать только внутри класса
+  private_class_method :new
+end
+```
+
+app.rb:
+```ruby
+require "./logger"
+
+Loggeer.instance.log "Good job!"
+```
+
+**В стандартной библиотеке ruby есть модуль Singleton**
+
+> https://ruby-doc.org/stdlib-2.5.3/libdoc/singleton/rdoc/Singleton.html
+
+Перепишем программу используя этот встроенный модуль.
+
+logger.rb:
+```ruby
+require 'singleton'
+
+class Loggeer
+
+  include Singleton
+
+  def initialize
+    @f = File.open 'log.txt', 'a'
+  end
+
+  def log bar
+    @f.puts bar
+    @f.flush
+  end
+
+end
+```
+app.rb:
+```ruby
+require "./logger"
+
+Loggeer.instance.log "It`s work!"
+```
+
+> https://github.com/krdprog/logger.rb
+
+**Домашнее задание:** сделать блог с сущностями post, link, image с комменатриями, сделать на главной странице вывод всех этих сущностей.
 
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-50.md
