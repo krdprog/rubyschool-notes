@@ -1,6 +1,152 @@
 ## Урок 49
 
-на оформлении
+### Про паттерны программирования. Полиморфные ассоциации:
+
+Создадим приложение poly_demo
+
+```bash
+rails new poly_demo
+```
+
+При написании приложения у нас могут быть сущности, которые содержит одинаковое поведение, одинаковые свойства и нам захочется использовать DRY-принцип, и в этом нам поможет следующее:
+
+```text
+Post - PostComment (x)
+
+Image - ImageComment (x)
+
+Link - LinkComment (x)
+
+Article - ArticleComment (x)
+```
+
+Нам нет смысла создавать отдельные сущности для подвидов комментариев.
+
+
+```text
+Post
+          \
+Image    --  Comment
+          /
+Link
+
+Article
+
+
+Post.comments
+Image.comments
+Link.comments
+Article.comments
+
+
+content
+rating
+```
+
+Одна модель может принадлежать разным сущностям, но при этом оставаться сама собой (полиморфизм).
+
+```bash
+rails g model Comment content:text
+```
+
+```bash
+rails g model Post content:text
+```
+
+```bash
+rails g model Image url:text
+```
+
+#### Свяжем эти сущности.
+
+Т.к. нам надо связать сущность комментарий с несколькими сущностями, belongs_to делаетс немного иначе, чем обычно.
+
+При связывании с полиморфной ассоциацией надо в belongs_to добавить с окончанием **able**
+
+/app/models/comment.rb:
+```ruby
+class Comment < ApplicationRecord
+  belongs_to :commentable, polymorphic: true
+end
+```
+commentable - получается: комментируемый
+
+Хендл, рукоятка, которая существует у других сущностей.
+
+/app/models/post.rb:
+```ruby
+class Post < ApplicationRecord
+  has_many :comments, as: :commentable
+end
+```
+
+/app/models/image.rb:
+```ruby
+class Image < ApplicationRecord
+  has_many :comments, as: :commentable
+end
+```
+
+Далее, откроем миграцию db/migrate/20190205095251_create_comments.rb и добавим строку:
+
+```ruby
+t.references :commentable, polymorphic: true
+```
+
+```ruby
+class CreateComments < ActiveRecord::Migration[5.2]
+  def change
+    create_table :comments do |t|
+      t.text :content
+      t.references :commentable, polymorphic: true
+      t.timestamps
+    end
+  end
+end
+```
+
+Далее, делаем:
+
+```bash
+bundle exec rake db:migrate
+```
+
+Далее, откроем Rails-консоль:
+
+```bash
+rails console
+```
+
+```ruby
+post = Post.create(content: 'Foo bar')
+post.comments
+post.comments.create(content: 'Baz Buuu Foo')
+post.comments.create(content: 'Comment 2')
+post.comments
+image = Image.create(url: '1.jpg')
+image.comments.create(content: 'Wow! Super!')
+image.comments.create(content: 'This is comment for image!')
+image.comments
+image2 = Image.create(url: '2.jpg')
+image2.comments.create(content: 'Bar')
+```
+
+Посмотрим базу данных /db/development.sqlite3:
+
+```bash
+sqlite3 development.sqlite3
+```
+
+```bash
+select * from comments;
+select * from posts;
+select * from images;
+```
+
+### Паттерн Singleton
+
+
+
 
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-50.md
