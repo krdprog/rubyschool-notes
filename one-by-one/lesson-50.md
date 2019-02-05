@@ -6,7 +6,7 @@
 
 Для отработки текстовых файлов, данных, веб-страниц.
 
-Файл для тренеровки с Regex можно скачать тут: https://github.com/krdprog/rubyschool-notes/blob/master/file-for-lesson-50/for-lesson-50-regex.txt
+Файл для тренеровки с Regex можно скачать тут: https://github.com/krdprog/rubyschool-notes/blob/master/for-lesson-50-regex.txt
 
 ```text
 The cat goes catatonic when you put in in catapult
@@ -85,9 +85,34 @@ the lazy dog
 ```
 
 ```text
+Убрать пустые строки:
 
+\n\n заменяем на \n
 ```
 
+```text
+
+the quick
+
+brown fox
+
+
+
+jumps
+
+
+over
+
+the lazy
+
+
+
+dog
+```
+
+```text
+\n+ заменяем на \n
+```
 
 ### Шпаргалка по регулярным выражениям (regex)
 
