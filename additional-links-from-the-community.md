@@ -51,6 +51,7 @@
 
 - https://rails-weekly.ongoodbits.com/ - This Week In Rails
 - https://rubyweekly.com/ - Ruby Weekly
+- https://ruby.libhunt.com/newsletter
 
 ## Ruby-блоги:
 
