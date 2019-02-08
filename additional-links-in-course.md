@@ -81,9 +81,67 @@
 - https://guides.rubyonrails.org/routing.html#crud-verbs-and-actions
 - Rusrails: Командная строка Rails - http://rusrails.ru/a-guide-to-the-rails-command-line
 - Ссылка на репозиторий с учебным блогом на Rails - https://github.com/krdprog/RailsBlog-rubyschool
-- ...
-
-(список дополнится ссылками с 10 уроков, которые ещё не оформлены)
+- https://railsguides.net/advanced-rails-model-generators/
+- https://guides.rubyonrails.org/association_basics.html
+- https://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html
+- http://rusrails.ru/active-record-associations
+- http://www.rusrails.ru/active-record-associations#foreign_key
+- https://github.com/rails/strong_parameters
+- https://guides.rubyonrails.org/action_controller_overview.html#more-examples
+- https://github.com/krdprog/rspec-demo-rubyschool - репозиторий Rspec-demo
+- https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+- Документация по гему devise - https://github.com/plataformatec/devise
+- Статья на Хабре по devise - https://habr.com/ru/post/208056/
+- Посмотреть примеры - https://github.com/plataformatec/devise/wiki/Example-applications
+- https://github.com/plataformatec/devise#controller-filters-and-helpers
+- https://ru.wikipedia.org/wiki/JSON
+- https://api.rubyonrails.org/classes/ActiveRecord/Migration.html
+- https://andreyex.ru/bazy-dannyx/uchebnoe-posobie-po-sql/sql-indeksy/
+- http://www.sql.ru/articles/mssql/03013101indexes.shtml
+- https://habr.com/ru/post/247373/
+- https://stackoverflow.com/questions/18424671/what-is-params-requireperson-permitname-age-doing-in-rails-4
+- https://api.rubyonrails.org/classes/ActionController/Parameters.html#method-i-require
+- https://api.rubyonrails.org/classes/ActionController/Parameters.html#method-i-permit
+- https://api.rubyonrails.org/classes/ActionController/Parameters.html
+- https://stackoverflow.com/questions/7493767/are-redirect-to-and-render-exchangeable
+- https://en.wikipedia.org/wiki/Post/Redirect/Get
+- http://rusrails.ru/action-view-overview
+- https://guides.rubyonrails.org/form_helpers.html
+- https://github.com/watir/watir
+- https://github.com/SeleniumHQ/selenium
+- http://kanbanflow.com/
+- http://trello.com/
+- https://www.vagrantup.com/
+- https://github.com/rails/rails-dev-box
+- https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+- https://matchers.shoulda.io/
+- http://matchers.shoulda.io/docs/v3.1.3/
+- https://github.com/thoughtbot/shoulda-matchers
+- http://matchers.shoulda.io/docs/v3.1.3/Shoulda/Matchers/ActiveRecord.html#have_many-instance_method
+- https://github.com/thoughtbot/factory_bot/blob/v4.9.0/UPGRADE_FROM_FACTORY_GIRL.md
+- https://www.rubydoc.info/gems/factory_bot/file/GETTING_STARTED.md
+- https://www.rubydoc.info/gems/factory_bot/file/GETTING_STARTED.md#Defining_factories
+- https://www.rubydoc.info/gems/factory_bot/file/GETTING_STARTED.md#Sequences
+- http://protesting.ru/testing/levels/acceptance.html
+- https://www.rubydoc.info/github/teamcapybara/capybara/master
+- https://github.com/teamcapybara/capybara#using-capybara-with-rspec
+- https://relishapp.com/rspec/rspec-core/v/3-8/docs/hooks/before-and-after-hooks
+- https://github.com/teamcapybara/capybara#transactions-and-database-setup
+- https://github.com/DatabaseCleaner/database_cleaner#rspec-example
+- https://github.com/teamcapybara/capybara
+- https://www.rubydoc.info/github/teamcapybara/capybara/master
+- https://postmarkapp.com/developer/user-guide/sending-email/sending-with-api
+- https://github.com/wildbit/postmark-gem
+- https://github.com/wildbit/postmark-rails
+- http://rusrails.ru/action-mailer-basics
+- https://www.youtube.com/watch?v=FNOhpAWbiKA
+- https://github.com/mikel/mail
+- https://habr.com/ru/post/210288/
+- https://ru.wikipedia.org/wiki/Design_Patterns
+- https://ruby-doc.org/stdlib-2.5.3/libdoc/singleton/rdoc/Singleton.html
+- https://github.com/krdprog/logger.rb
+- https://rubular.com/
+- https://github.com/krdprog/rubyschool-notes/blob/master/for-lesson-50-regex.txt
 
 Назад к конспектам курса: https://github.com/krdprog/rubyschool-notes
 
