@@ -34,6 +34,17 @@
 - https://thoughtbot.com/upcase/the-weekly-iteration
 - https://thoughtbot.com/upcase/
 
+## Sublime Text - Ruby, RoR snipptes and etc.
+
+- https://github.com/sublimehq/Packages/
+
+```bash
+git clone https://github.com/sublimehq/Packages.git
+ln -s `pwd`/Packages/Rails ~/.config/sublime-text-3/Packages/
+ln -s `pwd`/Packages/Ruby ~/.config/sublime-text-3/Packages/
+ln -s `pwd`/Packages/SQL ~/.config/sublime-text-3/Packages/
+```
+
 ## Ruby Gems Catalogs:
 
 - https://rubygems.org/ - Ruby Gems
