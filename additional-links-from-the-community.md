@@ -8,6 +8,10 @@
 
 - https://docker.crank.ru/docs/docker-engine/docker-overview/ - документация по Docker (рус.)
 
+## RSpec:
+
+- http://www.betterspecs.org/ru/
+
 ## Ruby:
 
 - http://rusrails.ru/ - Ruby on Rails по-русски
