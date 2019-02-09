@@ -33,6 +33,7 @@
 - https://thoughtbot.com/upcase/rails
 - https://thoughtbot.com/upcase/the-weekly-iteration
 - https://thoughtbot.com/upcase/
+- https://www.theodinproject.com/courses/ruby-on-rails
 
 ## Sublime Text - Ruby, RoR snipptes and etc.
 
