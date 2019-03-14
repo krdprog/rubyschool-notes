@@ -116,7 +116,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
   end
 end
 ```
-seed database - наполнить базу данных
+### Seed database. Наполним вручную базу данных
 
 ```bash
 rake db:create_migration NAME=add_products
@@ -154,6 +154,10 @@ class AddProducts < ActiveRecord::Migration[5.2]
       :path_to_image => '/images/03.jpg'
   end
 end
+```
+И, сделаем:
+```ruby
+rake db:migrate
 ```
 
 #### Домашнее задание:
