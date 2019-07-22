@@ -359,7 +359,7 @@ class Animal
   def eat
     puts "#{name}: I am eating..."
   end
-  
+
   def sleep
     puts "I am sleeping..."
   end
@@ -370,7 +370,6 @@ cat.jump
 # cat.eat # будет ошибка
 # cat.sleep # тоже ошибка
 ```
-#### Protected - ... ???
 
 ### Статические методы - self
 

@@ -41,7 +41,6 @@ cat.jump
 # cat.eat # будет ошибка
 # cat.sleep # тоже ошибка
 ```
-#### Protected - ... ???
 
 ### Статические методы - self
 
