@@ -6,7 +6,8 @@
 
 ## Docker:
 
-- https://docker.crank.ru/docs/docker-engine/docker-overview/ - документация по Docker (рус.)
+- https://dker.ru/ - документация по Docker (рус.)
+- http://rubyblog.ru/docker/docker/
 
 ## RSpec:
 
