@@ -60,7 +60,7 @@ OR:
 продолжение http://www.sqlishard.com/Exercise#/exercises/SELECT/S2.4
 ```
 #### Инструмент:
-> Addon Firefox: https://addons.mozilla.org/ru/firefox/addon/sqlite-manager (установить, перезагрузить браузер, потом нажать Alt - Инструменты - SQLite Manager, или вынести в боковое меню).
+> SQLite Browser https://sqlitebrowser.org/dl/
 
 - создадим базу данных test.sqlite
 - создадим таблицу Cars со столбцами:

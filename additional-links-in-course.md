@@ -23,7 +23,7 @@
 - Документация gem Pony: https://www.rubydoc.info/gems/pony/1.12
 - sqlite - https://sqlite.org/index.html
 - Пройти упражнения на тренажёре SQL is Hard: http://www.sqlishard.com/
-- Addon Firefox: https://addons.mozilla.org/ru/firefox/addon/sqlite-manager (установить, перезагрузить браузер, потом нажать Alt - Инструменты - SQLite Manager, или вынести в боковое меню).
+- SQLite Browser https://sqlitebrowser.org/dl/
 - Шпаргалка по SQLite3 - https://github.com/krdprog/sqlite-3-rus-howto
 - Escaping Strings For Ruby SQLite Insert - https://stackoverflow.com/questions/9614236/escaping-strings-for-ruby-sqlite-insert
 - Prepare - https://www.rubydoc.info/github/luislavena/sqlite3-ruby/SQLite3/Database#prepare-instance_method
