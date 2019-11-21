@@ -35,7 +35,7 @@ end
   p i
 end
 
-20.downt(10) do |i|
+20.downto(10) do |i|
   p i
 end
 ```
