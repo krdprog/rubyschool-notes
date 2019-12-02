@@ -1,4 +1,4 @@
-???# Конспект RubySchool.us [2]
+# Конспект RubySchool.us [2]
 
 ## Урок 15
 
@@ -1127,7 +1127,7 @@ get '/' do
   erb :index
 end
 
-post '/'do
+post '/' do
   @login = params[:login]
   erb :index
 end
@@ -1162,8 +1162,8 @@ post '/' do
   if @login == 'admin' && @password == '12345'
     erb :welcome
   else
-      @if_stop = "STOP!"
-      erb :index
+    @if_stop = "STOP!"
+    erb :index
   end
 end
 

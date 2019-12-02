@@ -213,7 +213,6 @@ views/watch_result.erb
 ```ruby
 <h1>Admin Panel (Watch Result)</h1>
 
-
 <table border="1">
 <% @file.each_line do |line| %>
   <tr><td><%= line %></td></tr>
