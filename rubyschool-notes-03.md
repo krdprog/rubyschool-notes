@@ -362,7 +362,7 @@ end
 ```ruby
 @baber = params[:baber]
 ```
-плюс добавили в @message и в код записи в в файл f.write
+плюс добавили в @message и в код записи в файл f.write
 
 ## Урок 23
 
