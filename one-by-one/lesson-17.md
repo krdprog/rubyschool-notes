@@ -2,7 +2,7 @@
 
 #### Метапрограммирование
 
-Функция send - отправить в какую-то функцию какие-то аргрументы.
+Функция send - отправить в какую-то функцию какие-то аргументы.
 
 ```ruby
 def mm
@@ -12,7 +12,7 @@ end
 # варианты вызова метода:
 mm
 
-# metaprogramm:
+# metaprogram:
 send :mm
 # or
 send "mm"
@@ -339,7 +339,7 @@ Dir.chdir '/home/alex/'
 Dir.entries '/foo/bar/'
 ```
 
-> ДЗ: написать программу которая ищет файл на диске
+> ДЗ: написать программу, которая ищет файл на диске
 
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-18.md
