@@ -108,6 +108,18 @@ views/welcome.erb
 ```
 > Отдельная область программирования scraping - парсинг информации
 
+Для автообновления страниц без перезапуска сервера, можно установить gem: sinatra-reloader
+
+```
+  gem install sinatra-reloader
+```
+
+Для использования прописываем в начале файла:
+
+```
+  require 'sinatra/reloader' if development?
+```
+
 ---
 **Следующий урок:**  https://github.com/krdprog/rubyschool-notes/blob/master/one-by-one/lesson-20.md
 
