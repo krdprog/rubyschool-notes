@@ -104,7 +104,7 @@ end
 run_5_times { |i, v| puts "Foo! Index: #{i}. Value: #{v}" }
 ```
 
-### Лямбда (lambda) - это указатель на фунцию:
+### Лямбда (lambda) - это указатель на функцию:
 
 ```ruby
 x = lambda { #some code }
