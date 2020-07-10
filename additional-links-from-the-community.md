@@ -2,7 +2,8 @@
 
 Добавляйте свои ссылки, делитесь полезным с сообществом. Отправляйте Pull Request в этот репозиторий.
 
-- https://github.com/Vito300187/Sobes/blob/master/rails.md - Ruby on Rails: вопросы, которые вас могут спросить, на которые идеально знать ответ (спасибо за ссылку @Vito300187)
+- https://github.com/aristofun/webdevdao/tree/master/test_assignments - тестовые задания на собеседованиях
+- https://github.com/aristofun/webdevdao/tree/master/interview - вопросы на интервью
 
 ## Docker:
 
