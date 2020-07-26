@@ -5,7 +5,7 @@
 Добавить в Gemfile нашего RailsBlog:
 
 ```ruby
-group :test :development do
+group :test, :development do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'capybara'
