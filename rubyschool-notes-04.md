@@ -503,6 +503,14 @@ rake db:create_migration NAME=name_of_migration
 ```ruby
 rake db:migrate
 ```
+
+если команда отрабатывает без каких-либо сообщений и база данный пустая, выполнить следующие шаги:
+```
+- Добавить в Gemfile: gem "rake"
+- Запустить bundle install
+- В app.rb изменить строку set :database, "sqlite3:barbershop.db"  на set :database, {adapter: "sqlite3", database: "barbershop.db"}
+```
+
 возврат к предыдущей миграции:
 ```ruby
 rake db:rollback
