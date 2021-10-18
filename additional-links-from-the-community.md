@@ -10,10 +10,6 @@
 - https://dker.ru/ - документация по Docker (рус.)
 - http://rubyblog.ru/docker/docker/
 
-## RSpec:
-
-- http://www.betterspecs.org/ru/
-
 ## Ruby:
 
 - http://rusrails.ru/ - Ruby on Rails по-русски
@@ -24,7 +20,6 @@
 - http://onrails.club/ - форум
 - https://www.apiduck.io/ - документация (ещё один сайт с документацией)
 - https://devdocs.io/ - отличный сайт с документацией (с оффлайн-версией в браузере)
-- http://indbooks.in/mirror3.ru/?page_id=233867 - Фултон Хэл. Программирование на языке Ruby (онлайн-версия книги)
 - https://www.railstutorial.org/book/ - онлайн-версия книги Хартла "Ruby on Rails" от самого автора (свежая версия, english)
 - https://awesome-ruby.com/
 - https://github.com/arbox/rails-style-guide
