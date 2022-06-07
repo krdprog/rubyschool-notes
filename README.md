@@ -12,6 +12,8 @@ Rubyschool.us - 50 уроков по Ruby/Sinatra/RoR. Курс от 2014 год
 
 У кого трудности с настройкой рабочего Ruby-окружения на компьютере, чтобы не тормозить изучение, используйте первое время онлайн-сервис: [https://repl.it/languages/ruby](https://repl.it/languages/ruby)
 
+«Как деплоить рельсы (Ruby on Rails). Коллекция инструкций»: [https://rubydeploy.ru/](https://rubydeploy.ru/)
+
 ## Содержание конспекта:
 
 |  N    |  N    |  N    |  N    |
