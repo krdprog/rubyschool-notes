@@ -5,6 +5,10 @@
 - https://github.com/aristofun/webdevdao/tree/master/test_assignments - тестовые задания на собеседованиях
 - https://github.com/aristofun/webdevdao/tree/master/interview - вопросы на интервью
 
+## Как деплоить рельсы
+
+- «Как деплоить рельсы (Ruby on Rails). Коллекция инструкций»: https://rubydeploy.ru/
+
 ## Docker:
 
 - https://dker.ru/ - документация по Docker (рус.)
