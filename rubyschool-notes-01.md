@@ -237,7 +237,7 @@ a.empty? #=> false
 #### Homework:
 Class: Integer - https://ruby-doc.org/core-3.1.2/Integer.html
 
-Class: String - https://ruby-doc.org/core-3.1.2/Integer.html
+Class: String - https://ruby-doc.org/core-3.1.2/String.html
 
 Написать программу, которая будет выводить числа от 0 до 50 следующим образом:
 
