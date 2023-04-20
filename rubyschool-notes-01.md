@@ -1002,7 +1002,7 @@ end
 
 ```ruby
 puts "Bar!" if true
-puts "Fooo!" if 2+2 = 4
+puts "Fooo!" if 2+2 == 4
 ```
 
 #### Защита от неустановленного параметра:
